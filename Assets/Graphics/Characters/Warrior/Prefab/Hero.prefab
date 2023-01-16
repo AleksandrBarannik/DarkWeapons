@@ -41,8 +41,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4621171860792138}
+  - component: {fileID: 1389782593767723150}
+  - component: {fileID: 4450608926121415800}
   - component: {fileID: 95401923652868456}
-  - component: {fileID: 114112542000598322}
   - component: {fileID: 1302807681}
   - component: {fileID: 8793566031091518109}
   - component: {fileID: 6356073947654224277}
@@ -71,6 +72,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389782593767723150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644408783840310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930ae74d357aad641af04387bd8e89ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerTarget: {fileID: 4450608926121415800}
+  clickableLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &4450608926121415800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644408783840310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97518bbb644c6742af72b14c48c76aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 95401923652868456}
+  agent: {fileID: 1302807681}
 --- !u!95 &95401923652868456
 Animator:
   serializedVersion: 4
@@ -91,18 +122,6 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114112542000598322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644408783840310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e5084d2bed6804e842e44e1f96ffbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &1302807681
 NavMeshAgent:
   m_ObjectHideFlags: 0
