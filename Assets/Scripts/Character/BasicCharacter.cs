@@ -34,6 +34,15 @@ public class BasicCharacter : MonoBehaviour
         target.ProcessInteraction(this);
     }
     
+  // public void MoveEnemy(Vector3 destination)
+   // {
+     //   if (agent.transform.position == agent.pathEndPosition)
+     //   {
+      //      agent.destination = destination;
+      //  }
+        
+    //}
+    
     public void MoveEnemy(Vector3 destination)
     {
         if (agent.transform.position == agent.pathEndPosition)
