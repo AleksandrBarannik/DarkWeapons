@@ -16,13 +16,24 @@ public class EnemyCharacterController : CharacterConrtoller
     private int indexWaypoint;
 
     public Vector3 destenation;
+
+
+    private bool IsInPoint(Vector3 targetPoint)
+    {
+        bool isInPoint = Vector3.Distance(transform.position, targetPoint) <= 1f;
+        return isInPoint;
+    }
     
     
     private void Patrol(BasicCharacter targetPatrol)
     {
         destenation = _waypointsPatrol[indexWaypoint].position;
-        targetPatrol.MoveEnemy(destenation);
-        indexWaypoint = Random.Range(0, _waypointsPatrol.Count);
+        targetPatrol.MoveTo(destenation);
+        
+        if (IsInPoint(destenation))
+        {
+            indexWaypoint = Random.Range(0, _waypointsPatrol.Count);
+        }
     }
     
     private void Presledovaniye(BasicCharacter targetPresledovaniya)
@@ -32,7 +43,7 @@ public class EnemyCharacterController : CharacterConrtoller
             destenation = _player.position;
             targetPresledovaniya.MoveTo(destenation);
         }
-    }
+    } 
 
     
     protected override void ProcessInput(BasicCharacter target)

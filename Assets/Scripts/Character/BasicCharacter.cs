@@ -11,12 +11,13 @@ public class BasicCharacter : MonoBehaviour
     [SerializeField]
     private NavMeshAgent agent; // reference to the NavMeshAgent
 
-    private float speed;
-    
+    private float _speed;
+    private static readonly int Speed = Animator.StringToHash("Speed");
+
     private void Update()
     {
-        speed = Mathf.Lerp(speed,agent.velocity.magnitude,Time.deltaTime * 10);
-        animator.SetFloat("Speed",speed);
+        _speed = Mathf.Lerp(_speed,agent.velocity.magnitude,Time.deltaTime * 10);
+        animator.SetFloat(Speed, _speed);
 
     }
     
@@ -25,34 +26,11 @@ public class BasicCharacter : MonoBehaviour
         StopAllCoroutines();
         agent.isStopped = false;
         agent.destination = destination;
-        
-        
+
     }
     
     public void Interact(InteractiveObject target)
     {
         target.ProcessInteraction(this);
     }
-    
-  // public void MoveEnemy(Vector3 destination)
-   // {
-     //   if (agent.transform.position == agent.pathEndPosition)
-     //   {
-      //      agent.destination = destination;
-      //  }
-        
-    //}
-    
-    public void MoveEnemy(Vector3 destination)
-    {
-        if (agent.transform.position == agent.pathEndPosition)
-        {
-            agent.destination = destination;
-        }
-        
-    }
-    
-    
-    
-    
 }
