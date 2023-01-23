@@ -2020,6 +2020,7 @@ GameObject:
   - component: {fileID: 400120}
   - component: {fileID: 2748087501873776150}
   - component: {fileID: 6592989677987240612}
+  - component: {fileID: 2287287601732445644}
   - component: {fileID: 9500000}
   - component: {fileID: 1871327229}
   - component: {fileID: 1871327231}
@@ -2040,7 +2041,7 @@ Transform:
   m_GameObject: {fileID: 100120}
   m_LocalRotation: {x: 0, y: -0.9993201, z: 0, w: 0.036870472}
   m_LocalPosition: {x: 240.38344, y: 0, z: 230.16202}
-  m_LocalScale: {x: 0.7, y: 0.7, z: -0.7}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 400118}
@@ -2062,6 +2063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 9500000}
   agent: {fileID: 1871327229}
+  _stats: {fileID: 2287287601732445644}
 --- !u!114 &6592989677987240612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2074,9 +2076,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4a2a820268d3b488ba8f1d18f6ef96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerTarget: {fileID: 0}
-  _waypointsPatrol: []
-  patrolTime: 2
+  controllerTarget: {fileID: 2748087501873776150}
+  _waypointsPatrol:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _aggroRange: 5
+  _player: {fileID: 0}
+  destenation: {x: 0, y: 0, z: 0}
+--- !u!114 &2287287601732445644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1ecd3ea0d8f3d41be2c19af45d30f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 1
+  agility: 1
+  vitality: 1
+  level: 1
+  CurrentHealthPoints: 0
 --- !u!95 &9500000
 Animator:
   serializedVersion: 4
@@ -2106,11 +2131,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 100120}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.5
-  m_Speed: 5
+  m_Radius: 1.6
+  m_Speed: 4
   m_Acceleration: 30
   avoidancePriority: 50
-  m_AngularSpeed: 800
+  m_AngularSpeed: 500
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -2130,9 +2155,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8
-  m_Height: 3.5
+  m_Height: 4.200396
   m_Direction: 2
-  m_Center: {x: 0, y: 0.9, z: -0.2}
+  m_Center: {x: 0, y: 0.90000004, z: -0.38551605}
 --- !u!54 &1871327230
 Rigidbody:
   m_ObjectHideFlags: 0

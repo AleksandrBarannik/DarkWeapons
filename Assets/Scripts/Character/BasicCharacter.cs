@@ -11,11 +11,15 @@ public class BasicCharacter : MonoBehaviour
     [SerializeField]
     private NavMeshAgent agent; // reference to the NavMeshAgent
 
+    [SerializeField] 
+    private Stats _stats; //Ссылка на статы
+
     private float _speed;
     private static readonly int Speed = Animator.StringToHash("Speed");
 
     private void Update()
     {
+        
         _speed = Mathf.Lerp(_speed,agent.velocity.magnitude,Time.deltaTime * 10);
         animator.SetFloat(Speed, _speed);
 

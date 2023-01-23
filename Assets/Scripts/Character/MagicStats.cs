@@ -5,9 +5,10 @@ using UnityEngine;
 public class MagicStats : Stats
 {
     [SerializeField]
-    protected int intelligence;
+    protected int intelligence = 1;
+
     [SerializeField]
-    protected int wisdom;
+    protected int wisdom = 1;
 
     public int CurrentManaPoints;
     public int MaxMana => Mathf.Max(5, intelligence * (wisdom * 5));

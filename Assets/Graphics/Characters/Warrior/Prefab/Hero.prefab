@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4621171860792138}
   - component: {fileID: 1389782593767723150}
   - component: {fileID: 4450608926121415800}
+  - component: {fileID: 3384434168150845282}
   - component: {fileID: 95401923652868456}
   - component: {fileID: 1302807681}
   - component: {fileID: 8793566031091518109}
@@ -87,7 +88,7 @@ MonoBehaviour:
   controllerTarget: {fileID: 4450608926121415800}
   clickableLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 24
 --- !u!114 &4450608926121415800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +103,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95401923652868456}
   agent: {fileID: 1302807681}
+  _stats: {fileID: 3384434168150845282}
+--- !u!114 &3384434168150845282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644408783840310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21dae7ae688bf34488afc4ac404c8f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 1
+  agility: 1
+  vitality: 1
+  level: 1
+  CurrentHealthPoints: 0
+  intelligence: 1
+  wisdom: 1
+  CurrentManaPoints: 0
+  _experienceToLevelUp: 100
+  experiensToAdd: 100
+  _skillPoints: 0
+  CurrentExperience: 0
 --- !u!95 &95401923652868456
 Animator:
   serializedVersion: 4
