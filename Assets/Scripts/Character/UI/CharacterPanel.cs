@@ -4,7 +4,7 @@ using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerPanel : MonoBehaviour
+public class CharacterPanel : MonoBehaviour
 {
     [SerializeField] 
     private Slider healthBar;
@@ -16,18 +16,18 @@ public class PlayerPanel : MonoBehaviour
     private Slider staminaBar;
     
     [SerializeField] 
-    private PlayerCharacterController player;
+    private Stats _stats;
 
     private void Start()
     {
-       player.CharacterStats.onDecreaseHealth.AddListener(UpdateUI);
-       player.CharacterStats.onIncreaseHealth.AddListener(UpdateUI);
+        _stats.onDecreaseHealth.AddListener(UpdateUI);
+        _stats.onIncreaseHealth.AddListener(UpdateUI);
     }
 
     private void UpdateUI()
     {
-        healthBar.maxValue = player.CharacterStats.MaxHealth;
-        healthBar.value = player.CharacterStats.CurrentHealthPoints;
+        healthBar.maxValue = _stats.MaxHealth;
+        healthBar.value = _stats.CurrentHealthPoints;
 
     }
 }

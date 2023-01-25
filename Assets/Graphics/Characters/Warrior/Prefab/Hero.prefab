@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerTarget: {fileID: 4450608926121415800}
+  _stats: {fileID: 3384434168150845282}
   clickableLayer:
     serializedVersion: 2
     m_Bits: 24
@@ -116,6 +117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21dae7ae688bf34488afc4ac404c8f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onIncreaseHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onDecreaseHealth:
+    m_PersistentCalls:
+      m_Calls: []
   strength: 1
   agility: 1
   vitality: 1
