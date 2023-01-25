@@ -7505,7 +7505,6 @@ GameObject:
   - component: {fileID: 8421834204066096065}
   - component: {fileID: 8421834204066096095}
   - component: {fileID: 8421834204066096064}
-  - component: {fileID: 5239976904256898786}
   m_Layer: 5
   m_Name: UICharacterBar
   m_TagString: Untagged
@@ -7574,22 +7573,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5239976904256898786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8421834204066096066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d66a7fae643e28d498414c1c5e732083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 747631681286477800}
-  manaBar: {fileID: 6517690558652039942}
-  staminaBar: {fileID: 4908819341094648164}
-  _stats: {fileID: 0}
 --- !u!1 &9051284891363561397
 GameObject:
   m_ObjectHideFlags: 0

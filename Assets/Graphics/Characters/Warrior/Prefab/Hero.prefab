@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1389782593767723150}
   - component: {fileID: 4450608926121415800}
   - component: {fileID: 3384434168150845282}
+  - component: {fileID: 1572023769730129460}
   - component: {fileID: 95401923652868456}
   - component: {fileID: 1302807681}
   - component: {fileID: 8793566031091518109}
@@ -135,6 +136,22 @@ MonoBehaviour:
   experiensToAdd: 100
   _skillPoints: 0
   CurrentExperience: 0
+--- !u!114 &1572023769730129460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644408783840310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66a7fae643e28d498414c1c5e732083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
+  staminaBar: {fileID: 0}
+  _stats: {fileID: 3384434168150845282}
 --- !u!95 &95401923652868456
 Animator:
   serializedVersion: 4

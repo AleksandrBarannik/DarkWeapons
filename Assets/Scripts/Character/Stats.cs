@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,11 @@ public class Stats : MonoBehaviour
     public int AttackDamage => Mathf.Max(2,1 + strength);
     public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * agility*strength));
 
+
+    private void Start()
+    {
+        Initialize();
+    }
 
     public virtual void Initialize()
     {

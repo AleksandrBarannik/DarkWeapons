@@ -15,6 +15,7 @@ public class EnemyCharacterController : CharacterConrtoller
 
     private int indexWaypoint;
 
+    
     public Vector3 destenation;
 
 

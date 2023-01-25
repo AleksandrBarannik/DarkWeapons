@@ -19,6 +19,10 @@ public class PlayerStats : MagicStats
     public int MaxExperience  =>_experienceToLevelUp;
 
 
+    private void Start()
+    {
+        Initialize();
+    }
     private void Update()
     {
         if (CurrentExperience == MaxExperience)

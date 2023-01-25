@@ -2021,6 +2021,7 @@ GameObject:
   - component: {fileID: 2748087501873776150}
   - component: {fileID: 6592989677987240612}
   - component: {fileID: 2287287601732445644}
+  - component: {fileID: 248010827745530466}
   - component: {fileID: 9500000}
   - component: {fileID: 1871327229}
   - component: {fileID: 1871327231}
@@ -2097,11 +2098,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1ecd3ea0d8f3d41be2c19af45d30f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onIncreaseHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  onDecreaseHealth:
+    m_PersistentCalls:
+      m_Calls: []
   strength: 1
   agility: 1
   vitality: 1
   level: 1
   CurrentHealthPoints: 0
+--- !u!114 &248010827745530466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66a7fae643e28d498414c1c5e732083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
+  staminaBar: {fileID: 0}
+  _stats: {fileID: 2287287601732445644}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 4
