@@ -700,6 +700,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1389782593767723150, guid: dd51aa0141228c3478f60d3fe5ba00eb, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 204968706}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd51aa0141228c3478f60d3fe5ba00eb, type: 3}
 --- !u!1 &1153568530
@@ -1068,6 +1072,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1153568535}
     m_Modifications:
+    - target: {fileID: 747631681286477800, guid: e2c98a13bb4be9c4aaa1606a6868fa90, type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6728555534634289507, guid: e2c98a13bb4be9c4aaa1606a6868fa90, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1091,6 +1099,10 @@ PrefabInstance:
     - target: {fileID: 8421834203482644920, guid: e2c98a13bb4be9c4aaa1606a6868fa90, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421834204066096064, guid: e2c98a13bb4be9c4aaa1606a6868fa90, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9051284891363561397, guid: e2c98a13bb4be9c4aaa1606a6868fa90, type: 3}
       propertyPath: m_Name
@@ -1182,6 +1194,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c98a13bb4be9c4aaa1606a6868fa90, type: 3}
+--- !u!114 &5239976904256898784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 747631681286477800, guid: e2c98a13bb4be9c4aaa1606a6868fa90, type: 3}
+  m_PrefabInstance: {fileID: 5239976904256898783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5239976904256898785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8421834204066096066, guid: e2c98a13bb4be9c4aaa1606a6868fa90, type: 3}
+  m_PrefabInstance: {fileID: 5239976904256898783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5239976904256898786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5239976904256898785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66a7fae643e28d498414c1c5e732083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 5239976904256898784}
+  player: {fileID: 204968705}
 --- !u!1001 &6939889318727344411
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Stats : MonoBehaviour
 {
+    public UnityEvent onIncreaseHealth;
+    public UnityEvent onDecreaseHealth;
+    
     [SerializeField]
     protected int strength = 1;
     
@@ -28,6 +32,22 @@ public class Stats : MonoBehaviour
     public virtual void Initialize()
     {
         CurrentHealthPoints = MaxHealth;
+    }
+
+    public void IncreaseHealth(int Value)
+    {
+        CurrentHealthPoints += Value;
+        onIncreaseHealth.Invoke();
+    }
+    
+    public void DecreaseHealth(int Value)
+    {
+        CurrentHealthPoints -= Value;
+        onIncreaseHealth.Invoke();
+        if (CurrentHealthPoints <= 0)
+        {
+            //Dead ;
+        }
     }
 
 }

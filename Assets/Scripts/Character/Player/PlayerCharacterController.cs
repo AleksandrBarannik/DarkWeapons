@@ -5,7 +5,11 @@ using UnityEngine;
 //Перемещение  персонажа для интерактивного обьекта дверь
 public class PlayerCharacterController : CharacterConrtoller
 {
+    [SerializeField]
+    private Stats _stats;
+    
     public LayerMask clickableLayer;
+    public Stats CharacterStats => _stats; 
     
     protected override void ProcessInput(BasicCharacter target)
     {
