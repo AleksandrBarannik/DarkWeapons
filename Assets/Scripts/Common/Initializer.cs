@@ -11,7 +11,7 @@ public class Initializer : MonoBehaviour
     private void Start()
     {
         Instantiate(_gameManagerPrefab);
-       LevelCreator();
+        LevelCreator();
     }
 
     private void LevelCreator()

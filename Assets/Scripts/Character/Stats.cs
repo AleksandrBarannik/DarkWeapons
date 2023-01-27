@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class Stats : MonoBehaviour
 {
-    public UnityEvent onIncreaseHealth;
-    public UnityEvent onDecreaseHealth;
+    public UnityEvent onChangeHealth;
+    public UnityEvent onChangeStamina;
     
     [SerializeField]
     protected int strength = 1;
@@ -23,8 +23,9 @@ public class Stats : MonoBehaviour
 
 
     public int CurrentHealthPoints;
+    public int CurrentStaminaPoints;
     public int MaxHealth => Mathf.Max(5,strength *(5 + vitality)) ;
-    public int Stamina => Mathf.Max(5,vitality *(5 + agility)) ;
+    public int MaxStamina => Mathf.Max(5,vitality *(5 + agility)) ;
     public float Speed => Mathf.Min(10, Mathf.Max(4, 4 + 0.1f * vitality * agility));
     public int AttackDamage => Mathf.Max(2,1 + strength);
     public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * agility*strength));
@@ -38,22 +39,27 @@ public class Stats : MonoBehaviour
     public virtual void Initialize()
     {
         CurrentHealthPoints = MaxHealth;
+        CurrentStaminaPoints = MaxStamina;
     }
 
-    public void IncreaseHealth(int Value)
+    public void ChangeHealth(int Value)
     {
-        CurrentHealthPoints += Value;
-        onIncreaseHealth.Invoke();
+        //добавить Условие для бутылки с зельем
+        //CurrentHealthPoints += Value;
+        
+        //добавить Условие для удара по нам противником
+        CurrentHealthPoints -= Value;
+        onChangeHealth.Invoke();
     }
     
-    public void DecreaseHealth(int Value)
+    public void ChangeStamina(int Value)
     {
-        CurrentHealthPoints -= Value;
-        onIncreaseHealth.Invoke();
-        if (CurrentHealthPoints <= 0)
-        {
-            //Dead ;
-        }
+        // добавить Условие для бутылки с зельем
+        //CurrentStaminaPoints += Value;
+        
+        // добавить Условие для удара по нам противником
+        CurrentStaminaPoints -= Value;
+        onChangeStamina.Invoke();
     }
 
 }

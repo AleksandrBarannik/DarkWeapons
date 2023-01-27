@@ -20,7 +20,8 @@ public class BasicCharacter : MonoBehaviour
     private void Update()
     {
         
-        _speed = Mathf.Lerp(_speed,agent.velocity.magnitude,Time.deltaTime * 10);
+       // _speed = Mathf.Lerp(_speed,agent.velocity.magnitude,Time.deltaTime * 10);
+       _speed = _stats.Speed;
         animator.SetFloat(Speed, _speed);
 
     }

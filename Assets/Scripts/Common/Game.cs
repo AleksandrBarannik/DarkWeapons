@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    [NonSerialized]
-    public static Game Instanse;
+    public static Game Instanse{get;private set;}
     
     private Configs _configs;
     private Level _level;
