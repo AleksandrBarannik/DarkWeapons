@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1389782593767723150}
   - component: {fileID: 4450608926121415800}
   - component: {fileID: 3384434168150845282}
-  - component: {fileID: 1572023769730129460}
+  - component: {fileID: 789588182602356124}
   - component: {fileID: 95401923652868456}
   - component: {fileID: 1302807681}
   - component: {fileID: 8793566031091518109}
@@ -87,7 +87,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerTarget: {fileID: 4450608926121415800}
-  _stats: {fileID: 3384434168150845282}
   clickableLayer:
     serializedVersion: 2
     m_Bits: 24
@@ -118,10 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21dae7ae688bf34488afc4ac404c8f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onIncreaseHealth:
+  onChangeHealth:
     m_PersistentCalls:
       m_Calls: []
-  onDecreaseHealth:
+  onChangeStamina:
     m_PersistentCalls:
       m_Calls: []
   strength: 1
@@ -129,6 +128,10 @@ MonoBehaviour:
   vitality: 1
   level: 1
   CurrentHealthPoints: 0
+  CurrentStaminaPoints: 0
+  onChangeMana:
+    m_PersistentCalls:
+      m_Calls: []
   intelligence: 1
   wisdom: 1
   CurrentManaPoints: 0
@@ -136,7 +139,7 @@ MonoBehaviour:
   experiensToAdd: 100
   _skillPoints: 0
   CurrentExperience: 0
---- !u!114 &1572023769730129460
+--- !u!114 &789588182602356124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,13 +148,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1644408783840310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d66a7fae643e28d498414c1c5e732083, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ce1402afa2514f4281e176119369dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  manaBar: {fileID: 0}
+  healthText: {fileID: 0}
   staminaBar: {fileID: 0}
+  staminaText: {fileID: 0}
   _stats: {fileID: 3384434168150845282}
+  _magicStats: {fileID: 3384434168150845282}
+  manaBar: {fileID: 0}
+  manaText: {fileID: 0}
 --- !u!95 &95401923652868456
 Animator:
   serializedVersion: 4

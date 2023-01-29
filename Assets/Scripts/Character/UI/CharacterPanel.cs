@@ -35,19 +35,27 @@ public class CharacterPanel : MonoBehaviour
         _stats.onChangeStamina.AddListener(UpdateStamina);
     }
 
-    private void UpdateHealth()
+    public void UpdateHealth()
     {
         healthBar.value = _stats.CurrentHealthPoints;
         healthBar.maxValue = _stats.MaxHealth;
-        healthText.text= (healthBar.value).ToString();
+        
+        if (healthText != null)
+        {
+            healthText.text= (healthBar.value).ToString();
+        }
 
     }
     
-    private void UpdateStamina()
+    public void UpdateStamina()
     {
         staminaBar.value = _stats.CurrentStaminaPoints;
         staminaBar.maxValue = _stats.MaxStamina;
-        staminaText.text= (staminaBar.value).ToString();
+        if (staminaText != null)
+        {
+             staminaText.text= (staminaBar.value).ToString();
+        }
+       
        
     }
     

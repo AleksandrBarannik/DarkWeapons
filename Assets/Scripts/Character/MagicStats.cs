@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MagicStats : Stats
 {
+    public UnityEvent onChangeMana;
+    
     [SerializeField]
     protected int intelligence = 1;
 
