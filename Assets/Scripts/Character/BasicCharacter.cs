@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,7 +10,7 @@ public class BasicCharacter : MonoBehaviour
     private NavMeshAgent agent; // reference to the NavMeshAgent
 
     [SerializeField] 
-    public Stats _stats; //Ссылка на статы
+    private Stats _stats; //Ссылка на статы
 
     private float _speed;
     private static readonly int Speed = Animator.StringToHash("Speed");
@@ -32,6 +30,13 @@ public class BasicCharacter : MonoBehaviour
         agent.isStopped = false;
         agent.destination = destination;
 
+    }
+
+    public void Stop()
+    {
+        StopAllCoroutines();
+        agent.isStopped = true;
+        agent.destination = transform.position;
     }
     
     public void Interact(InteractiveObject target)

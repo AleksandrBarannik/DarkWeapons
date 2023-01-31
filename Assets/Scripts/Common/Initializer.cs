@@ -1,22 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Initializer : MonoBehaviour
 {
     [SerializeField]
-    private Game _gameManagerPrefab;
+    private Game gameManagerPrefab;
 
-    [SerializeField] private Level CurrentLevel;
-    private void Start()
+    [SerializeField]
+    private Level _currentLevel;
+    private void Awake()
     {
-        Instantiate(_gameManagerPrefab);
+        Instantiate(gameManagerPrefab);
         LevelCreator();
     }
 
     private void LevelCreator()
     {
-         Game.Instanse.Level = CurrentLevel;
+         Game.Instanse.Level = _currentLevel;
     }
     
     

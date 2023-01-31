@@ -1,51 +1,44 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : MagicStats
 {
     [SerializeField] 
-    private int _experienceToLevelUp = 100;
+    private int experienceToLevelUp = 100;
     
     [SerializeField]
-    private int experiensToAdd = 100;
+    private int experienceToAdd = 100;
     
     [SerializeField]
-    private int _skillPoints = 0;
+    private int skillPoints = 0;
 
-    public int CurrentExperience = 0;
-    private object Range;
-    public int MaxExperience  =>_experienceToLevelUp;
+    public int currentExperience = 0;
+    public int MaxExperience  => experienceToLevelUp;
 
 
-    private void Start()
-    {
-        Initialize();
-    }
+    
     private void Update()
     {
-        if (CurrentExperience == MaxExperience)
+        if (currentExperience == MaxExperience)
         {
             LevelUp();
         }
     }
     
-    public void ChangeMana(int Value)
+    public void ChangeMana(int value)
     {
         //добавить Условие для бутылки с зельем маны
         
         //добавить Условие для атаки заклинанием
-        CurrentManaPoints -= Value;
-        onChangeMana.Invoke();
+        currentManaPoints -= value;
+        onChangeMana?.Invoke();
     }
 
 
     private void LevelUp()
     {
         AddSkillPoints();
-        _experienceToLevelUp *= 2;
-        CurrentExperience = 0;
+        experienceToLevelUp *= 2;
+        currentExperience = 0;
         level++;
 
     }
@@ -54,17 +47,17 @@ public class PlayerStats : MagicStats
     {
         if (level >= 50 )
         {
-            _skillPoints++;;
+            skillPoints++;;
         }
         else
         {
-            _skillPoints += 3;
+            skillPoints += 3;
         }
     }
     
     public void AddExperiense() 
     {
-        CurrentExperience += experiensToAdd;
+        currentExperience += experienceToAdd;
     }
     
     

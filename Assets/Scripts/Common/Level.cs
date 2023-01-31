@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -9,7 +7,12 @@ public class Level : MonoBehaviour
     [SerializeField]
     private PlayerCharacterController mainCharacter;
     [SerializeField]
-    private EnemyCharacterController [] enemys;
+    private EnemyCharacterController [] enemys; //Заменить на list
+
+    public EnemyCharacterController[] Enemies
+    {
+        get => enemys;
+    }
 
     //private PatrolPath[] waypointsPatrol;
 }

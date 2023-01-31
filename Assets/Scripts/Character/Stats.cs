@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+
 
 public class Stats : MonoBehaviour
 {
-    public UnityEvent onChangeHealth;
-    public UnityEvent onChangeStamina;
+    public Action onChangeHealth;
+    public Action onChangeStamina;
     
     [SerializeField]
     protected int strength = 1;
@@ -22,8 +20,8 @@ public class Stats : MonoBehaviour
     protected int level = 1;
 
 
-    public int CurrentHealthPoints;
-    public int CurrentStaminaPoints;
+    public int currentHealthPoints;
+    public int currentStaminaPoints;
     public int MaxHealth => Mathf.Max(5,strength *(5 + vitality)) ;
     public int MaxStamina => Mathf.Max(5,vitality *(5 + agility)) ;
     public float Speed => Mathf.Min(10, Mathf.Max(4, 4 + 0.1f * vitality * agility));
@@ -31,35 +29,35 @@ public class Stats : MonoBehaviour
     public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * agility*strength));
 
 
-    private void Start()
+    private void Awake()
     {
         Initialize();
     }
 
-    public virtual void Initialize()
+    protected virtual void Initialize()
     {
-        CurrentHealthPoints = MaxHealth;
-        CurrentStaminaPoints = MaxStamina;
+        currentHealthPoints = MaxHealth;
+        currentStaminaPoints = MaxStamina;
     }
 
-    public void ChangeHealth(int Value)
+    public void ChangeHealth(int value)
     {
         //добавить Условие для бутылки с зельем
         //CurrentHealthPoints += Value;
         
         //добавить Условие для удара по нам противником
-        CurrentHealthPoints -= Value;
-        onChangeHealth.Invoke();
+        currentHealthPoints -= value;
+        onChangeHealth?.Invoke();
     }
     
-    public void ChangeStamina(int Value)
+    public void ChangeStamina(int value)
     {
         // добавить Условие для бутылки с зельем
         //CurrentStaminaPoints += Value;
         
         // добавить Условие для удара по нам противником
-        CurrentStaminaPoints -= Value;
-        onChangeStamina.Invoke();
+        currentStaminaPoints -= value;
+        onChangeStamina?.Invoke();
     }
 
 }
