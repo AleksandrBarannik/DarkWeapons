@@ -10,7 +10,7 @@ public class EnemyCharacterController : CharacterConrtoller
     private float _aggroRange = 5;
 
     [SerializeField]
-    private Transform _player;
+    private GameObject _player;
     
     private int _indexWaypoint;
     public Vector3 destenation;
@@ -36,9 +36,9 @@ public class EnemyCharacterController : CharacterConrtoller
         }
     }
     
-    private void Presledovaniye(BasicCharacter targetPresledovaniya)
+    private void Pursuit(BasicCharacter targetPresledovaniya)
     {
-        var dist = Vector3.Distance(transform.position, _player.position);
+        var dist = Vector3.Distance(transform.position, _player.transform.position);
         if (_player != null && dist < _aggroRange)
         {
             if (dist < 2)
@@ -47,7 +47,7 @@ public class EnemyCharacterController : CharacterConrtoller
                 destenation = transform.position;
                 return;
             }
-            destenation = _player.position;
+            destenation = _player.transform.position;
             targetPresledovaniya.MoveTo(destenation);
         }
     } 
@@ -56,7 +56,9 @@ public class EnemyCharacterController : CharacterConrtoller
     protected override void ProcessInput(BasicCharacter target)
     {
        Patrol(target);
-       Presledovaniye(target);
+       Pursuit(target);
+       target.Attack(_player);
+       
     }
     
     private void OnDrawGizmos()

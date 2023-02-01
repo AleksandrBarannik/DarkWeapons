@@ -452,6 +452,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6939889317580515171, guid: c38c9e1d32553424fa1f311f8e73fb50, type: 3}
   m_PrefabInstance: {fileID: 6939889318727344411}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1355333107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6044206952570318576, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+  m_PrefabInstance: {fileID: 6044206952524443100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1401132099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4402563399457722, guid: 4052bdf0c3f66bb4a8e22553843b139d, type: 3}
@@ -762,6 +767,8 @@ MonoBehaviour:
   agility: 1
   vitality: 1
   level: 1
+  NormativeAttack: 4
+  _rangeAttack: 2
   currentHealthPoints: 0
   currentStaminaPoints: 0
   intelligence: 1
@@ -803,6 +810,7 @@ MonoBehaviour:
   clickableLayer:
     serializedVersion: 2
     m_Bits: 24
+  enemy: {fileID: 1355333107}
 --- !u!95 &481822561206555556
 Animator:
   serializedVersion: 4
@@ -1092,7 +1100,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5503193993565768740, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
   m_PrefabInstance: {fileID: 6044206952524443100}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1355333107}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d1ecd3ea0d8f3d41be2c19af45d30f0, type: 3}
@@ -1488,7 +1496,7 @@ PrefabInstance:
     - target: {fileID: 621029582582641484, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 481822561206555225}
+      objectReference: {fileID: 481822561206555215}
     - target: {fileID: 621029582582641484, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: _statsEnemy
       value: 
@@ -1511,15 +1519,23 @@ PrefabInstance:
       objectReference: {fileID: 871324197}
     - target: {fileID: 5503193993565768740, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: agility
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5503193993565768740, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: strength
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5503193993565768740, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: vitality
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503193993565768740, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+      propertyPath: _rangeAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503193993565768740, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+      propertyPath: NormativeAttack
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6044206952570024720, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: m_RootOrder
@@ -1576,7 +1592,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 621029582582641484, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
   m_PrefabInstance: {fileID: 6044206952524443100}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1355333107}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e4a2a820268d3b488ba8f1d18f6ef96, type: 3}

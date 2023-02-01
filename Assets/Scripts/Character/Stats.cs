@@ -19,6 +19,14 @@ public class Stats : MonoBehaviour
     [SerializeField][Range(1,80)]
     protected int level = 1;
 
+    [SerializeField] 
+    private float NormativeAttack = 100;
+
+    [SerializeField] 
+    private int _rangeAttack = 2;
+    
+    
+
 
     public int currentHealthPoints;
     public int currentStaminaPoints;
@@ -27,6 +35,10 @@ public class Stats : MonoBehaviour
     public float Speed => Mathf.Min(10, Mathf.Max(4, 4 + 0.1f * vitality * agility));
     public int AttackDamage => Mathf.Max(2,1 + strength);
     public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * agility*strength));
+
+    public float ColdDownAttack => NormativeAttack - AttackSpeed;
+
+    public int RangeAttack => _rangeAttack;
 
 
     private void Awake()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 //Move Player
 public class BasicCharacter : MonoBehaviour
@@ -14,6 +15,14 @@ public class BasicCharacter : MonoBehaviour
 
     private float _speed;
     private static readonly int Speed = Animator.StringToHash("Speed");
+
+    private GameObject _attackTarget;
+    
+    private float _weaponRange;
+    private float _coldDown;
+    
+    
+    
 
     private void Update()
     {
@@ -38,7 +47,46 @@ public class BasicCharacter : MonoBehaviour
         agent.isStopped = true;
         agent.destination = transform.position;
     }
-    
+
+    public void Attack(GameObject target)
+    {
+        StopAllCoroutines();
+        agent.isStopped = false;
+        
+        _attackTarget = target;
+        _weaponRange = _stats.RangeAttack;
+        _coldDown = _stats.ColdDownAttack;
+        StartCoroutine(PursueTarget());
+    }
+
+    private IEnumerator PursueTarget()
+    {
+        while (Vector3.Distance(transform.position, _attackTarget.transform.position) > _weaponRange)
+        {
+            agent.destination = _attackTarget.transform.position;
+            yield return null;
+        }
+        agent.isStopped = true;
+        transform.LookAt(_attackTarget.transform);
+        //animator.SetTrigger("Attack");
+        DoHit();
+        yield return new WaitForSeconds(_coldDown);
+        
+    }
+
+    public void DoHit()
+    {
+        if (_attackTarget != null)
+        {
+            var attackDamage = _stats.AttackDamage;
+            _attackTarget.GetComponent<Stats>().ChangeHealth(attackDamage);
+            
+        }
+    }
+
+
+
+
     public void Interact(InteractiveObject target)
     {
         target.ProcessInteraction(this);

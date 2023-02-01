@@ -7,6 +7,8 @@ using UnityEngine;
 public class PlayerCharacterController : CharacterConrtoller
 {
     public LayerMask clickableLayer;
+
+    public GameObject enemy;
     
     protected override void ProcessInput(BasicCharacter target)
     {
@@ -28,5 +30,12 @@ public class PlayerCharacterController : CharacterConrtoller
                 }
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            target.Attack(enemy);
+        }
+
+
     }
 }
