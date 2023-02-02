@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 6044206952570024720}
   - component: {fileID: 8485482322089963518}
   - component: {fileID: 621029582582641484}
-  - component: {fileID: 5503193993565768740}
+  - component: {fileID: 7033535792473384694}
   - component: {fileID: 6044206952563022984}
   - component: {fileID: 6044206953216722453}
   - component: {fileID: 6044206953216722455}
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6044206952563022984}
   agent: {fileID: 6044206953216722453}
-  _stats: {fileID: 5503193993565768740}
+  _stats: {fileID: 7033535792473384694}
 --- !u!114 &621029582582641484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   _aggroRange: 5
   _player: {fileID: 0}
   destenation: {x: 0, y: 0, z: 0}
---- !u!114 &5503193993565768740
+--- !u!114 &7033535792473384694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,8 +347,10 @@ MonoBehaviour:
   agility: 1
   vitality: 1
   level: 1
-  CurrentHealthPoints: 0
-  CurrentStaminaPoints: 0
+  NormativeAttack: 100
+  _rangeAttack: 2
+  currentHealthPoints: 0
+  currentStaminaPoints: 0
 --- !u!95 &6044206952563022984
 Animator:
   serializedVersion: 4

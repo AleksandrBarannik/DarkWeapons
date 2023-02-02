@@ -79,7 +79,17 @@ public class BasicCharacter : MonoBehaviour
         if (_attackTarget != null)
         {
             var attackDamage = _stats.AttackDamage;
-            _attackTarget.GetComponent<Stats>().ChangeHealth(attackDamage);
+            var _statsAttackTarget = _attackTarget.GetComponent<Stats>();
+            
+            if (_statsAttackTarget.currentHealthPoints >0)
+            {
+                _statsAttackTarget.ChangeHealth(attackDamage);
+            }
+            else
+            {
+                Debug.Log("Death");
+            }
+            
             
         }
     }

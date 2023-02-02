@@ -1095,17 +1095,6 @@ Transform:
   m_Father: {fileID: 481822561206555225}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2287287601837072888 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5503193993565768740, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
-  m_PrefabInstance: {fileID: 6044206952524443100}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355333107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d1ecd3ea0d8f3d41be2c19af45d30f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &2704929065207010415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5119923145092654262, guid: 0811454a14a0efd44bbec625e960e3d4, type: 3}
@@ -1500,7 +1489,7 @@ PrefabInstance:
     - target: {fileID: 621029582582641484, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: _statsEnemy
       value: 
-      objectReference: {fileID: 2287287601837072888}
+      objectReference: {fileID: 0}
     - target: {fileID: 621029582582641484, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: _waypointsPatrol.Array.data[0]
       value: 
@@ -1585,6 +1574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmurTiger_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8485482322089963518, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 6592989677965450902}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
 --- !u!114 &6592989677965450896 stripped
@@ -1596,6 +1589,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e4a2a820268d3b488ba8f1d18f6ef96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6592989677965450902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7033535792473384694, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+  m_PrefabInstance: {fileID: 6044206952524443100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355333107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1ecd3ea0d8f3d41be2c19af45d30f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6939889318727344411

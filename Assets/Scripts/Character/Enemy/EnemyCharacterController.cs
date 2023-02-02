@@ -50,14 +50,15 @@ public class EnemyCharacterController : CharacterConrtoller
             destenation = _player.transform.position;
             targetPresledovaniya.MoveTo(destenation);
         }
-    } 
+    }
 
+    
     
     protected override void ProcessInput(BasicCharacter target)
     {
        Patrol(target);
        Pursuit(target);
-       target.Attack(_player);
+       //target.Attack(_player);
        
     }
     

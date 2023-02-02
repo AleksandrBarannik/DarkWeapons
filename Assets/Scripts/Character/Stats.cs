@@ -20,7 +20,7 @@ public class Stats : MonoBehaviour
     protected int level = 1;
 
     [SerializeField] 
-    private float NormativeAttack = 100;
+    private float NormativeAttack = 100f;
 
     [SerializeField] 
     private int _rangeAttack = 2;
