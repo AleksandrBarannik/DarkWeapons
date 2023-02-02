@@ -58,7 +58,7 @@ public class EnemyCharacterController : CharacterConrtoller
     {
        Patrol(target);
        Pursuit(target);
-       //target.Attack(_player);
+       target.Attack(_player);
        
     }
     

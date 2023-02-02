@@ -20,7 +20,7 @@ public class Stats : MonoBehaviour
     protected int level = 1;
 
     [SerializeField] 
-    private float NormativeAttack = 100f;
+    private float _nextAttackTime= 10f;
 
     [SerializeField] 
     private int _rangeAttack = 2;
@@ -36,7 +36,7 @@ public class Stats : MonoBehaviour
     public int AttackDamage => Mathf.Max(2,1 + strength);
     public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * agility*strength));
 
-    public float ColdDownAttack => NormativeAttack - AttackSpeed;
+    public float ColdDownAttack => _nextAttackTime;
 
     public int RangeAttack => _rangeAttack;
 

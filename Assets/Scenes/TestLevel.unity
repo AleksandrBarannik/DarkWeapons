@@ -767,7 +767,7 @@ MonoBehaviour:
   agility: 1
   vitality: 1
   level: 1
-  NormativeAttack: 4
+  _nextAttackTime: 3
   _rangeAttack: 2
   currentHealthPoints: 0
   currentStaminaPoints: 0
@@ -1577,6 +1577,10 @@ PrefabInstance:
     - target: {fileID: 6044206952570318576, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: m_TagString
       value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033535792473384694, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+      propertyPath: _nextAttackTime
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8485482322089963518, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: _stats

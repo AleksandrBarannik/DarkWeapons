@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
@@ -21,8 +22,13 @@ public class BasicCharacter : MonoBehaviour
     
     private float _weaponRange;
     private float _coldDown;
-    
+    private float nextAttackTime;
 
+
+    private void Awake()
+    {
+        nextAttackTime = _stats.ColdDownAttack;
+    }
 
     private void Update()
     {
@@ -68,10 +74,11 @@ public class BasicCharacter : MonoBehaviour
         }
         agent.isStopped = true;
         transform.LookAt(_attackTarget.transform);
-        animator.SetTrigger(Attack1);
-        DoHit();
-        yield return new WaitForSeconds(_coldDown);
-        
+        if (!(Time.time < nextAttackTime))
+        {
+            animator.SetTrigger(Attack1);
+            DoHit();
+        }
     }
 
     public void DoHit()
@@ -84,6 +91,7 @@ public class BasicCharacter : MonoBehaviour
             if (_statsAttackTarget.currentHealthPoints >0)
             {
                 _statsAttackTarget.ChangeHealth(attackDamage);
+                nextAttackTime = Time.time + _coldDown;
             }
             else
             {
