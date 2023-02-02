@@ -96,6 +96,7 @@ public class BasicCharacter : MonoBehaviour
             else
             {
                 Debug.Log("Death");
+                StopAllCoroutines();
             }
             
             

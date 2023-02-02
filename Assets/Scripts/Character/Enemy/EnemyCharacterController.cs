@@ -36,15 +36,17 @@ public class EnemyCharacterController : CharacterConrtoller
         }
     }
     
-    private void Pursuit(BasicCharacter targetPresledovaniya)
+    private void PursuitAndAttack(BasicCharacter targetPresledovaniya)
     {
         var dist = Vector3.Distance(transform.position, _player.transform.position);
-        if (_player != null && dist < _aggroRange)
+        var attackRange = targetPresledovaniya.GetComponent<Stats>().RangeAttack;
+        if (_player != null && dist < _aggroRange )
         {
-            if (dist < 2)
+            if (dist < attackRange)
             {
                 targetPresledovaniya.Stop();
                 destenation = transform.position;
+                targetPresledovaniya.Attack(_player);
                 return;
             }
             destenation = _player.transform.position;
@@ -57,8 +59,7 @@ public class EnemyCharacterController : CharacterConrtoller
     protected override void ProcessInput(BasicCharacter target)
     {
        Patrol(target);
-       Pursuit(target);
-       target.Attack(_player);
+       PursuitAndAttack(target);
        
     }
     
