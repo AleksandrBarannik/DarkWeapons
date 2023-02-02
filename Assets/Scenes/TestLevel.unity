@@ -1574,6 +1574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmurTiger_01
       objectReference: {fileID: 0}
+    - target: {fileID: 6044206952570318576, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+      propertyPath: m_TagString
+      value: Attack
+      objectReference: {fileID: 0}
     - target: {fileID: 8485482322089963518, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
       propertyPath: _stats
       value: 

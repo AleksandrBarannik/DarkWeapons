@@ -5,6 +5,9 @@ using System.Collections;
 //Move Player
 public class BasicCharacter : MonoBehaviour
 {
+    private static readonly int Speed = Animator.StringToHash("Speed");
+    private static readonly int Attack1 = Animator.StringToHash("Attack");
+    
     [SerializeField]
     private Animator animator; // reference to the animator component
     [SerializeField]
@@ -14,15 +17,12 @@ public class BasicCharacter : MonoBehaviour
     private Stats _stats; //Ссылка на статы
 
     private float _speed;
-    private static readonly int Speed = Animator.StringToHash("Speed");
-
     private GameObject _attackTarget;
     
     private float _weaponRange;
     private float _coldDown;
     
-    
-    
+
 
     private void Update()
     {
@@ -68,7 +68,7 @@ public class BasicCharacter : MonoBehaviour
         }
         agent.isStopped = true;
         transform.LookAt(_attackTarget.transform);
-        //animator.SetTrigger("Attack");
+        animator.SetTrigger(Attack1);
         DoHit();
         yield return new WaitForSeconds(_coldDown);
         
