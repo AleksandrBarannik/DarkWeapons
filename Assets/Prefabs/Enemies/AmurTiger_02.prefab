@@ -2147,8 +2147,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100122}
-  m_LocalRotation: {x: 0, y: -0.9993201, z: 0, w: 0.036870472}
-  m_LocalPosition: {x: 241.76599, y: 0, z: 230.20103}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 241.76599, y: -0.78, z: 230.20103}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2157,7 +2157,7 @@ Transform:
   - {fileID: 400116}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -175.774, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7654730013968522984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2186,12 +2186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerTarget: {fileID: 7654730013968522984}
-  _waypointsPatrol:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _aggroRange: 5
+  _patrolPath: {fileID: 0}
   _player: {fileID: 0}
   destenation: {x: 0, y: 0, z: 0}
 --- !u!114 &9200833911531167697
@@ -2210,8 +2205,10 @@ MonoBehaviour:
   agility: 2
   vitality: 2
   level: 2
-  CurrentHealthPoints: 0
-  CurrentStaminaPoints: 0
+  _nextAttackTime: 10
+  _rangeAttack: 2
+  currentHealthPoints: 0
+  currentStaminaPoints: 0
 --- !u!95 &9500000
 Animator:
   serializedVersion: 4

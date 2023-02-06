@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,17 +16,18 @@ public class PlayerPanel : CharacterPanel
     [SerializeField] 
     private TextMeshProUGUI manaText;
     
-    private void Start()
+    protected override void Start()
     {
         UpdateMana();
-        UpdateHealth();
-        UpdateStamina();
+        _magicStats.onChangeMana += UpdateMana;
+        base.Start();
     }
-    
+
     private void Update()
     {
-        _magicStats.onChangeMana += UpdateMana;
+        
     }
+
 
     private void UpdateMana()
     {

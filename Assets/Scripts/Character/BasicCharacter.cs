@@ -17,7 +17,7 @@ public class BasicCharacter : MonoBehaviour
     [SerializeField] 
     private Stats _stats; //Ссылка на статы
 
-    private float _speed;
+  
     private GameObject _attackTarget;
     
     private float _weaponRange;
@@ -28,15 +28,12 @@ public class BasicCharacter : MonoBehaviour
     private void Awake()
     {
         nextAttackTime = _stats.ColdDownAttack;
+        agent.speed = _stats.Speed;
     }
 
     private void Update()
     {
-        
-       // _speed = Mathf.Lerp(_speed,agent.velocity.magnitude,Time.deltaTime * 10);
-       _speed = _stats.Speed;
-        animator.SetFloat(Speed, _speed);
-
+       animator.SetFloat(Speed, agent.velocity.magnitude);
     }
     
     public void MoveTo(Vector3 destination)

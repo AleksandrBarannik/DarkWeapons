@@ -4,14 +4,25 @@ using UnityEngine;
 public class EnemyCharacterController : CharacterConrtoller
 {
     [SerializeField]
-    private List <Transform> _waypointsPatrol;
+    private PatrolPath _patrolPath;
     
-    [SerializeField]
+    public PatrolPath PatrolPath
+    {
+        get => _patrolPath;
+        set => _patrolPath = value;
+    }
+
     private float _aggroRange = 5;
 
     [SerializeField]
     private GameObject _player;
-    
+
+    public GameObject Player
+    {
+        get => _player;
+        set => _player = value;
+    }
+
     private int _indexWaypoint;
     public Vector3 destenation;
     
@@ -27,12 +38,12 @@ public class EnemyCharacterController : CharacterConrtoller
     
     private void Patrol(BasicCharacter targetPatrol)
     {
-        destenation = _waypointsPatrol[_indexWaypoint].position;
+        destenation = _patrolPath.WaypointsPatrol[_indexWaypoint].position;
         targetPatrol.MoveTo(destenation);
         
         if (IsInPoint(destenation))
         {
-            _indexWaypoint = Random.Range(0, _waypointsPatrol.Count);
+            _indexWaypoint = Random.Range(0, _patrolPath.WaypointsPatrol.Count);
         }
     }
     

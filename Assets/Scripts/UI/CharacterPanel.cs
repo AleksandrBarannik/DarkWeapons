@@ -24,7 +24,7 @@ public class CharacterPanel : MonoBehaviour
 
     private EnemyCharacterController _target;
 
-    private void Start()
+    protected virtual void Start()
     {
         UpdateHealth();
         UpdateStamina();

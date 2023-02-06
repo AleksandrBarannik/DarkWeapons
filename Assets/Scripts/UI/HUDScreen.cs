@@ -13,7 +13,7 @@ public class HUDScreen : MonoBehaviour
 
     private void Start()
     {
-        foreach (var enemy in Game.Instanse.Level.Enemies)
+        foreach (var enemy in Game.Instanse.Level.EnemiesController.Enemies)
         {
             var newPanel = Instantiate(_enemyPanelPrefab, _enemyParentPanel);
             _characterPanels.Add(newPanel);

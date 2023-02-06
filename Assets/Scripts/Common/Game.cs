@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class Game : MonoBehaviour
+    
+public class Game : MonoBehaviour//Содержит все об модулях(системах) в игре
 {
     public static Game Instanse{get;private set;}
     
