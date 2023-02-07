@@ -15,7 +15,7 @@ MonoBehaviour:
   spawnNodes:
   - enemyToSpawn: {fileID: 8485482322089963518, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
     delayBeforeSpawn: 1
-  - enemyToSpawn: {fileID: 8485482322089963518, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+  - enemyToSpawn: {fileID: 7654730013968522984, guid: 52f25351a67e3f04bbc7b08fcec2f0be, type: 3}
     delayBeforeSpawn: 5
-  - enemyToSpawn: {fileID: 8485482322089963518, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+  - enemyToSpawn: {fileID: 1261097845, guid: b99cdc44e1d6f6441a71bae37ccb5563, type: 3}
     delayBeforeSpawn: 10
