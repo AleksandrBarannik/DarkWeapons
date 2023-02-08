@@ -13,7 +13,7 @@ public class EnemySpawnConfig : ScriptableObject // содержит префа�
 [System.Serializable]
 public struct EnemySpawnNode
 {
-    public BasicCharacter enemyToSpawn;
+    public EnemyCharacterController enemyToSpawn;
     public float delayBeforeSpawn;
    
     
