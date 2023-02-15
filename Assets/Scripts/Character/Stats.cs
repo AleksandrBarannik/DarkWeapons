@@ -6,6 +6,7 @@ public class Stats : MonoBehaviour
 {
     public Action onChangeHealth;
     public Action onChangeStamina;
+    public Action onCharacterDied;
     
     [SerializeField]
     protected int strength = 1;
@@ -60,6 +61,9 @@ public class Stats : MonoBehaviour
         //добавить Условие для удара по нам противником
         currentHealthPoints -= value;
         onChangeHealth?.Invoke();
+        if (currentHealthPoints < 0)
+            onCharacterDied?.Invoke();
+            
     }
     
     public void ChangeStamina(int value)

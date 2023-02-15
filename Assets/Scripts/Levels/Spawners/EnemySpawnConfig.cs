@@ -14,8 +14,6 @@ public class EnemySpawnConfig : ScriptableObject // содержит префа�
 public struct EnemySpawnNode
 {
     public EnemyCharacterController enemyToSpawn;
-    public float delayBeforeSpawn;
-   
-    
+    public float delayBeforeSpawn; 
     
 }

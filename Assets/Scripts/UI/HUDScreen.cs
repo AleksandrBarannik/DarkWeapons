@@ -13,11 +13,19 @@ public class HUDScreen : MonoBehaviour
 
     private void Start()
     {
-        foreach (var enemy in Game.Instanse.Level.EnemiesController.Enemies)
+        foreach (var enemy in Game.Instance.Level.EnemiesController.Enemies)
         {
-            var newPanel = Instantiate(_enemyPanelPrefab, _enemyParentPanel);
-            _characterPanels.Add(newPanel);
-            newPanel.SetTarget(enemy);
+            CreateEnemyPanel(enemy);
         }
+        Game.Instance.EventBus.onEnemySpawn += CreateEnemyPanel;
     }
+
+    private void CreateEnemyPanel(EnemyCharacterController enemyCharacterController)
+    {
+        var newPanel = Instantiate(_enemyPanelPrefab, _enemyParentPanel);
+        _characterPanels.Add(newPanel);
+        newPanel.SetTarget(enemyCharacterController);
+    }
+    
+    
 }

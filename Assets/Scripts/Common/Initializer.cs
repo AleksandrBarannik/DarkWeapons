@@ -7,6 +7,8 @@ public class Initializer : MonoBehaviour
 
     [SerializeField]
     private Level _currentLevel;
+
+    [SerializeField] private Player _player;
     private void Awake()
     {
         Instantiate(gameManagerPrefab);
@@ -15,7 +17,8 @@ public class Initializer : MonoBehaviour
 
     private void LevelCreator()
     {
-         Game.Instanse.Level = _currentLevel;
+         Game.Instance.Level = _currentLevel;
+         Game.Instance.Player = _player;
     }
     
     

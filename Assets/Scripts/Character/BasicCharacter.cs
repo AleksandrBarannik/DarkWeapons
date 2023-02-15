@@ -6,11 +6,9 @@ using System.Collections;
 //Move Player
 public class BasicCharacter : MonoBehaviour
 {
-    private static readonly int Speed = Animator.StringToHash("Speed");
-    private static readonly int Attack1 = Animator.StringToHash("Attack");
+    [SerializeField] 
+    private CharacterView _characterView;
     
-    [SerializeField]
-    private Animator animator; // reference to the animator component
     [SerializeField]
     private NavMeshAgent agent; // reference to the NavMeshAgent
 
@@ -30,10 +28,17 @@ public class BasicCharacter : MonoBehaviour
         nextAttackTime = _stats.ColdDownAttack;
         agent.speed = _stats.Speed;
     }
+    
+    private void Start()
+    {
+        _stats.onCharacterDied += Died;
+    }
+
 
     private void Update()
     {
-       animator.SetFloat(Speed, agent.velocity.magnitude);
+        _characterView.UpdateVelocity(agent.velocity.magnitude);
+       
     }
     
     public void MoveTo(Vector3 destination)
@@ -73,7 +78,7 @@ public class BasicCharacter : MonoBehaviour
         transform.LookAt(_attackTarget.transform);
         if (!(Time.time < nextAttackTime))
         {
-            animator.SetTrigger(Attack1);
+            _characterView.PlayAttackAnim();
             DoHit();
         }
     }
@@ -90,21 +95,22 @@ public class BasicCharacter : MonoBehaviour
                 _statsAttackTarget.ChangeHealth(attackDamage);
                 nextAttackTime = Time.time + _coldDown;
             }
-            else
-            {
-                Debug.Log("Death");
-                StopAllCoroutines();
-            }
+            
             
             
         }
     }
 
 
-
-
     public void Interact(InteractiveObject target)
     {
         target.ProcessInteraction(this);
+    }
+
+    private void Died()
+    {
+        StopAllCoroutines();
+        _characterView.PlayDeathAnim();
+        
     }
 }

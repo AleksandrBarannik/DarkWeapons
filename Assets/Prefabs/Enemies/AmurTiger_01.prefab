@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 6044206952570024720}
   - component: {fileID: 8485482322089963518}
   - component: {fileID: 621029582582641484}
+  - component: {fileID: 466276978401330361}
   - component: {fileID: 7033535792473384694}
   - component: {fileID: 6044206952563022984}
   - component: {fileID: 6044206953216722453}
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97518bbb644c6742af72b14c48c76aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6044206952563022984}
+  _characterView: {fileID: 466276978401330361}
   agent: {fileID: 6044206953216722453}
   _stats: {fileID: 7033535792473384694}
 --- !u!114 &621029582582641484
@@ -323,14 +324,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerTarget: {fileID: 8485482322089963518}
-  _waypointsPatrol:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _aggroRange: 5
+  _patrolPath: {fileID: 0}
   _player: {fileID: 0}
   destenation: {x: 0, y: 0, z: 0}
+--- !u!114 &466276978401330361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6044206952570318576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066edf8925d54d548bbb209f93b915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6044206952563022984}
 --- !u!114 &7033535792473384694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +356,7 @@ MonoBehaviour:
   agility: 1
   vitality: 1
   level: 1
-  NormativeAttack: 100
+  _nextAttackTime: 10
   _rangeAttack: 2
   currentHealthPoints: 0
   currentStaminaPoints: 0

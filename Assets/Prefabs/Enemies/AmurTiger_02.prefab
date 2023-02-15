@@ -2133,6 +2133,7 @@ GameObject:
   - component: {fileID: 879323905406385479}
   - component: {fileID: 3353303687319495368}
   - component: {fileID: 4562357879823176960}
+  - component: {fileID: 1802320307864484678}
   m_Layer: 0
   m_Name: AmurTiger_02
   m_TagString: Untagged
@@ -2170,7 +2171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97518bbb644c6742af72b14c48c76aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 9500000}
+  _characterView: {fileID: 1802320307864484678}
   agent: {fileID: 879323905406385479}
   _stats: {fileID: 9200833911531167697}
 --- !u!114 &6440920863079726944
@@ -2281,3 +2282,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1802320307864484678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066edf8925d54d548bbb209f93b915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 9500000}

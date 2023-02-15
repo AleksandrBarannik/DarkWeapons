@@ -21,15 +21,13 @@ public class EnemySpawner : ActivatableObject
             
             
             var spawnEnemy = Instantiate(spawnNode.enemyToSpawn,
-                                                     Game.Instanse.Level.EnemiesController.EnemiesParent);
+                                                     Game.Instance.Level.EnemiesController.EnemiesParent);
 
             spawnEnemy.transform.position = transform.position;
+            spawnEnemy.PatrolPath = Game.Instance.Level.EnemiesController._patrolPath;
+            spawnEnemy.Player = Game.Instance.Level.EnemiesController._player;
             
-            //НОВОЕ ДОБАВИЛ:
-            
-            //Выдать точки патруля для создаваемого обьекта
-            spawnEnemy.PatrolPath = Game.Instanse.Level.EnemiesController._patrolPath;
-            spawnEnemy.Player = Game.Instanse.Level.EnemiesController._player;
+            Game.Instance.EventBus.OnEnemySpawn(spawnEnemy);
             
         }
     }

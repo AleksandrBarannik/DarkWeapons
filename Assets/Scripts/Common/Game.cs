@@ -2,10 +2,18 @@ using UnityEngine;
     
 public class Game : MonoBehaviour//Содержит все об модулях(системах) в игре
 {
-    public static Game Instanse{get;private set;}
+    public static Game Instance{get;private set;}
     
+    private EventBus _eventBus = new EventBus();
+
+    public EventBus EventBus => _eventBus;
+
+    [SerializeField]
     private Configs _configs;
+    
     private Level _level;
+    
+    [SerializeField]
     private Player _player;
 
     public Level Level
@@ -14,12 +22,16 @@ public class Game : MonoBehaviour//Содержит все об модулях(�
         set => _level = value;
     }
     
-    public Player Player => _player;
+    public Player Player
+    {
+        get => _player;
+        set => _player = value;
+    }
     
 
     private void Awake()
     {
-        Instanse = this;
+        Instance = this;
     }
 
     private void Start()
