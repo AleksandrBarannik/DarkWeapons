@@ -113,4 +113,5 @@ public class BasicCharacter : MonoBehaviour
         _characterView.PlayDeathAnim();
         
     }
+
 }

@@ -8,9 +8,12 @@ public class PlayerCharacterController : CharacterConrtoller
 {
     public LayerMask clickableLayer;
 
-    public GameObject enemy;
+    public  List<EnemyCharacterController> enemys;
     
-    protected override void ProcessInput(BasicCharacter target)
+    
+    
+
+   protected override void ProcessInput(BasicCharacter target)
     {
         
         if (Input.GetMouseButtonDown(0))
@@ -33,7 +36,8 @@ public class PlayerCharacterController : CharacterConrtoller
 
         if (Input.GetMouseButtonDown(1))
         {
-            target.Attack(enemy);
+            enemys = Game.Instance.Level.EnemiesController.Enemies;
+            target.Attack(enemys[0].gameObject);
         }
 
 
