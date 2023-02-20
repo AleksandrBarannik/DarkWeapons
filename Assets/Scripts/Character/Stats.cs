@@ -7,6 +7,8 @@ public class Stats : MonoBehaviour
     public Action onChangeHealth;
     public Action onChangeStamina;
     public Action onCharacterDied;
+
+    public bool IsDead => (currentHealthPoints <=0);
     
     [SerializeField]
     protected int strength = 1;

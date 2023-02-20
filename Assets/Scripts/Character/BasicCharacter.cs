@@ -7,6 +7,13 @@ using System.Collections;
 public class BasicCharacter : MonoBehaviour
 {
     [SerializeField] 
+    private Rigidbody _rigidbody;
+
+    [SerializeField]
+    private Collider _collider;
+    
+  
+    [SerializeField] 
     private CharacterView _characterView;
     
     [SerializeField]
@@ -15,7 +22,9 @@ public class BasicCharacter : MonoBehaviour
     [SerializeField] 
     private Stats _stats; //Ссылка на статы
 
-  
+    public Stats Stats => _stats;
+
+
     private GameObject _attackTarget;
     
     private float _weaponRange;
@@ -43,6 +52,8 @@ public class BasicCharacter : MonoBehaviour
     
     public void MoveTo(Vector3 destination)
     {
+        if (_stats.IsDead)
+            return;
         StopAllCoroutines();
         agent.isStopped = false;
         agent.destination = destination;
@@ -58,9 +69,11 @@ public class BasicCharacter : MonoBehaviour
 
     public void Attack(GameObject target)
     {
+        if (_stats.IsDead)
+            return;
         StopAllCoroutines();
         agent.isStopped = false;
-        
+        Debug.LogError($"{gameObject.name}: set target {target.name}");
         _attackTarget = target;
         _weaponRange = _stats.RangeAttack;
         _coldDown = _stats.ColdDownAttack;
@@ -69,11 +82,15 @@ public class BasicCharacter : MonoBehaviour
 
     private IEnumerator PursueTarget()
     {
+        if (_stats.IsDead)
+            yield break;
+        
         while (Vector3.Distance(transform.position, _attackTarget.transform.position) > _weaponRange)
         {
             agent.destination = _attackTarget.transform.position;
             yield return null;
         }
+        Debug.LogError($"{gameObject.name}: agent.isStopped");
         agent.isStopped = true;
         transform.LookAt(_attackTarget.transform);
         if (!(Time.time < nextAttackTime))
@@ -85,13 +102,16 @@ public class BasicCharacter : MonoBehaviour
 
     public void DoHit()
     {
+        Debug.LogError($"{gameObject.name}: do hit Enter ");
         if (_attackTarget != null)
         {
+            Debug.LogError($"{gameObject.name}: attack target != NULL ");
             var attackDamage = _stats.AttackDamage;
             var _statsAttackTarget = _attackTarget.GetComponent<Stats>();
             
             if (_statsAttackTarget.currentHealthPoints >0)
             {
+                Debug.LogError($"{gameObject.name}: CurrentPoints > 0 ");
                 _statsAttackTarget.ChangeHealth(attackDamage);
                 nextAttackTime = Time.time + _coldDown;
             }
@@ -104,13 +124,18 @@ public class BasicCharacter : MonoBehaviour
 
     public void Interact(InteractiveObject target)
     {
+        if (_stats.IsDead)
+            return;
         target.ProcessInteraction(this);
     }
 
     private void Died()
     {
+        
         StopAllCoroutines();
         _characterView.PlayDeathAnim();
+        Destroy(_rigidbody);
+        Destroy(_collider);
         
     }
 

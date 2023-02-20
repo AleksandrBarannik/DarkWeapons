@@ -272,9 +272,10 @@ GameObject:
   - component: {fileID: 6044206953216722453}
   - component: {fileID: 6044206953216722455}
   - component: {fileID: 6044206953216722454}
+  - component: {fileID: 1703026399327002316}
   m_Layer: 0
   m_Name: AmurTiger_01
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,6 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97518bbb644c6742af72b14c48c76aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 6044206953216722454}
+  _collider: {fileID: 6044206953216722455}
   _characterView: {fileID: 466276978401330361}
   agent: {fileID: 6044206953216722453}
   _stats: {fileID: 7033535792473384694}
@@ -432,6 +435,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1703026399327002316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6044206952570318576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f99ed756c815504abebc6fac6300716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _owner: {fileID: 8485482322089963518}
+  _lootTable:
+  - LootObject: {fileID: 1367549441938970, guid: 518279ee3f0cb7b4ba4915ee4bacb5ca, type: 3}
+    probability: 100
 --- !u!1 &6044206952570318584
 GameObject:
   m_ObjectHideFlags: 0

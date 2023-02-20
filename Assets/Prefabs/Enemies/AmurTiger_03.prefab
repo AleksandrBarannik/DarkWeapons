@@ -2244,7 +2244,7 @@ GameObject:
   - component: {fileID: 653362025767189370}
   m_Layer: 0
   m_Name: AmurTiger_03
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2280,6 +2280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97518bbb644c6742af72b14c48c76aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1261097847}
+  _collider: {fileID: 1261097848}
   _characterView: {fileID: 653362025767189370}
   agent: {fileID: 1261097846}
   _stats: {fileID: 1261097843}

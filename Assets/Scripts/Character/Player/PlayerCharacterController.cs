@@ -15,29 +15,40 @@ public class PlayerCharacterController : CharacterConrtoller
 
    protected override void ProcessInput(BasicCharacter target)
     {
-        
+        RaycastHit hit;
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value))
+            
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
+                                                             out hit, 50, clickableLayer.value))
             {
                 var interactedTarget = hit.collider.gameObject.GetComponent<InteractiveObject>();
                 if (interactedTarget != null)
                 {
                     target.Interact(interactedTarget);
                 }
+                
 
                 else
                 {
-                    target.MoveTo(hit.point);
+                    var attackTarget = hit.collider.gameObject.GetComponent<EnemyCharacterController>();
+                    if (attackTarget != null)
+                    {
+                        target.Attack(attackTarget.gameObject);
+                    }
+                    else
+                    {
+                        target.MoveTo(hit.point);
+                    }
+                    
                 }
             }
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            enemys = Game.Instance.Level.EnemiesController.Enemies;
-            target.Attack(enemys[0].gameObject);
+            // enemys = Game.Instance.Level.EnemiesController.Enemies;
+          //  target.Attack(enemys[1].gameObject);
         }
 
 

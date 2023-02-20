@@ -10,6 +10,7 @@ public class HUDScreen : MonoBehaviour
     private Transform _enemyParentPanel;
 
     private List<CharacterPanel> _characterPanels = new List<CharacterPanel>();
+    
 
     private void Start()
     {

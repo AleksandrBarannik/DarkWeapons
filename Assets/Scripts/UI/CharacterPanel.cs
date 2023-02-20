@@ -68,6 +68,12 @@ public class CharacterPanel : MonoBehaviour
     {
         _target = target;
         _stats = target.GetComponent<Stats>();
+        _stats.onCharacterDied += DestroySelf;
+    }
+    
+    private void DestroySelf()
+    {
+        Destroy(this.gameObject);
     }
     
     

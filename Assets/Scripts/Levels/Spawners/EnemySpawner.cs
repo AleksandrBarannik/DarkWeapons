@@ -24,9 +24,12 @@ public class EnemySpawner : ActivatableObject
                                                      Game.Instance.Level.EnemiesController.EnemiesParent);
 
             spawnEnemy.transform.position = transform.position;
+            
+            //назначает точки патруля  и назначает  кого преследовать (главного героя)
             spawnEnemy.PatrolPath = Game.Instance.Level.EnemiesController._patrolPath;
             spawnEnemy.Player = Game.Instance.Level.EnemiesController._player;
             
+            Game.Instance.Level.EnemiesController.Enemies.Add(spawnEnemy);
             Game.Instance.EventBus.OnEnemySpawn(spawnEnemy);
             
         }

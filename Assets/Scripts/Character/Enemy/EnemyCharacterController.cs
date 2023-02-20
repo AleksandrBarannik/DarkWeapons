@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyCharacterController : CharacterConrtoller
 {
@@ -25,9 +27,11 @@ public class EnemyCharacterController : CharacterConrtoller
 
     private int _indexWaypoint;
     public Vector3 destenation;
-    
-    
 
+    private void Start()
+    {
+        controllerTarget.Stats.onCharacterDied += DestroySelf;
+    }
 
     private bool IsInPoint(Vector3 targetPoint)
     {
@@ -72,6 +76,12 @@ public class EnemyCharacterController : CharacterConrtoller
        Patrol(target);
        PursuitAndAttack(target);
        
+    }
+
+
+    private void DestroySelf()
+    {
+        Destroy(this);
     }
     
     private void OnDrawGizmos()
