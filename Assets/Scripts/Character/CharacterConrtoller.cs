@@ -7,6 +7,8 @@ public abstract class CharacterConrtoller : MonoBehaviour
 {
     [SerializeField]
     protected BasicCharacter controllerTarget;
+
+    public BasicCharacter ControllerTarget => controllerTarget;
     private void Update()
     {
         ProcessInput(controllerTarget);

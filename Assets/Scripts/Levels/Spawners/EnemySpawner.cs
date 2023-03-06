@@ -7,11 +7,28 @@ public class EnemySpawner : ActivatableObject
 {
     [SerializeField]
     private EnemySpawnConfig _spawnConfig;
+
+    private List<EnemyCharacterController> spawnedEnemyList = new List<EnemyCharacterController>();
+
+    public bool AllEnemiesSpawned { get; private set; } = false;
+    
     
     public override void Activate()
     {
         StartCoroutine(SpawnProcess());
     }
+
+    public int SpawnedAliveEnemyCount()
+    {
+        int count = 0;
+        foreach (var enemy in spawnedEnemyList)
+        {
+            if (enemy != null && !enemy.ControllerTarget.Stats.IsDead)
+                count++;
+        }
+        return count;
+    }
+    
 
     private IEnumerator SpawnProcess()
     {
@@ -31,8 +48,11 @@ public class EnemySpawner : ActivatableObject
             
             Game.Instance.Level.EnemiesController.Enemies.Add(spawnEnemy);
             Game.Instance.EventBus.OnEnemySpawn(spawnEnemy);
+            spawnedEnemyList.Add(spawnEnemy);
             
         }
+
+        AllEnemiesSpawned = true;
     }
     
 }
