@@ -9,6 +9,8 @@ public class Loot : MonoBehaviour
 {
     [SerializeField]
     private BasicCharacter _owner;
+    
+    private int jumpForce = 1000;
 
     [SerializeField]
     private List<LootNote> _lootTable;
@@ -17,6 +19,8 @@ public class Loot : MonoBehaviour
     {
         _owner.Stats.onCharacterDied += DropLoot;
     }
+    
+    
 
     private void DropLoot()
     {
@@ -25,9 +29,13 @@ public class Loot : MonoBehaviour
             if (Random.Range(0, 100f) < loot.probability)
             {
                 Instantiate(loot.LootObject, transform.position, Quaternion.identity);
+                
+                loot.rigidbody.AddForce(Vector3.up * jumpForce);
             }
         }
     }
+
+    
 }
 
 [Serializable]
@@ -36,6 +44,9 @@ public class LootNote
     //item 
     public GameObject LootObject;
     
+    public Rigidbody rigidbody;
+    
     [Range(0,100f)]
     public float probability;
+    
 }

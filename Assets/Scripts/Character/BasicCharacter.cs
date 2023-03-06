@@ -73,7 +73,7 @@ public class BasicCharacter : MonoBehaviour
             return;
         StopAllCoroutines();
         agent.isStopped = false;
-        Debug.LogError($"{gameObject.name}: set target {target.name}");
+        //Debug.LogError($"{gameObject.name}: set target {target.name}");
         _attackTarget = target;
         _weaponRange = _stats.RangeAttack;
         _coldDown = _stats.ColdDownAttack;
@@ -90,7 +90,7 @@ public class BasicCharacter : MonoBehaviour
             agent.destination = _attackTarget.transform.position;
             yield return null;
         }
-        Debug.LogError($"{gameObject.name}: agent.isStopped");
+        //Debug.LogError($"{gameObject.name}: agent.isStopped");
         agent.isStopped = true;
         transform.LookAt(_attackTarget.transform);
         if (!(Time.time < nextAttackTime))
@@ -102,16 +102,16 @@ public class BasicCharacter : MonoBehaviour
 
     public void DoHit()
     {
-        Debug.LogError($"{gameObject.name}: do hit Enter ");
+        //Debug.LogError($"{gameObject.name}: do hit Enter ");
         if (_attackTarget != null)
         {
-            Debug.LogError($"{gameObject.name}: attack target != NULL ");
+            //Debug.LogError($"{gameObject.name}: attack target != NULL ");
             var attackDamage = _stats.AttackDamage;
             var _statsAttackTarget = _attackTarget.GetComponent<Stats>();
             
             if (_statsAttackTarget.currentHealthPoints >0)
             {
-                Debug.LogError($"{gameObject.name}: CurrentPoints > 0 ");
+                //Debug.LogError($"{gameObject.name}: CurrentPoints > 0 ");
                 _statsAttackTarget.ChangeHealth(attackDamage);
                 nextAttackTime = Time.time + _coldDown;
             }

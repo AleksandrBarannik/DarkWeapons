@@ -47,8 +47,7 @@ public class PlayerCharacterController : CharacterConrtoller
 
         if (Input.GetMouseButtonDown(1))
         {
-            // enemys = Game.Instance.Level.EnemiesController.Enemies;
-          //  target.Attack(enemys[1].gameObject);
+            
         }
 
 
