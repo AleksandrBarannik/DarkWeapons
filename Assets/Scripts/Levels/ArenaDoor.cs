@@ -12,7 +12,7 @@ public class ArenaDoor : MonoBehaviour
 
     private static readonly int Open1 = Animator.StringToHash("Open");
 
-    private void Awake()
+    private void Start()
     {
         if (IsOpenDoorByLevelStart)
             Open();
