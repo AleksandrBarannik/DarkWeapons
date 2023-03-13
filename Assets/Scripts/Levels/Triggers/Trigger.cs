@@ -14,7 +14,7 @@ public abstract class Trigger : MonoBehaviour
         {
             ActivateTrigger();
             if (activateType == ActivateType.Single)
-                this.enabled = false;
+                this.gameObject.SetActive(false);
 
         }
 

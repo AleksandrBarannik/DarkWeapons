@@ -17,13 +17,6 @@ public class LevelEnemiesController  //Соддержит ссылки на вс
 
     public Transform EnemiesParent => _enemiesParent;
 
-    //НОВОЕ ДОБАВИЛ:
     
-    [SerializeField]
-    public PatrolPath _patrolPath;
-    
-    [SerializeField]
-    public GameObject _player;
-
 }
         

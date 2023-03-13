@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ArenaFightActivatable : ActivatableObject
 {
+    [SerializeField]
     private List<EnemySpawner> _arenaSpawners;
+    
+    [SerializeField]
     private List<ArenaDoor> _arenaDoors;
 
 
@@ -17,6 +20,7 @@ public class ArenaFightActivatable : ActivatableObject
         }
         foreach (var spawner in _arenaSpawners)
         {
+            Debug.Log("spawnerActivate");
             spawner.Activate();
         }
 

@@ -5,7 +5,10 @@ public class Level : MonoBehaviour //Соддержит все обьекты н
 {
     [SerializeField] private GameObject _currentLevel;
     [SerializeField] private PlayerCharacterController mainCharacter;
-    [SerializeField] private LevelEnemiesController _levelEnemiesController;
+    public PlayerCharacterController MainCharacter => mainCharacter;
+    
+    [SerializeField]
+    private LevelEnemiesController _levelEnemiesController;
     public LevelEnemiesController EnemiesController => _levelEnemiesController;
 }
     

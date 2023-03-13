@@ -8,6 +8,9 @@ public class EnemySpawner : ActivatableObject
     [SerializeField]
     private EnemySpawnConfig _spawnConfig;
 
+    [SerializeField]
+    private List<PatrolPath> _patrolPaths;
+
     private List<EnemyCharacterController> spawnedEnemyList = new List<EnemyCharacterController>();
 
     public bool AllEnemiesSpawned { get; private set; } = false;
@@ -38,13 +41,14 @@ public class EnemySpawner : ActivatableObject
             
             
             var spawnEnemy = Instantiate(spawnNode.enemyToSpawn,
-                                                     Game.Instance.Level.EnemiesController.EnemiesParent);
+                                                    transform.position,Quaternion.identity);
 
-            spawnEnemy.transform.position = transform.position;
+            
+            spawnEnemy.transform.parent = Game.Instance.Level.EnemiesController.EnemiesParent;
             
             //назначает точки патруля  и назначает  кого преследовать (главного героя)
-            spawnEnemy.PatrolPath = Game.Instance.Level.EnemiesController._patrolPath;
-            spawnEnemy.Player = Game.Instance.Level.EnemiesController._player;
+            spawnEnemy.PatrolPath = _patrolPaths[Random.Range(0, _patrolPaths.Count)];
+            spawnEnemy.Player = Game.Instance.Level.MainCharacter.gameObject;
             
             Game.Instance.Level.EnemiesController.Enemies.Add(spawnEnemy);
             Game.Instance.EventBus.OnEnemySpawn(spawnEnemy);
