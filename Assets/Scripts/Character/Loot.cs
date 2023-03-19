@@ -10,7 +10,7 @@ public class Loot : MonoBehaviour
     [SerializeField]
     private BasicCharacter _owner;
     
-    private int jumpForce = 1000;
+    private int jumpForce = 100;
 
     [SerializeField]
     private List<LootNote> _lootTable;
@@ -30,7 +30,7 @@ public class Loot : MonoBehaviour
             {
                 Instantiate(loot.LootObject, transform.position, Quaternion.identity);
                 
-                loot.rigidbody.AddForce(Vector3.up * jumpForce);
+                loot.LootObject.Rigidbody.AddForce(Vector3.up * jumpForce);
             }
         }
     }
@@ -42,9 +42,7 @@ public class Loot : MonoBehaviour
 public class LootNote
 {
     //item 
-    public GameObject LootObject;
-    
-    public Rigidbody rigidbody;
+    public Item LootObject;
     
     [Range(0,100f)]
     public float probability;
