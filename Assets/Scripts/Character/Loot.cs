@@ -10,7 +10,7 @@ public class Loot : MonoBehaviour
     [SerializeField]
     private BasicCharacter _owner;
     
-    private int jumpForce = 100;
+    private int jumpForce = 7;
 
     [SerializeField]
     private List<LootNote> _lootTable;
@@ -28,9 +28,11 @@ public class Loot : MonoBehaviour
         {
             if (Random.Range(0, 100f) < loot.probability)
             {
-                Instantiate(loot.LootObject, transform.position, Quaternion.identity);
+                var spawnedLoot = Instantiate(loot.LootObject, transform.position + Vector3.up , Quaternion.identity);
                 
-                loot.LootObject.Rigidbody.AddForce(Vector3.up * jumpForce);
+                spawnedLoot.Rigidbody.velocity = Vector3.up * jumpForce;
+                spawnedLoot.Rigidbody.angularVelocity =
+                    new Vector3(Random.Range(-20, 20), Random.Range(-20, 20), Random.Range(-20, 20));
             }
         }
     }

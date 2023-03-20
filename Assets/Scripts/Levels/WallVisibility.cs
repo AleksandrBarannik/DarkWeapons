@@ -26,7 +26,7 @@ public class WallVisibility : MonoBehaviour
    {
       foreach (var wallMesh in _wallMesh)
       {
-         wallMesh.enabled = false;
+         wallMesh.material.color = new Color(1,1,1,0.5f);
       }
       
    }
@@ -35,7 +35,7 @@ public class WallVisibility : MonoBehaviour
    {
       foreach (var wallMesh in _wallMesh)
       {
-         wallMesh.enabled = true;
+         wallMesh.material.color = new Color(1,1,1,1);
       }
       
    }
