@@ -24,16 +24,6 @@ public class PlayerStats : MagicStats
         }
     }
     
-    public void ChangeMana(int value)
-    {
-        //добавить Условие для бутылки с зельем маны
-        
-        //добавить Условие для атаки заклинанием
-        currentManaPoints -= value;
-        onChangeMana?.Invoke();
-    }
-
-
     private void LevelUp()
     {
         AddSkillPoints();
