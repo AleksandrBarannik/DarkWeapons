@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _owner: {fileID: 8485482322089963518}
   _lootTable:
-  - LootObject: {fileID: 11400000, guid: b098e150d8645694482c6013a31d31c1, type: 2}
+  - LootObject: {fileID: 2741567925003258405, guid: 518279ee3f0cb7b4ba4915ee4bacb5ca, type: 3}
     spawnChance: 100
 --- !u!1 &6044206952570318584
 GameObject:

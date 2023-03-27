@@ -28,7 +28,7 @@ public class Loot : MonoBehaviour
         {
             if (Random.Range(0, 100f) < loot.spawnChance)
             {
-                var spawnedLoot = Instantiate(loot.LootObject.item,
+                var spawnedLoot = Instantiate(loot.LootObject,
                                             transform.position + Vector3.up , Quaternion.identity);
                 
                 spawnedLoot.Rigidbody.velocity = Vector3.up * jumpForce;
@@ -45,7 +45,7 @@ public class Loot : MonoBehaviour
 public class LootNote
 {
     
-    public ItemPickUps_SO LootObject ;
+    public ItemSceneView LootObject ;
     
     [Range(0,100f)]
     public float spawnChance;
