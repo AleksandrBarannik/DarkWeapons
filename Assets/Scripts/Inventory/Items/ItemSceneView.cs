@@ -7,7 +7,10 @@ public class ItemSceneView : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     public Rigidbody Rigidbody => _rigidbody;
 
-    [SerializeField]
-    private EquippableItem _equippableItem;
-    public  EquippableItem ItemEquippableI => _equippableItem;
+    public  EquippableItem ItemEquippable;
+    
+    public  ConsumableItem itemConsumable;
+    
+    public  InstantItem itemInstant;
+    
 }

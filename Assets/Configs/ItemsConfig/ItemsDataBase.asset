@@ -24,7 +24,7 @@ MonoBehaviour:
     _material: {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
     _slot: 2
   _instantItems:
-  - _id: 1
+  - _id: 2
     _name: Wealth
     _description: Wealth(+100gold)
     _stackMaxCount: 100000
@@ -34,7 +34,7 @@ MonoBehaviour:
     _mesh: {fileID: 4300000, guid: 242d0c84f77361d4abc018c8b39c5d92, type: 3}
     _material: {fileID: 2100000, guid: 78e53f773c1253e42a517e179f18734b, type: 2}
   _consumableItems:
-  - _id: 1
+  - _id: 3
     _name: 'HealthBoutle '
     _description: HealthBoutle (restore full health)
     _stackMaxCount: 10
@@ -44,7 +44,7 @@ MonoBehaviour:
     _mesh: {fileID: -2432090755550338912, guid: 887a534051bdbf449b6fc141de3d5c53, type: 3}
     _material: {fileID: 2100000, guid: 13dcb46a756acb54487e0e6e6ad96506, type: 2}
     _particle: {fileID: 4984809687711823257, guid: 43887e5150fa77e4991a0ecb6851e5e6, type: 3}
-  - _id: 2
+  - _id: 4
     _name: ManaBoutle
     _description: ManaBoutle (restore full Mana))
     _stackMaxCount: 10
@@ -54,7 +54,7 @@ MonoBehaviour:
     _mesh: {fileID: 4300000, guid: da8a393ba24fc6f49842d87b0937b84d, type: 3}
     _material: {fileID: 2100000, guid: c7b5ee6d805865f4d87c945585777026, type: 2}
     _particle: {fileID: 5906364108134086106, guid: b7e3217a535394f48a91bd564c4b25a9, type: 3}
-  - _id: 3
+  - _id: 5
     _name: StaminaBoutle
     _description: StaminaBoutle (restore full Stamina))
     _stackMaxCount: 10
