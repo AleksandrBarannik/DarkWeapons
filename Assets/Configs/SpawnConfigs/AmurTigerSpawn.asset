@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63b5c942054070488a4803932bb3c69, type: 3}
+  m_Name: AmurTigerSpawn
+  m_EditorClassIdentifier: 
+  spawnNodes:
+  - enemyToSpawn: {fileID: 621029582582641484, guid: 43bc3a7b0b88f0a4e9feadbc9801a564, type: 3}
+    delayBeforeSpawn: 1
+  - enemyToSpawn: {fileID: 6440920863079726944, guid: 52f25351a67e3f04bbc7b08fcec2f0be, type: 3}
+    delayBeforeSpawn: 5
+  - enemyToSpawn: {fileID: 1261097844, guid: b99cdc44e1d6f6441a71bae37ccb5563, type: 3}
+    delayBeforeSpawn: 10

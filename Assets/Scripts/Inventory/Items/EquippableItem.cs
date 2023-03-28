@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum EquipmentSlot
 {
+    Empty = 0,
     LeftHand = 1,
     RightHand = 2,
     Head = 3,
@@ -17,6 +18,5 @@ public class EquippableItem : Item
 {
     [SerializeField] private EquipmentSlot _slot;
     public EquipmentSlot Slot => _slot;
-    
-    
+
 }

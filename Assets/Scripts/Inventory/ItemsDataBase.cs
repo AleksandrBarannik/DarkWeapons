@@ -8,4 +8,5 @@ public class ItemsDataBase : ScriptableObject
     [SerializeField] private List<EquippableItem> _equippableItems;
     [SerializeField] private List<InstantItem> _instantItems;
     [SerializeField] private List<ConsumableItem> _consumableItems;
+    
 }

@@ -7,14 +7,21 @@ using UnityEngine;
 [Serializable]
 public abstract class Item
 {
+    [Tooltip("Id in DataBase")][SerializeField]
+    private int _id;
+    public int ID => _id;
+    
+    [Tooltip("Name object(item)")][SerializeField]
     private string _name;
+    
+    [Tooltip("Description object(item)")][SerializeField]
     private string _description;
     
-    [Tooltip("Максимум предметов в пачке")][SerializeField]
+    [Tooltip("Maximum items in stack")][SerializeField]
     private int _stackMaxCount = 1;
     public int StackMaxCount => _stackMaxCount;
     
-    [Tooltip("Сейчас предметов в пачке")][SerializeField]
+    [Tooltip("now count items in stack")][SerializeField]
     private int _stackCount = 1;
     public int StackCount => _stackCount;
 
@@ -25,16 +32,16 @@ public abstract class Item
     [SerializeField]
     private MeshRenderer _meshRenderer;
     public MeshRenderer MeshRenderer => _meshRenderer;
+    
+    [Tooltip("Для смены модельки предмета")][SerializeField]
+    private Mesh _mesh;
+    public  Mesh Mesh => _mesh;
 
-    [SerializeField]
+    [Tooltip("Material Item(Object)")][SerializeField]
     private Material _material;
     public Material Material => _material;
-
-    [SerializeField]
-    private int _id;
-
-    public int ID => _id;
-
+    
+    
 
     //Метод когда предмет попадает в инвентарь
     public virtual void OnCollect(){}
