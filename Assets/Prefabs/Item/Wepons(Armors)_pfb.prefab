@@ -49,17 +49,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 791928068141791237}
-  _item:
-    _id: 1
-    _name: Weapon
+  _equippableItem:
+    _id: 0
+    _name: 
     _description: 
     _stackMaxCount: 1
     _stackCount: 1
     _icon: {fileID: 0}
     _meshRenderer: {fileID: 3978502009076308761}
+    _mesh: {fileID: 4300000, guid: e63ecf4b97d312d49ba6fa012d369af5, type: 3}
     _material: {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
-    _colider: {fileID: 5882199535752658798}
-    _slot: 2
+    _slot: 0
 --- !u!33 &5077849505224611230
 MeshFilter:
   m_ObjectHideFlags: 0
