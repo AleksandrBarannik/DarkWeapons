@@ -159,26 +159,26 @@ MonoBehaviour:
     _material: {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
     _slot: 2
   itemConsumable:
-    _id: 3
-    _name: 'HealthBoutle '
-    _scaleElement: {x: 1, y: 1, z: 1}
-    _description: HealthBoutle (restore full health)
-    _stackMaxCount: 10
-    _stackCount: 0
+    _id: 0
+    _name: 
+    _scaleElement: {x: 0, y: 0, z: 0}
+    _description: 
+    _stackMaxCount: 1
+    _stackCount: 1
     _icon: {fileID: 0}
-    _mesh: {fileID: -2432090755550338912, guid: 887a534051bdbf449b6fc141de3d5c53, type: 3}
-    _material: {fileID: 2100000, guid: 13dcb46a756acb54487e0e6e6ad96506, type: 2}
-    _particle: {fileID: 4984809687711823257, guid: 43887e5150fa77e4991a0ecb6851e5e6, type: 3}
+    _mesh: {fileID: 0}
+    _material: {fileID: 0}
+    _particle: {fileID: 0}
   itemInstant:
-    _id: 2
-    _name: Wealth
+    _id: 0
+    _name: 
     _scaleElement: {x: 1, y: 1, z: 1}
-    _description: Wealth(+100gold)
-    _stackMaxCount: 100000
+    _description: 
+    _stackMaxCount: 0
     _stackCount: 0
     _icon: {fileID: 0}
     _mesh: {fileID: 0}
-    _material: {fileID: 2100000, guid: 78e53f773c1253e42a517e179f18734b, type: 2}
+    _material: {fileID: 0}
 --- !u!54 &791928068141791237
 Rigidbody:
   m_ObjectHideFlags: 0
