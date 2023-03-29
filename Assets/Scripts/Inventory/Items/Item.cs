@@ -13,6 +13,11 @@ public abstract class Item
     
     [Tooltip("Name object(item)")][SerializeField]
     private string _name;
+    public string Name => _name;
+
+    [Tooltip("For Scale Item")][SerializeField]
+    private Vector3 _scaleElement;
+    public Vector3 ScaleElement => _scaleElement;
     
     [Tooltip("Description object(item)")][SerializeField]
     private string _description;
@@ -29,14 +34,10 @@ public abstract class Item
     private Sprite _icon;
     public Sprite Icon => _icon;
     
-    [SerializeField]
-    private MeshRenderer _meshRenderer;
-    public MeshRenderer MeshRenderer => _meshRenderer;
-    
-    [Tooltip("Для смены модельки предмета")][SerializeField]
+    [Tooltip("Нужно для смены самого меша")][SerializeField]
     private Mesh _mesh;
-    public  Mesh Mesh => _mesh;
-
+    public Mesh Mesh => _mesh;
+    
     [Tooltip("Material Item(Object)")][SerializeField]
     private Material _material;
     public Material Material => _material;
