@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1531634252166777842}
   - component: {fileID: 6391313947775339110}
   m_Layer: 8
-  m_Name: SwordBase
+  m_Name: Wealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2443122186336940132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3273341577199043916}
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2443122186336940132}
-  m_Mesh: {fileID: 4300000, guid: e63ecf4b97d312d49ba6fa012d369af5, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 242d0c84f77361d4abc018c8b39c5d92, type: 3}
 --- !u!23 &1531634252166777842
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
+  - {fileID: 2100000, guid: 78e53f773c1253e42a517e179f18734b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -170,15 +170,16 @@ MonoBehaviour:
     _material: {fileID: 0}
     _particle: {fileID: 0}
   itemInstant:
-    _id: 0
-    _name: 
+    _id: 5
+    _name: Wealth
     _scaleElement: {x: 1, y: 1, z: 1}
-    _description: 
-    _stackMaxCount: 0
+    _description: Wealth(+100gold)
+    _stackMaxCount: 100000
     _stackCount: 0
     _icon: {fileID: 0}
-    _mesh: {fileID: 0}
-    _material: {fileID: 0}
+    _mesh: {fileID: 4300000, guid: 242d0c84f77361d4abc018c8b39c5d92, type: 3}
+    _material: {fileID: 2100000, guid: 78e53f773c1253e42a517e179f18734b, type: 2}
+    CountData: 3
 --- !u!54 &791928068141791237
 Rigidbody:
   m_ObjectHideFlags: 0

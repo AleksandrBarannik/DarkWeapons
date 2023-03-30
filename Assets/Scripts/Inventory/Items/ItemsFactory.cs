@@ -37,19 +37,24 @@ public class ItemsFactory : MonoBehaviour
             _itemSceneView.ItemEquippable = _equippableItem;
             return _equippableItem;
         }
+        
         if (_equippableItem == null)
         {
             _consumableItem = _itemsDataBase.ConsumableItems.Find((item) => item.ID == id);
-            _itemSceneView.itemConsumable = _consumableItem;
-            return _consumableItem;
+            
+            if (_consumableItem != null)
+            {
+                _itemSceneView.itemConsumable = _consumableItem;
+                return _consumableItem;
+            }
+            
+            if (_consumableItem == null)
+            {
+                _instantItem = _itemsDataBase.InstantItems.Find((item) => item.ID == id);
+                _itemSceneView.itemInstant = _instantItem;
+                return _instantItem;
+            }
         }
-        if (_consumableItem == null)
-        {
-            _instantItem = _itemsDataBase.InstantItems.Find((item) => item.ID == id);
-            _itemSceneView.itemInstant = _instantItem;
-            return _instantItem;
-        }
-        
         return null;
     }
 

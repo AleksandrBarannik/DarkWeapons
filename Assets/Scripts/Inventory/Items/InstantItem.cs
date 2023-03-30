@@ -8,5 +8,6 @@ using UnityEngine;
 [Serializable]
 public class InstantItem : Item
 {
-    
+    [SerializeField]
+    private int CountData;
 }

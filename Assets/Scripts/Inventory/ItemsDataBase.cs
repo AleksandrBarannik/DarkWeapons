@@ -9,11 +9,12 @@ public class ItemsDataBase : ScriptableObject
     private List<EquippableItem> _equippableItems;
     public List<EquippableItem> EquippableItems => _equippableItems;
     
-    [SerializeField]
-    private List<InstantItem> _instantItems;
-    public List<InstantItem> InstantItems => _instantItems;
 
     [SerializeField]
     private List<ConsumableItem> _consumableItems;
     public List<ConsumableItem> ConsumableItems => _consumableItems;
+    
+    [SerializeField]
+    private List<InstantItem> _instantItems;
+    public List<InstantItem> InstantItems => _instantItems;
 }
