@@ -25,7 +25,7 @@ public class ItemsFactory : MonoBehaviour
 
     private void Start()
     {
-        CreateSceneItem(5);
+        CreateSceneItem(3);
     }
 
 
@@ -60,10 +60,11 @@ public class ItemsFactory : MonoBehaviour
 
     private void CreateSceneItem(int id)
     {
-        _itemSceneView.meshRenderer.material = FindItem(id).Material;
-        _itemSceneView.meshFilter.name = FindItem(id).Name;
-        _itemSceneView.meshFilter.mesh = FindItem(id).Mesh;
-        _itemSceneView.scaleItem.localScale = FindItem(id).ScaleElement;
+        var targetItem = FindItem(id);
+        _itemSceneView.meshRenderer.material = targetItem.Material;
+        _itemSceneView.meshFilter.name = targetItem.Name;
+        _itemSceneView.meshFilter.mesh = targetItem.Mesh;
+        _itemSceneView.scaleItem.localScale = targetItem.ScaleElement;
         
         Instantiate(_itemSceneView, transform.position, Quaternion.identity);
     }
