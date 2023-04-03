@@ -10,40 +10,42 @@ public class WallVisibility : MonoBehaviour
 
    private float _showTime;
    
-   private  float altha = 1f;
+   private  float targetAlpha = 1f;
 
+   private float currentAlpha = 1f;
    
    private void Update()
    {
       if (Time.time > _showTime)
          Show();
+      if (currentAlpha == targetAlpha) return;
+      
+      UpdateAlpha();
+   }
+
+   private void UpdateAlpha()
+   {
+      if (targetAlpha > currentAlpha)
+         currentAlpha = Mathf.Clamp(currentAlpha + Time.deltaTime , 0,targetAlpha);
+      
+      else if (targetAlpha < currentAlpha)
+         currentAlpha = Mathf.Clamp(currentAlpha - Time.deltaTime,targetAlpha, 1);
+      
+      foreach (var wallMesh in _wallMesh)
+      {         
+         wallMesh.material.color = new Color(1,1,1,currentAlpha);
+      }
    }
 
    public void HideFor(float seconds)
    {
-      StartCoroutine(nameof(Hide));
+      targetAlpha = 0.5f;
       _showTime = Time.time + seconds;
    }
    
    private void Show()
    {
-      foreach (var wallMesh in _wallMesh)
-      {         
-         wallMesh.material.color = new Color(1,1,1,altha);
-         altha = 1f;
-      }
+      targetAlpha = 1f;
    }   
 
-   IEnumerator Hide()
-   {
-      while (altha > 0.5f)
-      {
-         foreach (var wallMesh in _wallMesh)
-         {
-            wallMesh.material.color = new Color(1, 1, 1, altha);
-            altha -= Time.deltaTime;
-            yield return altha;
-         }
-      }
    }
-}

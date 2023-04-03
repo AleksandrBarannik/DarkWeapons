@@ -19,6 +19,10 @@ public abstract class Item
     private Vector3 _scaleElement;
     public Vector3 ScaleElement => _scaleElement;
     
+    [SerializeField]
+    private Vector3 _colliderSize;
+    public Vector3 ColliderSize => _colliderSize;
+    
     [Tooltip("Description object(item)")][SerializeField]
     private string _description;
     
