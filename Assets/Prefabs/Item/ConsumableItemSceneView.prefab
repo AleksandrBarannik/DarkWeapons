@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1531634252166777842}
   - component: {fileID: 6391313947775339110}
   m_Layer: 8
-  m_Name: ManaBoutle
+  m_Name: SwordBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2443122186336940132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3273341577199043916}
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2443122186336940132}
-  m_Mesh: {fileID: 4300000, guid: da8a393ba24fc6f49842d87b0937b84d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e63ecf4b97d312d49ba6fa012d369af5, type: 3}
 --- !u!23 &1531634252166777842
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c7b5ee6d805865f4d87c945585777026, type: 2}
+  - {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &5671847610168431222
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,10 +144,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 791928068141791237}
-  meshFilter: {fileID: 9013680770858873817}
-  meshRenderer: {fileID: 1531634252166777842}
-  scaleItem: {fileID: 7004709496738972730}
   _boxCollider: {fileID: 6391313947775339110}
+  _meshFilter: {fileID: 9013680770858873817}
+  _meshRenderer: {fileID: 1531634252166777842}
+  scaleItem: {fileID: 7004709496738972730}
 --- !u!54 &791928068141791237
 Rigidbody:
   m_ObjectHideFlags: 0

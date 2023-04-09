@@ -19,9 +19,13 @@ public abstract class Item
     private Vector3 _scaleElement;
     public Vector3 ScaleElement => _scaleElement;
     
-    [SerializeField]
+    [SerializeField][Tooltip("For Scale ColiderItem")]
     private Vector3 _colliderSize;
     public Vector3 ColliderSize => _colliderSize;
+    
+    [SerializeField][Tooltip("Выбор центра для предмета (для мечей и тд  он не нулевой)")]
+    private Vector3 _colliderCenter;
+    public Vector3 ColliderCenter => _colliderCenter;
     
     [Tooltip("Description object(item)")][SerializeField]
     private string _description;

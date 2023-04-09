@@ -16,7 +16,8 @@ MonoBehaviour:
   - _id: 1
     _name: SwordBase
     _scaleElement: {x: 0.2, y: 0.2, z: 0.2}
-    _colliderSize: {x: 1, y: 1, z: 1}
+    _colliderSize: {x: 1, y: 6, z: 1}
+    _colliderCenter: {x: 0, y: 2, z: 0}
     _description: SwordBase
     _stackMaxCount: 1
     _stackCount: 1
@@ -28,7 +29,8 @@ MonoBehaviour:
   - _id: 2
     _name: HealthBoutle
     _scaleElement: {x: 1, y: 1, z: 1}
-    _colliderSize: {x: 1, y: 1, z: 1}
+    _colliderSize: {x: 0.4, y: 0.3, z: 0.6}
+    _colliderCenter: {x: 0, y: 0, z: 0}
     _description: HealthBoutle
     _stackMaxCount: 1
     _stackCount: 10
@@ -40,6 +42,7 @@ MonoBehaviour:
     _name: ManaBoutle
     _scaleElement: {x: 1, y: 1, z: 1}
     _colliderSize: {x: 1, y: 1, z: 1}
+    _colliderCenter: {x: 0, y: 0, z: 0}
     _description: ManaBoutle (restore full Mana))
     _stackMaxCount: 10
     _stackCount: 0
@@ -50,7 +53,8 @@ MonoBehaviour:
   - _id: 4
     _name: StaminaBoutle
     _scaleElement: {x: 1, y: 1, z: 1}
-    _colliderSize: {x: 1, y: 1, z: 1}
+    _colliderSize: {x: 0.4, y: 0.3, z: 0.6}
+    _colliderCenter: {x: 0, y: 0, z: 0}
     _description: StaminaBoutle (restore full Stamina))
     _stackMaxCount: 10
     _stackCount: 0
@@ -62,7 +66,8 @@ MonoBehaviour:
   - _id: 5
     _name: Wealth
     _scaleElement: {x: 1, y: 1, z: 1}
-    _colliderSize: {x: 1, y: 1, z: 1}
+    _colliderSize: {x: 0.3, y: 0.3, z: 0.3}
+    _colliderCenter: {x: 0, y: 0, z: 0}
     _description: Wealth(+100gold)
     _stackMaxCount: 100000
     _stackCount: 0

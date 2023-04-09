@@ -8,6 +8,6 @@ using UnityEngine;
 [Serializable]
 public class InstantItem : Item
 {
-    [SerializeField]
+    [SerializeField][Tooltip("For Money")]
     private int CountData;
 }

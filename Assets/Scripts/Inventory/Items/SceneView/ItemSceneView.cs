@@ -4,19 +4,26 @@ using UnityEngine;
 
 public abstract  class ItemSceneView : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] 
+    private Rigidbody _rigidbody;
     public Rigidbody Rigidbody => _rigidbody;
     
-    public MeshFilter meshFilter;
-
-    public MeshRenderer meshRenderer; //Дописать свойствами
-    
-    public Transform scaleItem;
-
     [SerializeField]
     private BoxCollider _boxCollider;
     public BoxCollider Collider => _boxCollider;
     
+    [SerializeField] 
+    private MeshFilter _meshFilter;
+    public MeshFilter FilterMesh => _meshFilter;
+    
+    [SerializeField]
+    private MeshRenderer _meshRenderer;
+    public MeshRenderer RendererMesh => _meshRenderer;
+    
+    [SerializeField]
+    private Transform scaleItem;
+    public Transform ScaleItem => scaleItem;
+
     public  Item Item;
     
 }

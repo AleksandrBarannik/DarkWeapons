@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public class ItemsFactory : MonoBehaviour
@@ -33,7 +28,7 @@ public class ItemsFactory : MonoBehaviour
 
     private void Start()
     {
-        CreateSceneItem(3);
+        CreateSceneItem(1);
     }
 
 
@@ -74,12 +69,12 @@ public class ItemsFactory : MonoBehaviour
         var targetItem = FindItem(id, out var _itemSceneView);
         
         _itemSceneView = _consumableItemSceneView;
-        _itemSceneView.meshRenderer.material = targetItem.Material;
-        _itemSceneView.meshFilter.name = targetItem.Name;
-        _itemSceneView.meshFilter.mesh = targetItem.Mesh;
-        _itemSceneView.scaleItem.localScale = targetItem.ScaleElement;
+        _itemSceneView.RendererMesh.material = targetItem.Material;
+        _itemSceneView.FilterMesh.name = targetItem.Name;
+        _itemSceneView.FilterMesh.mesh = targetItem.Mesh;
+        _itemSceneView.ScaleItem.localScale = targetItem.ScaleElement;
         _itemSceneView.Collider.size = targetItem.ColliderSize;
-        _itemSceneView.Collider.center = Vector3.zero;
+        _itemSceneView.Collider.center = targetItem.ColliderCenter;
         Instantiate(_itemSceneView, transform.position, Quaternion.identity);
     }
 }
