@@ -66,15 +66,17 @@ public class ItemsFactory : MonoBehaviour
 
     public void CreateSceneItem(int id)
     {
-        var targetItem = FindItem(id, out var _itemSceneView);
+        var targetItem = FindItem(id, out var itemSceneView);
+        var spawnItem = Instantiate(itemSceneView, transform.position, Quaternion.identity);
+        //_itemSceneView = _consumableItemSceneView;
+        spawnItem.RendererMesh.material = targetItem.Material;
+        spawnItem.FilterMesh.name = targetItem.Name;
+        spawnItem.FilterMesh.mesh = targetItem.Mesh;
+        spawnItem.ScaleItem.localScale = targetItem.ScaleElement;
+        spawnItem.Collider.size = targetItem.ColliderSize;
+        spawnItem.Collider.center = targetItem.ColliderCenter;
+        spawnItem.Item = targetItem;
         
-        _itemSceneView = _consumableItemSceneView;
-        _itemSceneView.RendererMesh.material = targetItem.Material;
-        _itemSceneView.FilterMesh.name = targetItem.Name;
-        _itemSceneView.FilterMesh.mesh = targetItem.Mesh;
-        _itemSceneView.ScaleItem.localScale = targetItem.ScaleElement;
-        _itemSceneView.Collider.size = targetItem.ColliderSize;
-        _itemSceneView.Collider.center = targetItem.ColliderCenter;
-        Instantiate(_itemSceneView, transform.position, Quaternion.identity);
+       
     }
 }

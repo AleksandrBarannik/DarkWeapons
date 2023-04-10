@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,5 +26,19 @@ public abstract  class ItemSceneView : MonoBehaviour
     public Transform ScaleItem => scaleItem;
 
     public  Item Item;
-    
+
+   
+    public void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject == Game.Instance.Player.Character.gameObject)
+        {
+            OnCollect();
+            Destroy(this.gameObject);
+        }
+    }
+
+    protected virtual void OnCollect()
+    {
+        Item.OnCollect();
+    }
 }

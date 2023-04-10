@@ -25,6 +25,8 @@ MonoBehaviour:
     _mesh: {fileID: 4300000, guid: e63ecf4b97d312d49ba6fa012d369af5, type: 3}
     _material: {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
     _slot: 2
+    _effects:
+    - {fileID: 11400000, guid: 9cdda72229649c4479596b90ec183bdd, type: 2}
   _consumableItems:
   - _id: 2
     _name: HealthBoutle

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7004709496738972730}
   - component: {fileID: 9013680770858873817}
   - component: {fileID: 1531634252166777842}
+  - component: {fileID: 1411210007970861672}
   - component: {fileID: 6391313947775339110}
   m_Layer: 8
   m_Name: Weapon
@@ -84,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6391313947775339110
+--- !u!65 &1411210007970861672
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +94,19 @@ BoxCollider:
   m_GameObject: {fileID: 2443122186336940132}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7124014, y: 5.916022, z: 0.54246783}
+  m_Center: {x: -0.00013950467, y: 1.7421696, z: 0.010040015}
+--- !u!65 &6391313947775339110
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2443122186336940132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.7124014, y: 5.916022, z: 0.54246783}

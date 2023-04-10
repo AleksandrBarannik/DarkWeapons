@@ -19,4 +19,16 @@ public class EquippableItem : Item
     [SerializeField] private EquipmentSlot _slot;
     public EquipmentSlot Slot => _slot;
 
+    [SerializeField]
+    private List<Effect> _effects;
+
+    public override void OnCollect()
+    {
+        base.OnCollect();
+        foreach (var effect in _effects)
+        {
+            Game.Instance.Player.Character.Stats.EffectsProxy.AddEffect(effect);
+        }
+        
+    }
 }

@@ -9,9 +9,14 @@ public class Stats : MonoBehaviour
     public Action onCharacterDied;
 
     public bool IsDead => (currentHealthPoints <=0);
-    
+
+    [SerializeField]
+    protected EffectsProxy effectsProxy;
+    public EffectsProxy EffectsProxy => effectsProxy;
+
     [SerializeField]
     protected int strength = 1;
+    public int Strength => strength + effectsProxy.StrengthBonus;
     
     [SerializeField]
     protected int agility = 1;
@@ -33,11 +38,11 @@ public class Stats : MonoBehaviour
 
     public int currentHealthPoints;
     public int currentStaminaPoints;
-    public int MaxHealth => Mathf.Max(5,strength *(5 + vitality)) ;
+    public int MaxHealth => Mathf.Max(5,Strength *(5 + vitality)) ;
     public int MaxStamina => Mathf.Max(5,vitality *(5 + agility)) ;
     public float Speed => Mathf.Min(10, Mathf.Max(4, 4 + 0.1f * vitality * agility));
-    public int AttackDamage => Mathf.Max(2,1 + strength);
-    public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * agility*strength));
+    public int AttackDamage => Mathf.Max(2,1 + Strength);
+    public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * agility*Strength));
 
     public float ColdDownAttack => _nextAttackTime;
 
@@ -53,6 +58,11 @@ public class Stats : MonoBehaviour
     {
         currentHealthPoints = MaxHealth;
         currentStaminaPoints = MaxStamina;
+
+        if (effectsProxy == null)
+        {
+            effectsProxy = this.gameObject.AddComponent<EffectsProxy>();
+        }
     }
 
     public void ChangeHealth(int value)
