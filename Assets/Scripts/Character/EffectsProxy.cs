@@ -9,6 +9,8 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     private BasicCharacter _owner;
     
     private List<Effect>_allEffectsOnCharacter = new List<Effect>();
+    
+    private int totalBonus = 0;
 
     public void AddEffect(Effect effect)
     {
@@ -20,8 +22,6 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     {
         get
         {
-            int totalBonus = 0;
-
             foreach (var effect in _allEffectsOnCharacter)
             {
                 if (effect is IModifyStats modifyStatsEffect)
@@ -31,6 +31,84 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
                 
             }
             return totalBonus;
+        }
+    }
+
+    public int AgilityBonus
+    {
+        get
+        {
+            foreach (var effect in _allEffectsOnCharacter)
+            {
+                if (effect is ModifyStatsEffect modifyStatsEffect)
+                {
+                    totalBonus += modifyStatsEffect.AgilityBonus;
+                }
+            }
+            return totalBonus;
+        }
+    }
+
+    public int VitalityBonus 
+    {
+        get
+        {
+            foreach (var effect in _allEffectsOnCharacter)
+            {
+                if (effect is ModifyStatsEffect modifyStatsEffect)
+                {
+                    totalBonus += modifyStatsEffect.VitalityBonus;
+                }
+            }
+            return totalBonus;
+        }
+    }
+
+    public int IntelligenceBonus
+    {
+        get
+        {
+            foreach (var effect in _allEffectsOnCharacter)
+            {
+                if (effect is ModifyStatsEffect modifyStatsEffect)
+                {
+                    totalBonus += modifyStatsEffect.VitalityBonus;
+                }
+            }
+            return totalBonus;
+            
+        }
+    }
+
+    public int WisdomBonus
+    {
+        get
+        {
+            foreach (var effect in _allEffectsOnCharacter)
+            {
+                if (effect is ModifyStatsEffect modifyStatsEffect)
+                {
+                    totalBonus += modifyStatsEffect.VitalityBonus;
+                }
+            }
+            return totalBonus;
+            
+        }
+    }
+    
+    public int ExperienceBonus
+    {
+        get
+        {
+            foreach (var effect in _allEffectsOnCharacter)
+            {
+                if (effect is ModifyStatsEffect modifyStatsEffect)
+                {
+                    totalBonus += modifyStatsEffect.ExperienceBonus;
+                }
+            }
+            return totalBonus;
+            
         }
     }
 }

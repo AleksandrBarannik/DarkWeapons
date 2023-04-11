@@ -17,12 +17,15 @@ public class Stats : MonoBehaviour
     [SerializeField]
     protected int strength = 1;
     public int Strength => strength + effectsProxy.StrengthBonus;
-    
-    [SerializeField]
-    protected int agility = 1;
-    
-    [SerializeField]
-    protected int vitality = 1;
+
+    [SerializeField] 
+    protected int agility;
+    public int Agility => agility + effectsProxy.AgilityBonus;
+
+    [SerializeField] 
+    protected int vitality;
+    public int Vitality => vitality + effectsProxy.VitalityBonus;
+
 
     [SerializeField][Range(1,80)]
     protected int level = 1;
@@ -38,11 +41,11 @@ public class Stats : MonoBehaviour
 
     public int currentHealthPoints;
     public int currentStaminaPoints;
-    public int MaxHealth => Mathf.Max(5,Strength *(5 + vitality)) ;
-    public int MaxStamina => Mathf.Max(5,vitality *(5 + agility)) ;
-    public float Speed => Mathf.Min(10, Mathf.Max(4, 4 + 0.1f * vitality * agility));
+    public int MaxHealth => Mathf.Max(5,Strength * (5 + Vitality)) ;
+    public int MaxStamina => Mathf.Max(5,Vitality * (5 + Agility)) ;
+    public float Speed => Mathf.Min(10, Mathf.Max(4, 4 + 0.1f * Vitality * Agility));
     public int AttackDamage => Mathf.Max(2,1 + Strength);
-    public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * agility*Strength));
+    public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * Agility * Strength));
 
     public float ColdDownAttack => _nextAttackTime;
 

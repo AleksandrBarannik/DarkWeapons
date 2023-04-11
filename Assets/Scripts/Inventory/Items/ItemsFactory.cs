@@ -68,6 +68,7 @@ public class ItemsFactory : MonoBehaviour
     {
         var targetItem = FindItem(id, out var itemSceneView);
         var spawnItem = Instantiate(itemSceneView, transform.position, Quaternion.identity);
+        
         //_itemSceneView = _consumableItemSceneView;
         spawnItem.RendererMesh.material = targetItem.Material;
         spawnItem.FilterMesh.name = targetItem.Name;

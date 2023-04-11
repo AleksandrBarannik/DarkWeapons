@@ -27,6 +27,7 @@ MonoBehaviour:
     _slot: 2
     _effects:
     - {fileID: 11400000, guid: 9cdda72229649c4479596b90ec183bdd, type: 2}
+    - {fileID: 11400000, guid: 18571bbee0c9fcc409f36ad8919d5f0b, type: 2}
   _consumableItems:
   - _id: 2
     _name: HealthBoutle

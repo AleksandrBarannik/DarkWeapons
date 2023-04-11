@@ -7,10 +7,13 @@ public class MagicStats : Stats
     public Action onChangeMana;
     
     [SerializeField]
-    protected int intelligence = 1;
-
+    protected int intelligence;
+    public int Intelligence => intelligence +effectsProxy.IntelligenceBonus;
+    
     [SerializeField]
     protected int wisdom = 1;
+    public int Wisdom => wisdom + effectsProxy.WisdomBonus;
+
 
     public int currentManaPoints;
     public int MaxMana => Mathf.Max(5, intelligence * (wisdom * 5));

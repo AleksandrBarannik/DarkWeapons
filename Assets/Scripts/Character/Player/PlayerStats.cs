@@ -4,17 +4,18 @@ public class PlayerStats : MagicStats
 {
     [SerializeField] 
     private int experienceToLevelUp = 100;
+    public int MaxExperience  => experienceToLevelUp;
     
     [SerializeField]
     private int experienceToAdd = 100;
+
+    public int ExperienceToAdd => experienceToAdd + effectsProxy.ExperienceBonus;
     
     [SerializeField]
     private int skillPoints = 0;
 
-    public int currentExperience = 0;
-    public int MaxExperience  => experienceToLevelUp;
-
-
+    private int currentExperience = 0;
+    
     
     private void Update()
     {
@@ -47,7 +48,7 @@ public class PlayerStats : MagicStats
     
     public void AddExperiense() 
     {
-        currentExperience += experienceToAdd;
+        currentExperience += ExperienceToAdd;
     }
     
     

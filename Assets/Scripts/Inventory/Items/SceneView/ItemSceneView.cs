@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public abstract  class ItemSceneView : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public abstract  class ItemSceneView : MonoBehaviour
         {
             OnCollect();
             Destroy(this.gameObject);
+           // Debug.LogError(Game.Instance.Player.Character.Stats);
         }
     }
 

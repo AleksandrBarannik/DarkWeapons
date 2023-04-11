@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df30ae44deb75e24c98109ee717bc163, type: 3}
-  m_Name: SuperPowerModifyStatsEffect
+  m_Name: VitalityEffect
   m_EditorClassIdentifier: 
-  strengthBonus: 1000
+  strengthBonus: 0
   agilityBonus: 0
-  vitalityBonus: 0
+  vitalityBonus: 1000
   intelligenceBonus: 0
   wisdomBonus: 0
   experienceBonus: 0
