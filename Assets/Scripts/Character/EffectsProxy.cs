@@ -111,4 +111,49 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
             
         }
     }
+
+    public int HealthBonus
+    {
+        get
+        {foreach (var effect in _allEffectsOnCharacter)
+            {
+                if (effect is ModifyStatsEffect modifyStatsEffect)
+                {
+                    totalBonus += modifyStatsEffect.HealthBonus;
+                }
+            }
+            return totalBonus;
+        }
+    }
+
+    public int ManaBonus
+    {
+        get
+        {
+            foreach (var effect in _allEffectsOnCharacter)
+            {
+                if (effect is ModifyStatsEffect modifyStatsEffect)
+                {
+                    totalBonus += modifyStatsEffect.ManaBonus;
+                }
+            }
+            return totalBonus; 
+        }
+        
+    }
+
+    public int StaminaBonus
+    {
+        get
+        {
+            foreach (var effect in _allEffectsOnCharacter)
+            {
+                if (effect is ModifyStatsEffect modifyStatsEffect)
+                {
+                    totalBonus += modifyStatsEffect.StaminaBonus;
+                }
+            }
+            return totalBonus;
+        }
+    }
 }

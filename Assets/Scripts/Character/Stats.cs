@@ -41,13 +41,14 @@ public class Stats : MonoBehaviour
 
     public int currentHealthPoints;
     public int currentStaminaPoints;
-    public int MaxHealth => Mathf.Max(5,Strength * (5 + Vitality)) ;
-    public int MaxStamina => Mathf.Max(5,Vitality * (5 + Agility)) ;
+    public int MaxHealth => Mathf.Max(5,Strength * (5 + Vitality)) + effectsProxy.HealthBonus;
+    public int MaxStamina => Mathf.Max(5,Vitality * (5 + Agility))+ effectsProxy.StaminaBonus;
     public float Speed => Mathf.Min(10, Mathf.Max(4, 4 + 0.1f * Vitality * Agility));
+    
     public int AttackDamage => Mathf.Max(2,1 + Strength);
-    public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * Agility * Strength));
+    public float AttackSpeed => Mathf.Max(1,  1 + (0.1f * Agility * Strength)); //добавить влияние на перезарядку атаки
 
-    public float ColdDownAttack => _nextAttackTime;
+    public float ColdDownAttack => _nextAttackTime;//проконсультироваться с андреем
 
     public int RangeAttack => _rangeAttack;
 

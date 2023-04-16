@@ -8,18 +8,26 @@ public class MagicStats : Stats
     
     [SerializeField]
     protected int intelligence;
-    public int Intelligence => intelligence +effectsProxy.IntelligenceBonus;
+    public int Intelligence => intelligence + effectsProxy.IntelligenceBonus;
     
     [SerializeField]
     protected int wisdom = 1;
     public int Wisdom => wisdom + effectsProxy.WisdomBonus;
 
+    [SerializeField]
+    private float _nextMagicAttackTime = 10f;
+
 
     public int currentManaPoints;
-    public int MaxMana => Mathf.Max(5, intelligence * (wisdom * 5));
-    public float SpeedMagicCast =>Mathf.Max(1,  1 + (0.1f * intelligence * wisdom));
+    public int MaxMana => Mathf.Max(5, intelligence * (wisdom * 5)) + EffectsProxy.ManaBonus;
     public int MagicDamage => Mathf.Max(1, 1 *wisdom);
     public int MagicBulletCount => Mathf.Max(1, 3 * intelligence);
+    
+    public float SpeedMagicCast =>Mathf.Max(1,  1 + (0.1f * intelligence * wisdom));
+    
+    public float ColdDownMagicAttack => _nextMagicAttackTime;
+   
+   
 
     protected override void Initialize()
     {
