@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HUDScreen : MonoBehaviour
+public class HUDScreen : Screen
 {
     [SerializeField]
     private CharacterPanel _enemyPanelPrefab;

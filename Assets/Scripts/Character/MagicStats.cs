@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-
 public class MagicStats : Stats
 {
     public Action onChangeMana;
@@ -37,11 +36,11 @@ public class MagicStats : Stats
     
     public void ChangeMana(int value)
     {
-        // добавить Условие для бутылки с зельем
-        //CurrentManaPoints += Value;
-        
-        // добавить Условие расхода манны за заклинание
-        currentManaPoints -= value;
+        currentManaPoints = Math.Clamp(currentManaPoints + value,0,MaxMana);
         onChangeMana?.Invoke();
+        if (currentManaPoints <= 0)
+        {
+            //подождать время  пока не востановится мана нужное количество
+        }
     }
 }

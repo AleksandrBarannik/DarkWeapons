@@ -2315,9 +2315,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectsProxy: {fileID: 860223192961146285}
-  strength: 3
-  agility: 3
-  vitality: 3
+  strength: 1
+  agility: 1
+  vitality: 1
   level: 3
   _nextAttackTime: 10
   _rangeAttack: 2

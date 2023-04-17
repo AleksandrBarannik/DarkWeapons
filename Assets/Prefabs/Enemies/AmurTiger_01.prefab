@@ -359,7 +359,7 @@ MonoBehaviour:
   effectsProxy: {fileID: 8825111638064990792}
   strength: 1
   agility: 1
-  vitality: 1000
+  vitality: 100
   level: 1
   _nextAttackTime: 10
   _rangeAttack: 2

@@ -35,8 +35,8 @@ public class CharacterPanel : MonoBehaviour
     private void Update()
     {
         var position = Camera.main.WorldToScreenPoint(_target.transform.position + Vector3.up * 2);
-        position.x = position.x / Screen.width * 1280 - 640;
-        position.y = position.y / Screen.height * 720 - 360;
+        position.x = position.x / UnityEngine.Screen.width * 1280 - 640;
+        position.y = position.y / UnityEngine.Screen.height * 720 - 360;
         transform.localPosition = position;
     }
 

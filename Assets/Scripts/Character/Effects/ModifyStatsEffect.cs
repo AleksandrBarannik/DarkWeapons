@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New ModifyStatsEffect",menuName = "Effects/ModifyStatsEffect")]
+[CreateAssetMenu(fileName = "New ModifyStatsEffect",menuName = "DarkWeapons/Effects/ModifyStatsEffect")]
 public class ModifyStatsEffect : Effect,IModifyStats
 {
     [SerializeField]

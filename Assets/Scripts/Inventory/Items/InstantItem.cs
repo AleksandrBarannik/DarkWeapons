@@ -8,6 +8,14 @@ using UnityEngine;
 [Serializable]
 public class InstantItem : Item
 {
-    [SerializeField][Tooltip("For Money")]
-    private int CountData;
+    [SerializeField] private List<InstantEffect> _instantEffects;
+
+    public override void OnCollect()
+    {
+        base.OnCollect();
+        foreach (var instantEffect in _instantEffects)
+        {
+            instantEffect.OnApply(Game.Instance.Player.Character);
+        }
+    }
 }

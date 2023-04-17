@@ -1,5 +1,6 @@
 using UnityEngine;
 
+    //СОздает предмет на сцене  по айдишнику  и из базы данных предмета  передает его значения ему 
 public class ItemsFactory : MonoBehaviour
 {
     [Tooltip("Base prefab for Item")][SerializeField] 
@@ -28,7 +29,7 @@ public class ItemsFactory : MonoBehaviour
 
     private void Start()
     {
-        CreateSceneItem(1);
+        CreateSceneItem(5);
     }
 
 

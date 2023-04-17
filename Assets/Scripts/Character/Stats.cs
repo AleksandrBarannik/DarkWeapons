@@ -71,11 +71,8 @@ public class Stats : MonoBehaviour
 
     public void ChangeHealth(int value)
     {
-        //добавить Условие для бутылки с зельем
-        //CurrentHealthPoints += Value;
         
-        //добавить Условие для удара по нам противником
-        currentHealthPoints -= value;
+        currentHealthPoints = (int) Math.Clamp(currentHealthPoints + value ,0,MaxHealth);
         onChangeHealth?.Invoke();
         if (currentHealthPoints < 0)
             onCharacterDied?.Invoke();
@@ -84,12 +81,13 @@ public class Stats : MonoBehaviour
     
     public void ChangeStamina(int value)
     {
-        // добавить Условие для бутылки с зельем
-        //CurrentStaminaPoints += Value;
-        
-        // добавить Условие для удара по нам противником
-        currentStaminaPoints -= value;
+        currentStaminaPoints = Math.Clamp(currentStaminaPoints + value,0,MaxStamina);
         onChangeStamina?.Invoke();
+        if (currentStaminaPoints <= 0)
+        {
+            // подождать какое-то время на востановление стамины
+        }
+            
     }
 
 }
