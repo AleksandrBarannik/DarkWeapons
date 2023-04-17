@@ -77,4 +77,5 @@ MonoBehaviour:
     _icon: {fileID: 0}
     _mesh: {fileID: 4300000, guid: 242d0c84f77361d4abc018c8b39c5d92, type: 3}
     _material: {fileID: 2100000, guid: 78e53f773c1253e42a517e179f18734b, type: 2}
-    CountData: 3
+    _instantEffects:
+    - {fileID: 11400000, guid: b11b3c630111a3a498ab82e89c39d878, type: 2}

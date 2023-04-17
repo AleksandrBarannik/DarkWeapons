@@ -15,12 +15,13 @@ public class ScreenController : MonoBehaviour
 
     public void Start()
     {
-        Push(_startScreen);
+        Push_T(_startScreen);
+        
     }
     
     
     //основная реализация
-    public void Push<TScreen>(TScreen screen,bool hidePrev = true) where TScreen : Screen
+    public void Push_T<TScreen>(TScreen screen,bool hidePrev = true) where TScreen : Screen
     {
         
     }
@@ -34,14 +35,14 @@ public class ScreenController : MonoBehaviour
     //скрывает текущий экран  и возвращает предыдущий
     public Screen Pop()
     {
-        throw  new  NotImplementedException();
+        return null;
     }
 
     
     // отправляет экран на вершину стека
     public Screen OnTop()
     {
-        throw  new  NotImplementedException();
+        return null;
     }
     
 
