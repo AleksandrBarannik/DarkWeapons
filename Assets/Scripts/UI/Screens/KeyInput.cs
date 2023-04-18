@@ -25,23 +25,22 @@ public class KeyInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-           // _pauseScreen.gameObject.SetActive(true);
            Debug.Log("Нажата кнопка ESCape");
            _screenController.Push_T(_pauseScreen);
         }
         
         if (Input.GetKeyDown(KeyCode.U))
         {
-            Debug.Log("Нажата кнопка I");
+            Debug.Log("Нажата кнопка U");
             _screenController.Push_T(_statsScreen);
-            //_statsScreen.gameObject.SetActive(true);
+            
         }
         
         if (Input.GetKeyDown(KeyCode.I))
         {
             Debug.Log("Нажата кнопка I");
             _screenController.Push_T(_inventoryScreen);
-            //_inventoryScreen.gameObject.SetActive(true);
+            
         }
     }
 }

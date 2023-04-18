@@ -25,12 +25,14 @@ public class ScreenController : MonoBehaviour
     public void Push_T<TScreen>(TScreen screen, bool hidePrev = true) where TScreen : Screen
     {
         var findedScreen = _allScreen.Find((element) => element == screen);
+        
         _screenStack.Push(findedScreen);
         if (hidePrev)
         {
             OnPop().gameObject.SetActive(false);
         }
-        
+        currentScreen = Top();
+
     }
     
     
@@ -41,7 +43,8 @@ public class ScreenController : MonoBehaviour
 
     //скрывает текущий экран  и пишит на вершину предыдущий
     public Screen OnPop()
-    {
+    { 
+        currentScreen.gameObject.SetActive(true);
         if (_screenStack.Count != 0)
         {
             previewScreen = Top();
@@ -49,6 +52,7 @@ public class ScreenController : MonoBehaviour
             _screenStack.Push(previewScreen);
             
         }
+        currentScreen = previewScreen;
         return previewScreen;
     }
 
