@@ -45,10 +45,7 @@ public class PlayerCharacterController : CharacterConrtoller
             }
         }
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            
-        }
+        
 
 
     }
