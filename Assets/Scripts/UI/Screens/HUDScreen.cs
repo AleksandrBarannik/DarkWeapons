@@ -25,8 +25,11 @@ public class HUDScreen : Screen
     {
         var newPanel = Instantiate(_enemyPanelPrefab, _enemyParentPanel);
         _characterPanels.Add(newPanel);
-        newPanel.SetTarget(enemyCharacterController);
+        newPanel.SetTarget(enemyCharacterController.ControllerTarget.Stats);
     }
-    
-    
+
+    public override void OnBackPressed()
+    {
+       Game.Instance.Pause();
+    }
 }

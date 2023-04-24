@@ -5,5 +5,9 @@ using UnityEngine;
 
 public class PauseScreen : Screen
 {
+    public override void OnBackPressed()
+    {
+        Game.Instance.UnPause();
+    }
     
 }

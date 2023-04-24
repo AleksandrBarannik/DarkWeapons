@@ -6,7 +6,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Action OnMoneyChange;
-    
+
+    [SerializeField]
+    private PlayerStats _playerStats;
+    public PlayerStats PlayerStats => _playerStats;
     
     [SerializeField]
     private BasicCharacter _Character;

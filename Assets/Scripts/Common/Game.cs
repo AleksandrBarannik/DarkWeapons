@@ -8,6 +8,13 @@ public class Game : MonoBehaviour//Содержит все об модулях(�
 
     public EventBus EventBus => _eventBus;
 
+    public bool Paused => Time.timeScale < 0.05;
+
+
+    [SerializeField]
+    private ScreenController _screenController;
+    public ScreenController ScreenController => _screenController;
+
     [SerializeField]
     private Configs _configs;
     
@@ -37,5 +44,17 @@ public class Game : MonoBehaviour//Содержит все об модулях(�
     private void Start()
     {
         DontDestroyOnLoad(this);
+    }
+
+    public void Pause()
+    {
+        _screenController.Push_T<PauseScreen>();
+        Time.timeScale = 0.001f;
+    }
+
+    public void UnPause()
+    {
+        Time.timeScale = 1;
+        _screenController.Pop();
     }
 }

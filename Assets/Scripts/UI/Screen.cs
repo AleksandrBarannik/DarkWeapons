@@ -12,4 +12,9 @@ public abstract  class Screen : MonoBehaviour
    
    public virtual void OnPush() {}
    public virtual void OnPop() {}
+
+   public virtual void OnBackPressed()
+   {
+       Game.Instance.ScreenController.Pop();
+   }
 }

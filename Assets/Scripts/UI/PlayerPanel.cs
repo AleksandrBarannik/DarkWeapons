@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerPanel : CharacterPanel
 {
-    [SerializeField] 
-    private MagicStats _magicStats;
+    private PlayerStats _playerStats;
     
     [SerializeField] 
     private Slider manaBar;
@@ -18,11 +17,14 @@ public class PlayerPanel : CharacterPanel
     
     protected override void Start()
     {
+        _playerStats = Game.Instance.Player.PlayerStats;
+        SetTarget(_playerStats);
         UpdateMana();
-        _magicStats.onChangeMana += UpdateMana;
+        _playerStats.onChangeMana += UpdateMana;
         base.Start();
     }
 
+    //do not remove (hide parent Update)
     private void Update()
     {
         
@@ -31,8 +33,8 @@ public class PlayerPanel : CharacterPanel
 
     private void UpdateMana()
     {
-        manaBar.value = _magicStats.currentManaPoints;
-        manaBar.maxValue = _magicStats.MaxMana;
+        manaBar.value = _playerStats.currentManaPoints;
+        manaBar.maxValue = _playerStats.MaxMana;
         manaText.text= (manaBar.value).ToString();
 
     }

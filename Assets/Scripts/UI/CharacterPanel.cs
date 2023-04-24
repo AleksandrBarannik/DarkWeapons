@@ -22,7 +22,7 @@ public class CharacterPanel : MonoBehaviour
     
     
 
-    private EnemyCharacterController _target;
+    private Transform _target;
 
     protected virtual void Start()
     {
@@ -64,10 +64,10 @@ public class CharacterPanel : MonoBehaviour
        
     }
 
-    public void SetTarget(EnemyCharacterController  target)
+    public void SetTarget(Stats  target)
     {
-        _target = target;
-        _stats = target.GetComponent<Stats>();
+        _target = target.transform;
+        _stats = target;
         _stats.onCharacterDied += DestroySelf;
     }
     

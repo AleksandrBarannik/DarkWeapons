@@ -13,9 +13,6 @@ public class ScreenController : MonoBehaviour
     [SerializeField] 
     private Screen _startScreen;
     
-    private Screen currentScreen;
-    private Screen previewScreen;
-
     public void Start()
     {
         Push_T(_startScreen,false);
@@ -24,36 +21,52 @@ public class ScreenController : MonoBehaviour
     //основная реализация
     public void Push_T<TScreen>(TScreen screen, bool hidePrev = true) where TScreen : Screen
     {
-        var findedScreen = _allScreen.Find((element) => element == screen);
-        
-        _screenStack.Push(findedScreen);
-        if (hidePrev)
+       if (_screenStack.Contains(screen))
         {
-            OnPop().gameObject.SetActive(false);
+            while (_screenStack.Peek()!= screen)
+            {
+                var popedScreen = _screenStack.Pop();
+                popedScreen.OnPop();
+                popedScreen.gameObject.SetActive(false);
+            }
         }
-        currentScreen = Top();
+
+       else if ( hidePrev && _screenStack.Count > 0 )
+       {
+           var popedScreen = _screenStack.Peek();
+           if (popedScreen.GetType() != typeof(HUDScreen))
+           {
+               popedScreen.gameObject.SetActive(false);
+           }
+       }
+
+       _screenStack.Push(screen);
+        screen.gameObject.SetActive(true);
+        
 
     }
-    
-    
+
     public void Push_T<TScreen>(bool hidePrev = true) where TScreen : Screen
     {
-        
+        var findedScreen = _allScreen.Find((element) => element.GetType() == typeof(TScreen));
+        Debug.LogError($"push {findedScreen.gameObject.name}");
+        Push_T(findedScreen,hidePrev);
+       
     }
 
     //скрывает текущий экран  и пишит на вершину предыдущий
-    public Screen OnPop()
+    public Screen Pop()
     { 
-        currentScreen.gameObject.SetActive(true);
-        if (_screenStack.Count != 0)
-        {
-            previewScreen = Top();
-            previewScreen.gameObject.SetActive(true);
-            _screenStack.Push(previewScreen);
-            
-        }
-        currentScreen = previewScreen;
-        return previewScreen;
+        var popedScreen = _screenStack.Pop();
+        popedScreen.OnPop();
+        
+        popedScreen.gameObject.SetActive(false);
+        
+        var topScreen = _screenStack.Peek();
+        topScreen.gameObject.SetActive(true);
+        printSteck();
+        return topScreen;
+
     }
 
     
@@ -62,6 +75,16 @@ public class ScreenController : MonoBehaviour
     {
         return _screenStack.Pop();
     }
-    
+
+
+    private void printSteck()
+    {
+        var str = $"[{_screenStack.Count}]";
+        foreach (var screen in _screenStack)
+        {
+            str += screen.gameObject.name + "; ";
+        }
+        Debug.LogError(str);
+    }
 
 }
