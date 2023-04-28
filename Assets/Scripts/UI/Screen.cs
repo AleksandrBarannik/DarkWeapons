@@ -5,16 +5,12 @@ using UnityEngine;
 
 public abstract  class Screen : MonoBehaviour
 {
-   //[SerializeField]
-  // private Screen _type;
-
- //  public Screen Type => _type;
-   
    public virtual void OnPush() {}
    public virtual void OnPop() {}
 
    public virtual void OnBackPressed()
    {
+       Debug.Log("Выполнился OnBackPressed в  Классе Screen");
        Game.Instance.ScreenController.Pop();
    }
 }
