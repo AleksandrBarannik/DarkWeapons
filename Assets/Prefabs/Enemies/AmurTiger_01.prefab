@@ -356,6 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1ecd3ea0d8f3d41be2c19af45d30f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rewardExperience: 100
   effectsProxy: {fileID: 8825111638064990792}
   strength: 1
   agility: 1

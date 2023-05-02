@@ -31,6 +31,7 @@ public class ScreenController : MonoBehaviour
                popedScreen.gameObject.SetActive(false);
            }
            screen.gameObject.SetActive(true);
+           screen.OnPush();
            return;
        }
        
@@ -47,6 +48,7 @@ public class ScreenController : MonoBehaviour
        Debug.LogError($"добавляемый экран {screen.gameObject.name}");
        _screenStack.Push(screen);
        screen.gameObject.SetActive(true);
+       screen.OnPush();
         
 
     }
@@ -64,18 +66,12 @@ public class ScreenController : MonoBehaviour
     //скрывает текущий экран  и пишит на вершину предыдущий
     public Screen Pop()
     { 
-        Debug.Log("Началось выполнение Метода Pop класса  ScreenController");
-        
         var popedScreen = _screenStack.Pop();
         popedScreen.OnPop();
         popedScreen.gameObject.SetActive(false);
         
-        Debug.Log("текущий экран который скрылся" + popedScreen );
-        printSteck();
-
         var topScreen = _screenStack.Peek();
         topScreen.gameObject.SetActive(true);
-        printSteck();
         return topScreen;
 
     }
@@ -84,9 +80,7 @@ public class ScreenController : MonoBehaviour
     // возвращает верхний экран стека
     public Screen Top()
     {
-        Debug.Log("Выполняется метод TOP класса ScreenController");
-        Debug.LogError("Верхний в стеке был "+ _screenStack.Pop());
-        return _screenStack.Pop();
+        return _screenStack.Peek();
     }
 
 

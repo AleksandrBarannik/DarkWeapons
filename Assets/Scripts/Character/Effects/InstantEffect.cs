@@ -33,7 +33,7 @@ public class InstantEffect : Effect
         playerStats.ChangeHealth(restoreHealth);
         playerStats.ChangeMana(restoreMana);
         playerStats.ChangeStamina(restoreStamina);
-        playerStats.AddExperiense(addExperience);
+        playerStats.AddExperience(addExperience);
         Game.Instance.Player.AddMoney(addMoney);
 
     }

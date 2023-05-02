@@ -10,7 +10,6 @@ public abstract  class Screen : MonoBehaviour
 
    public virtual void OnBackPressed()
    {
-       Debug.Log("Выполнился OnBackPressed в  Классе Screen");
-       Game.Instance.ScreenController.Pop();
+      Game.Instance.ScreenController.Pop();
    }
 }

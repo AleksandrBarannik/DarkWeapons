@@ -9,6 +9,9 @@ public class PlayerStats : MagicStats
     [SerializeField]
     private int skillPoints = 0;
 
+    public int SkillPoints => skillPoints;
+    
+
     private int currentExperience = 0;
     
     
@@ -18,6 +21,12 @@ public class PlayerStats : MagicStats
         {
             LevelUp();
         }
+    }
+
+    public void ApplyStats(int additionalStrength)
+    {
+        strength += additionalStrength;
+        skillPoints -= additionalStrength;
     }
     
     private void LevelUp()
@@ -41,9 +50,15 @@ public class PlayerStats : MagicStats
         }
     }
     
-    public void AddExperiense(int ExperienceToAdd) 
+    public void AddExperience(int ExperienceToAdd) 
     {
         currentExperience += ExperienceToAdd + effectsProxy.ExperienceBonus;
+        var sanityCheck = 0;
+        while (currentExperience > experienceToLevelUp && sanityCheck < 10000)
+        {
+            LevelUp();
+            sanityCheck++;
+        }
     }
     
     

@@ -30,8 +30,6 @@ public class HUDScreen : Screen
 
     public override void OnBackPressed()
     {
-        Debug.Log("Выполнился OnBackPressed в  Классе HUDScreen");
-        
         Game.Instance.Pause();
     }
 }

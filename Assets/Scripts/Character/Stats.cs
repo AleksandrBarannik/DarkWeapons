@@ -8,6 +8,10 @@ public class Stats : MonoBehaviour
     public Action onChangeStamina;
     public Action onCharacterDied;
 
+    [SerializeField]
+    private int _rewardExperience;
+    public int RewardExperience => _rewardExperience;
+
     public bool IsDead => (currentHealthPoints <=0);
 
     [SerializeField]
@@ -75,7 +79,11 @@ public class Stats : MonoBehaviour
         currentHealthPoints = (int) Math.Clamp(currentHealthPoints + value ,0,MaxHealth);
         onChangeHealth?.Invoke();
         if (currentHealthPoints < 0)
+        {
+            Game.Instance.Player.PlayerStats.AddExperience(_rewardExperience);
             onCharacterDied?.Invoke();
+        }
+            
             
     }
     
