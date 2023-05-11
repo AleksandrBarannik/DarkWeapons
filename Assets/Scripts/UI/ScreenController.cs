@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Управляет сменой экранов (запись в стек и выгрузка из стека)
 public class ScreenController : MonoBehaviour
 {
     private Stack<Screen> _screenStack = new Stack<Screen>();
@@ -19,7 +20,6 @@ public class ScreenController : MonoBehaviour
        
     }
 
-    //основная реализация
     public void Push_T<TScreen>(TScreen screen, bool hidePrev = true) where TScreen : Screen
     {
        if (_screenStack.Contains(screen))
@@ -40,12 +40,12 @@ public class ScreenController : MonoBehaviour
            var popedScreen = _screenStack.Peek();
            if (popedScreen.GetType() != typeof(HUDScreen))
            {
-               Debug.LogError($"HideScreen {popedScreen.gameObject.name}");
+               //Debug.LogError($"HideScreen {popedScreen.gameObject.name}");
                popedScreen.gameObject.SetActive(false);
                
            }
        }
-       Debug.LogError($"добавляемый экран {screen.gameObject.name}");
+       //Debug.LogError($"добавляемый экран {screen.gameObject.name}");
        _screenStack.Push(screen);
        screen.gameObject.SetActive(true);
        screen.OnPush();
@@ -56,7 +56,7 @@ public class ScreenController : MonoBehaviour
     public void Push_T<TScreen>(bool hidePrev = true) where TScreen : Screen
     {
         var findedScreen = _allScreen.Find((element) => element.GetType() == typeof(TScreen));
-        Debug.LogError($"push {findedScreen.gameObject.name}");
+        //Debug.LogError($"push {findedScreen.gameObject.name}");
         Push_T(findedScreen,hidePrev);
        
     }

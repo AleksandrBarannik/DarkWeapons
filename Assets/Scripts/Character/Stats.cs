@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-
+//Базовые характеристики для всех (и врагов и босов и главного персонажа)
 public class Stats : MonoBehaviour
 {
     public Action onChangeHealth;

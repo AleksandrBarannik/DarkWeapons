@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Отвечает за анимацию открытия и закрытия дверей на Арене
 public class ArenaDoor : MonoBehaviour
 {
     [SerializeField]

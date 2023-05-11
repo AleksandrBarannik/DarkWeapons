@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Отвечает за запуск анимации ( врагов боссов главного персонажа)
 public class CharacterView : MonoBehaviour
 {
     [SerializeField]

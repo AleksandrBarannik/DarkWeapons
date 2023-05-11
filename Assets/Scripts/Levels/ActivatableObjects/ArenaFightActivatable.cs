@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//ОТвечает за активацию боя на арене и запуск спавнеров  противников и блокировку дверей во время боя
 public class ArenaFightActivatable : ActivatableObject
 {
     [SerializeField]

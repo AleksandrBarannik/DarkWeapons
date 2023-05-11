@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+//Характеристики для врагов с магическими атаками
 public class MagicStats : Stats
 {
     public Action onChangeMana;

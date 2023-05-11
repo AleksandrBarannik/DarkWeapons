@@ -2207,9 +2207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rewardExperience: 200
   effectsProxy: {fileID: 2338505612341987170}
-  strength: 1
-  agility: 1
-  vitality: 1
+  strength: 2
+  agility: 2
+  vitality: 2
   level: 2
   _nextAttackTime: 10
   _rangeAttack: 2

@@ -1,7 +1,12 @@
 using UnityEngine;
 
+
+//Отвечает за характеристики главного персонажа
 public class PlayerStats : MagicStats
 {
+    [SerializeField]
+    private int _countActiveStats = 4;
+    
     [SerializeField] 
     private int experienceToLevelUp = 100;
     public int MaxExperience  => experienceToLevelUp;
@@ -23,11 +28,25 @@ public class PlayerStats : MagicStats
         }
     }
 
-    public void ApplyStats(int additionalStrength)
+    public void ApplyStats(int additionalStrength,int additionalAgility,
+                            int additionalIntelligence, int additionalVitality )
     {
         strength += additionalStrength;
-        skillPoints -= additionalStrength;
+        agility += additionalAgility;
+        intelligence += additionalIntelligence;
+        vitality += additionalVitality;
+        skillPoints -= additionalStrength + additionalAgility + additionalIntelligence + additionalVitality;
     }
+
+    public void ResetStats()
+    {
+        skillPoints = (strength + agility + intelligence + vitality) - _countActiveStats;
+        strength = 1; 
+        agility = 1;
+        intelligence = 1; 
+        vitality = 1;
+    }
+    
     
     private void LevelUp()
     {

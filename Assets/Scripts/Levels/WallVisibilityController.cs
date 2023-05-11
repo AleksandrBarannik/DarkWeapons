@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//ОТвечает за видимость стен
+
 public class WallVisibilityController : MonoBehaviour
 {
     private float nextRaycastTime = 0;

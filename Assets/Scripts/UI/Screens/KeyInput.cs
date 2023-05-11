@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Отвечает за нажаты клавиши
 public class KeyInput : MonoBehaviour
 {
     void Update()
@@ -15,14 +16,15 @@ public class KeyInput : MonoBehaviour
         {
           
            Game.Instance.ScreenController.Top().OnBackPressed();
-          
+                        
+                            //Debug
            // Game.Instance.ScreenController.Push_T<PauseScreen>();
-           Game.Instance.ScreenController.printSteck();
+           //Game.Instance.ScreenController.printSteck();
+           
         }
         
         if (Input.GetKeyDown(KeyCode.U))
         {
-            // Debug.Log("Нажата кнопка U");
             if (Game.Instance.ScreenController.Top() is StatsScreen)
                 Game.Instance.ScreenController.Pop();
             else
@@ -32,9 +34,10 @@ public class KeyInput : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.I))
         {
-           // Debug.Log("Нажата кнопка I");
-            Game.Instance.ScreenController.Push_T<InventoryScreen>();
-            
+            if (Game.Instance.ScreenController.Top() is InventoryScreen)
+                Game.Instance.ScreenController.Pop();
+            else
+                Game.Instance.ScreenController.Push_T<InventoryScreen>();
         }
     }
 }
