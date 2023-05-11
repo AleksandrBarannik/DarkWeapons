@@ -41,10 +41,9 @@ public class Stats : MonoBehaviour
     private int _rangeAttack = 2;
     
     
-
-
     public int currentHealthPoints;
     public int currentStaminaPoints;
+    
     public int MaxHealth => Mathf.Max(5,Strength * (5 + Vitality)) + effectsProxy.HealthBonus;
     public int MaxStamina => Mathf.Max(5,Vitality * (5 + Agility))+ effectsProxy.StaminaBonus;
     public float Speed => Mathf.Min(10, Mathf.Max(4, 4 + 0.1f * Vitality * Agility));
@@ -78,7 +77,7 @@ public class Stats : MonoBehaviour
         
         currentHealthPoints = (int) Math.Clamp(currentHealthPoints + value ,0,MaxHealth);
         onChangeHealth?.Invoke();
-        if (currentHealthPoints < 0)
+        if (currentHealthPoints <= 0)
         {
             Game.Instance.Player.PlayerStats.AddExperience(_rewardExperience);
             onCharacterDied?.Invoke();

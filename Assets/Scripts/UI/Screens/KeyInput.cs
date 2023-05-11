@@ -18,7 +18,6 @@ public class KeyInput : MonoBehaviour
            Game.Instance.ScreenController.Top().OnBackPressed();
                         
                             //Debug
-           // Game.Instance.ScreenController.Push_T<PauseScreen>();
            //Game.Instance.ScreenController.printSteck();
            
         }

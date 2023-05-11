@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+    //отвечает за обноление здоровья  маны и тд у врагов на их characterPanel а так же для игрока (здоровье и стамина)
 public class CharacterPanel : MonoBehaviour
 {
     [SerializeField] 
@@ -47,7 +48,7 @@ public class CharacterPanel : MonoBehaviour
         
         if (healthText != null)
         {
-            healthText.text= (healthBar.value).ToString();
+            healthText.text = (healthBar.value).ToString();
         }
 
     }

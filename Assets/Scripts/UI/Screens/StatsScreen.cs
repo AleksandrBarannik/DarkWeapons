@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Отвечает за обновление UI STATS PANEL(Панели характеристик)
 public class StatsScreen : Screen
 {
     [SerializeField]
@@ -149,6 +150,8 @@ public class StatsScreen : Screen
         deltaAgility = 0;
         deltaIntelligence = 0;
         deltaVitality = 0;
+        Game.Instance.Player.PlayerStats.currentHealthPoints = Game.Instance.Player.PlayerStats.MaxHealth;
+        Game.Instance.Player.PlayerStats.currentManaPoints = Game.Instance.Player.PlayerStats.MaxMana;
         UpdateValues();
         UpdateButtonState();
         

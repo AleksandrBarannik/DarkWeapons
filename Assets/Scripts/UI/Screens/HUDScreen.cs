@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+//Для прикрепления панельки жизни к врагам
 public class HUDScreen : Screen
 {
     [SerializeField]

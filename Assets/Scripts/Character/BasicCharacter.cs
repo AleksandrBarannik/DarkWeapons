@@ -113,6 +113,7 @@ public class BasicCharacter : MonoBehaviour
             {
                 //Debug.LogError($"{gameObject.name}: CurrentPoints > 0 ");
                 _statsAttackTarget.ChangeHealth(-attackDamage);
+                
                 nextAttackTime = Time.time + _coldDown;
             }
             

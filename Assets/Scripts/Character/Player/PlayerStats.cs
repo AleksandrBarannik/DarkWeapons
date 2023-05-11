@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-//Отвечает за характеристики главного персонажа
+//Отвечает за характеристики главного персонажа (повышение уровня)
 public class PlayerStats : MagicStats
 {
     [SerializeField]
@@ -36,6 +36,7 @@ public class PlayerStats : MagicStats
         intelligence += additionalIntelligence;
         vitality += additionalVitality;
         skillPoints -= additionalStrength + additionalAgility + additionalIntelligence + additionalVitality;
+        
     }
 
     public void ResetStats()
@@ -54,6 +55,9 @@ public class PlayerStats : MagicStats
         experienceToLevelUp *= 2;
         currentExperience = 0;
         level++;
+        currentHealthPoints = MaxHealth;
+        currentStaminaPoints = MaxStamina;
+        currentManaPoints = MaxMana;
 
     }
 

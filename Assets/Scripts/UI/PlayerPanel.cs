@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Отвечает за обновления мына  для панели Главного игрока
 public class PlayerPanel : CharacterPanel
 {
     private PlayerStats _playerStats;

@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Перемещение  персонажа для интерактивного обьекта дверь
+//Перемещение  персонажа  по рейкасту по нажатию мыши  и  атака по нажатию кнопки мыши
 public class PlayerCharacterController : CharacterConrtoller
 {
     public LayerMask clickableLayer;
 
     public  List<EnemyCharacterController> enemys;
+
+    private int _staminaAmount = 2;
     
     
     
