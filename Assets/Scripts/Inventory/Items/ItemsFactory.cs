@@ -29,7 +29,7 @@ public class ItemsFactory : MonoBehaviour
 
     private void Start()
     {
-        CreateSceneItem(5);
+        CreateSceneItem(1);
     }
 
 

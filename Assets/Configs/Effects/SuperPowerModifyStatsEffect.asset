@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df30ae44deb75e24c98109ee717bc163, type: 3}
   m_Name: SuperPowerModifyStatsEffect
   m_EditorClassIdentifier: 
-  strengthBonus: 1000
-  agilityBonus: 0
-  vitalityBonus: 0
-  intelligenceBonus: 0
-  wisdomBonus: 0
-  experienceBonus: 0
+  _strengthBonus: 10
+  _agilityBonus: 0
+  _vitalityBonus: 0
+  _intelligenceBonus: 0
+  _wisdomBonus: 0
+  _experienceBonus: 0
+  _healthBonus: 0
+  _manaBonus: 0
+  _staminaBonus: 0

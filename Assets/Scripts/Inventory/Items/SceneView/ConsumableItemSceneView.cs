@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class ConsumableItemSceneView : ItemSceneView
 {
-    
+    protected override bool CanCollect()
+    {
+        //и  добавляем в инвентарь и возвращаем что добавили
+        return Game.Instance.Player.Inventory.Add(Item);
+    }
 }

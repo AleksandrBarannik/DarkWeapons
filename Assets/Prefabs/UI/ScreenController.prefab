@@ -262,6 +262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2064205457019936892, guid: 2aa31175333a4c045893240f72efe399, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2064205457019936893, guid: 2aa31175333a4c045893240f72efe399, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

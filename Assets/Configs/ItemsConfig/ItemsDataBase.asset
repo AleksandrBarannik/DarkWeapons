@@ -21,7 +21,7 @@ MonoBehaviour:
     _description: SwordBase
     _stackMaxCount: 1
     _stackCount: 1
-    _icon: {fileID: 0}
+    _icon: {fileID: 21300000, guid: fb1ae10a47c45d04c807f8e2b317257b, type: 3}
     _mesh: {fileID: 4300000, guid: e63ecf4b97d312d49ba6fa012d369af5, type: 3}
     _material: {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
     _slot: 2
@@ -37,7 +37,7 @@ MonoBehaviour:
     _description: HealthBoutle
     _stackMaxCount: 1
     _stackCount: 10
-    _icon: {fileID: 0}
+    _icon: {fileID: 21300000, guid: 6640b580b0c7e48458b9db87e378d8bd, type: 3}
     _mesh: {fileID: -2432090755550338912, guid: 887a534051bdbf449b6fc141de3d5c53, type: 3}
     _material: {fileID: 2100000, guid: 13dcb46a756acb54487e0e6e6ad96506, type: 2}
     _particle: {fileID: 4984809687711823257, guid: 43887e5150fa77e4991a0ecb6851e5e6, type: 3}
@@ -49,7 +49,7 @@ MonoBehaviour:
     _description: ManaBoutle (restore full Mana))
     _stackMaxCount: 10
     _stackCount: 0
-    _icon: {fileID: 0}
+    _icon: {fileID: 21300000, guid: 6fe4c2a9ac2165b449752dd9bb5d7e25, type: 3}
     _mesh: {fileID: 4300000, guid: da8a393ba24fc6f49842d87b0937b84d, type: 3}
     _material: {fileID: 2100000, guid: c7b5ee6d805865f4d87c945585777026, type: 2}
     _particle: {fileID: 5906364108134086106, guid: b7e3217a535394f48a91bd564c4b25a9, type: 3}
@@ -61,7 +61,7 @@ MonoBehaviour:
     _description: StaminaBoutle (restore full Stamina))
     _stackMaxCount: 10
     _stackCount: 0
-    _icon: {fileID: 0}
+    _icon: {fileID: 21300000, guid: e7ef532ce6da0e441ae57c7c4d43dea8, type: 3}
     _mesh: {fileID: 4300000, guid: 73c33de544278cc40862c8e46858e7fd, type: 3}
     _material: {fileID: 2100000, guid: fb276041f4776ba4ca924be1e46d1148, type: 2}
     _particle: {fileID: 1444762453637762568, guid: cea07367ce00c8241b102d727812552a, type: 3}

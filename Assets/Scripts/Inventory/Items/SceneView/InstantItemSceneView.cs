@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class InstantItemSceneView :ItemSceneView
 {
+    protected override bool CanCollect()
+    {
+        return true;
+    }
+    
     
 }

@@ -18,8 +18,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private PlayerCharacterController _player;
 
+    private Inventory _inventory = new Inventory();
+
+    public Inventory Inventory => _inventory;
+
     private int _money;
     public int Money => _money;
+    
+    
 
 
     public void AddMoney(int count)

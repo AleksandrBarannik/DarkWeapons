@@ -35,6 +35,8 @@ public class Game : MonoBehaviour//Содержит все об модулях(�
         set => _player = value;
     }
     
+    
+    
 
     private void Awake()
     {

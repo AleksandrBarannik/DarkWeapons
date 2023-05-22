@@ -45,7 +45,7 @@ public class Loot : MonoBehaviour
 public class LootNote
 {
     
-    public ItemSceneView LootObject ;
+    public ItemSceneView LootObject;
     
     [Range(0,100f)]
     public float spawnChance;
