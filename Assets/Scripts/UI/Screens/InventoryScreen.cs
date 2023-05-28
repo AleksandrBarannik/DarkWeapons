@@ -30,6 +30,7 @@ public class InventoryScreen : Screen
         for (int i = 0; i < Game.Instance.Player.Inventory.Bag.Count; i++)
         {
             _bagSlots[i].SetItem(Game.Instance.Player.Inventory.Bag[i]);
+
         }
     }
 }

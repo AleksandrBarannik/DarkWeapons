@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//Мгновенные эффекты (применяются сразу при взятии предмета и не хранятся в инвентаре)
 [CreateAssetMenu(fileName = "New InstantEffect",menuName = "DarkWeapons/Effects/InstantEffect")]
 public class InstantEffect : Effect
 {

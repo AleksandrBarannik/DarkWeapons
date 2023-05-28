@@ -29,7 +29,7 @@ public class ItemsFactory : MonoBehaviour
 
     private void Start()
     {
-        CreateSceneItem(1);
+        //CreateSceneItem(1);
     }
 
 
@@ -65,10 +65,10 @@ public class ItemsFactory : MonoBehaviour
         return null;
     }
 
-    public void CreateSceneItem(int id)
+    public ItemSceneView CreateSceneItem(int id, Transform transformSpawn) // в предыдущей версии был только id и функция была только void
     {
         var targetItem = FindItem(id, out var itemSceneView);
-        var spawnItem = Instantiate(itemSceneView, transform.position, Quaternion.identity);
+        var spawnItem = Instantiate(itemSceneView, transformSpawn.position, Quaternion.identity);
         
         //_itemSceneView = _consumableItemSceneView;
         spawnItem.RendererMesh.material = targetItem.Material;
@@ -78,7 +78,12 @@ public class ItemsFactory : MonoBehaviour
         spawnItem.Collider.size = targetItem.ColliderSize;
         spawnItem.Collider.center = targetItem.ColliderCenter;
         spawnItem.Item = targetItem;
-        
-       
+
+        return spawnItem;
+
     }
+
+    
+    
+    
 }

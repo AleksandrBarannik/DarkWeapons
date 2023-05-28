@@ -11,4 +11,5 @@ public class ConsumableItem : Item
     [SerializeField]
     private ParticleSystem _particle;
     public ParticleSystem Particle => _particle;
+
 }

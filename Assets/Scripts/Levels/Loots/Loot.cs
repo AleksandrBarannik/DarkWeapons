@@ -9,14 +9,19 @@ public class Loot : MonoBehaviour
 {
     [SerializeField]
     private BasicCharacter _owner;
+
+    private ItemsFactory _itemsFactory;
     
     private int jumpForce = 7;
+
+    [SerializeField] private Transform EnemyPosition;
 
     [SerializeField]
     private List<LootNote> _lootTable;
 
     private void Start()
     {
+        _itemsFactory = Game.Instance.Player.itemsFactory;
         _owner.Stats.onCharacterDied += DropLoot;
     }
     
@@ -28,8 +33,9 @@ public class Loot : MonoBehaviour
         {
             if (Random.Range(0, 100f) < loot.spawnChance)
             {
-                var spawnedLoot = Instantiate(loot.LootObject,
-                                            transform.position + Vector3.up , Quaternion.identity);
+                var spawnedLoot = _itemsFactory.CreateSceneItem(loot.LootId, EnemyPosition) ;
+               // var spawnedLoot = Instantiate(loot.LootObject,
+                                           // transform.position + Vector3.up , Quaternion.identity);
                 
                 spawnedLoot.Rigidbody.velocity = Vector3.up * jumpForce;
                 spawnedLoot.Rigidbody.angularVelocity =
@@ -44,8 +50,9 @@ public class Loot : MonoBehaviour
 [Serializable]
 public class LootNote
 {
+    public int LootId;
     
-    public ItemSceneView LootObject;
+    public ItemSceneView LootObject ;
     
     [Range(0,100f)]
     public float spawnChance;

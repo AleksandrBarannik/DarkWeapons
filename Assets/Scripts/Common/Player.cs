@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
 
     public Inventory Inventory => _inventory;
 
+
+    public ItemsFactory itemsFactory;
+
     private int _money;
     public int Money => _money;
     
