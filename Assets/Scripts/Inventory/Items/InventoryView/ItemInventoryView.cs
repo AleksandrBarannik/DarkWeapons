@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,16 +19,8 @@ public class ItemInventoryView : MonoBehaviour
     public void SetItem(Item item)
     {
         _itemIcon.sprite = item.Icon;
-    }
-    
-    public void SetItem(ConsumableItem item, int currenCountInSlot)
-    {
         _stackCountTMP.gameObject.SetActive(true);
-        _stackCountTMP.text = currenCountInSlot.ToString();
+        _stackCountTMP.text = $"{item.StackCount}/{item.StackMaxCount}";
     }
 
-    
-
-
-    
 }

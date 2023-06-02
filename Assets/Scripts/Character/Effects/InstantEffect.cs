@@ -7,23 +7,23 @@ using UnityEngine;
 public class InstantEffect : Effect
 {
     [SerializeField]
-    private int restoreHealth;
+    protected int restoreHealth;
     public int RestoreHealth => restoreHealth;
 
     [SerializeField]
-    private int restoreMana;
+    protected int restoreMana;
     public int RestoreMana => restoreMana;
     
     [SerializeField]
-    private int restoreStamina;
+    protected int restoreStamina;
     public int RestoreStamina => restoreStamina;
 
     [SerializeField]
-    private int addMoney;
+    protected int addMoney;
     public int AddMoney => addMoney;
 
     [SerializeField]
-    private int addExperience;
+    protected int addExperience;
     public int AddExperience => addExperience;
 
     public override void OnApply(BasicCharacter basicCharacter)
@@ -36,5 +36,17 @@ public class InstantEffect : Effect
         playerStats.AddExperience(addExperience);
         Game.Instance.Player.AddMoney(addMoney);
 
+    }
+
+    public  override Effect Copy()
+    {
+        var effect = new InstantEffect();
+        effect.restoreHealth = this.restoreHealth;
+        effect.restoreMana = this.restoreMana;
+        effect.restoreStamina= this.restoreStamina;
+        effect.addMoney = this.addMoney;
+        effect.addExperience = this.addExperience;
+        
+        return effect;
     }
 }

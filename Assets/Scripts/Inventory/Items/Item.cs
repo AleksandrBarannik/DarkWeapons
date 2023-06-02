@@ -8,46 +8,55 @@ using UnityEngine;
 public abstract class Item
 {
     [Tooltip("Id in DataBase")][SerializeField]
-    private int _id;
+    protected int _id;
     public int ID => _id;
     
     [Tooltip("Name object(item)")][SerializeField]
-    private string _name;
+    protected string _name;
     public string Name => _name;
 
     [Tooltip("For Scale Item")][SerializeField]
-    private Vector3 _scaleElement;
+    protected Vector3 _scaleElement;
     public Vector3 ScaleElement => _scaleElement;
     
     [SerializeField][Tooltip("For Scale ColiderItem")]
-    private Vector3 _colliderSize;
+    protected Vector3 _colliderSize;
     public Vector3 ColliderSize => _colliderSize;
     
     [SerializeField][Tooltip("Выбор центра для предмета (для мечей и тд  он не нулевой)")]
-    private Vector3 _colliderCenter;
+    protected Vector3 _colliderCenter;
     public Vector3 ColliderCenter => _colliderCenter;
     
     [Tooltip("Description object(item)")][SerializeField]
-    private string _description;
+    protected string _description;
     
     [Tooltip("Maximum items in stack")][SerializeField]
-    private int _stackMaxCount = 1;
+    protected int _stackMaxCount = 1;
     public int StackMaxCount => _stackMaxCount;
     
     [Tooltip("now count items in stack")][SerializeField]
-    private int _stackCount = 1;
-    public int StackCount => _stackCount;
+    protected int _stackCount = 1;
+    public int StackCount
+    {
+        get { return _stackCount; }
+        set
+        {
+            _stackCount = value;
+            if (0 > _stackCount || _stackCount > _stackMaxCount)
+                throw new ArgumentException();
+        }
+    }
 
     [SerializeField]
-    private Sprite _icon;
+    protected Sprite _icon;
     public Sprite Icon => _icon;
     
     [Tooltip("Нужно для смены самого меша")][SerializeField]
-    private Mesh _mesh;
+    protected Mesh _mesh;
     public Mesh Mesh => _mesh;
     
     [Tooltip("Material Item(Object)")][SerializeField]
-    private Material _material;
+    protected Material _material;
     public Material Material => _material;
     
     
@@ -57,8 +66,11 @@ public abstract class Item
     
     //при двойном клике на предмет взаимодействие с ним 
     public virtual void OnInteract(){}
-    
-    
+
+    public abstract Item Copy();
+
+
+
 
 
 

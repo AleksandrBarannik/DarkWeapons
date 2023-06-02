@@ -34,9 +34,6 @@ public class Loot : MonoBehaviour
             if (Random.Range(0, 100f) < loot.spawnChance)
             {
                 var spawnedLoot = _itemsFactory.CreateSceneItem(loot.LootId, EnemyPosition) ;
-               // var spawnedLoot = Instantiate(loot.LootObject,
-                                           // transform.position + Vector3.up , Quaternion.identity);
-                
                 spawnedLoot.Rigidbody.velocity = Vector3.up * jumpForce;
                 spawnedLoot.Rigidbody.angularVelocity =
                     new Vector3(Random.Range(-20, 20), Random.Range(-20, 20), Random.Range(-20, 20));
@@ -51,9 +48,7 @@ public class Loot : MonoBehaviour
 public class LootNote
 {
     public int LootId;
-    
-    public ItemSceneView LootObject ;
-    
+
     [Range(0,100f)]
     public float spawnChance;
     

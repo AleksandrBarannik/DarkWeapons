@@ -35,24 +35,26 @@ MonoBehaviour:
     _colliderSize: {x: 0.4, y: 0.3, z: 0.6}
     _colliderCenter: {x: 0, y: 0, z: 0}
     _description: HealthBoutle
-    _stackMaxCount: 1
-    _stackCount: 10
+    _stackMaxCount: 3
+    _stackCount: 1
     _icon: {fileID: 21300000, guid: 6640b580b0c7e48458b9db87e378d8bd, type: 3}
     _mesh: {fileID: -2432090755550338912, guid: 887a534051bdbf449b6fc141de3d5c53, type: 3}
     _material: {fileID: 2100000, guid: 13dcb46a756acb54487e0e6e6ad96506, type: 2}
-    _particle: {fileID: 4984809687711823257, guid: 43887e5150fa77e4991a0ecb6851e5e6, type: 3}
+    _instantEffects:
+    - {fileID: 11400000, guid: b11b3c630111a3a498ab82e89c39d878, type: 2}
   - _id: 3
     _name: ManaBoutle
     _scaleElement: {x: 1, y: 1, z: 1}
     _colliderSize: {x: 1, y: 1, z: 1}
     _colliderCenter: {x: 0, y: 0, z: 0}
     _description: ManaBoutle (restore full Mana))
-    _stackMaxCount: 10
-    _stackCount: 0
+    _stackMaxCount: 3
+    _stackCount: 1
     _icon: {fileID: 21300000, guid: 6fe4c2a9ac2165b449752dd9bb5d7e25, type: 3}
     _mesh: {fileID: 4300000, guid: da8a393ba24fc6f49842d87b0937b84d, type: 3}
     _material: {fileID: 2100000, guid: c7b5ee6d805865f4d87c945585777026, type: 2}
-    _particle: {fileID: 5906364108134086106, guid: b7e3217a535394f48a91bd564c4b25a9, type: 3}
+    _instantEffects:
+    - {fileID: 11400000, guid: cb7f4a94ae4a9cb498cbfe0631d4e589, type: 2}
   - _id: 4
     _name: StaminaBoutle
     _scaleElement: {x: 1, y: 1, z: 1}
@@ -60,11 +62,11 @@ MonoBehaviour:
     _colliderCenter: {x: 0, y: 0, z: 0}
     _description: StaminaBoutle (restore full Stamina))
     _stackMaxCount: 10
-    _stackCount: 0
+    _stackCount: 1
     _icon: {fileID: 21300000, guid: e7ef532ce6da0e441ae57c7c4d43dea8, type: 3}
     _mesh: {fileID: 4300000, guid: 73c33de544278cc40862c8e46858e7fd, type: 3}
     _material: {fileID: 2100000, guid: fb276041f4776ba4ca924be1e46d1148, type: 2}
-    _particle: {fileID: 1444762453637762568, guid: cea07367ce00c8241b102d727812552a, type: 3}
+    _instantEffects: []
   _instantItems:
   - _id: 5
     _name: Wealth
@@ -77,5 +79,18 @@ MonoBehaviour:
     _icon: {fileID: 0}
     _mesh: {fileID: 4300000, guid: 242d0c84f77361d4abc018c8b39c5d92, type: 3}
     _material: {fileID: 2100000, guid: 78e53f773c1253e42a517e179f18734b, type: 2}
+    _instantEffects:
+    - {fileID: 11400000, guid: 38c1d0b45b2928047892c694206b6133, type: 2}
+  - _id: 6
+    _name: HealthBoutle
+    _scaleElement: {x: 1, y: 1, z: 1}
+    _colliderSize: {x: 0.4, y: 0.3, z: 0.6}
+    _colliderCenter: {x: 0, y: 0, z: 0}
+    _description: HealthBoutle
+    _stackMaxCount: 10
+    _stackCount: 1
+    _icon: {fileID: 21300000, guid: 6640b580b0c7e48458b9db87e378d8bd, type: 3}
+    _mesh: {fileID: -2432090755550338912, guid: 887a534051bdbf449b6fc141de3d5c53, type: 3}
+    _material: {fileID: 2100000, guid: 13dcb46a756acb54487e0e6e6ad96506, type: 2}
     _instantEffects:
     - {fileID: 11400000, guid: b11b3c630111a3a498ab82e89c39d878, type: 2}

@@ -467,13 +467,16 @@ MonoBehaviour:
   EnemyPosition: {fileID: 6044206952570024720}
   _lootTable:
   - LootId: 1
-    LootObject: {fileID: 7677363562443740260, guid: cb63b8df6022770409d9ae68c810d3fd, type: 3}
     spawnChance: 100
   - LootId: 2
-    LootObject: {fileID: 3181468231095750672, guid: faf943f7a091e8749a822b1ac0fe186f, type: 3}
+    spawnChance: 100
+  - LootId: 2
+    spawnChance: 100
+  - LootId: 2
+    spawnChance: 100
+  - LootId: 2
     spawnChance: 100
   - LootId: 3
-    LootObject: {fileID: 3181468231095750672, guid: faf943f7a091e8749a822b1ac0fe186f, type: 3}
     spawnChance: 100
 --- !u!1 &6044206952570318584
 GameObject:

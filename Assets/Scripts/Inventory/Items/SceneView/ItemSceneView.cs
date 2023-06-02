@@ -33,7 +33,7 @@ public abstract  class ItemSceneView : MonoBehaviour
     {
         if (collider.gameObject == Game.Instance.Player.Character.gameObject)
         {
-            if (CanCollect())
+            if (TryCollect())
             {
                  OnCollect();
                  Destroy(this.gameObject);
@@ -44,7 +44,7 @@ public abstract  class ItemSceneView : MonoBehaviour
 
     //подьем предмета
 
-    protected abstract bool CanCollect();
+    protected abstract bool TryCollect();
     
     protected virtual void OnCollect()
     {

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74de5bfa1feb83844949b6ba5f0671ee, type: 3}
-  m_Name: RestoreHealthEffect
+  m_Name: AddMoneyEffect
   m_EditorClassIdentifier: 
-  restoreHealth: 100
+  restoreHealth: 0
   restoreMana: 0
   restoreStamina: 0
-  addMoney: 0
+  addMoney: 500
   addExperience: 0

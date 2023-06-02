@@ -6,42 +6,56 @@ using UnityEngine;
 public class ModifyStatsEffect : Effect,IModifyStats
 {
     [SerializeField]
-    private int _strengthBonus;
+    protected int _strengthBonus;
     public int StrengthBonus => _strengthBonus;
     
     [SerializeField]
-    private int _agilityBonus;
+    protected int _agilityBonus;
     public int AgilityBonus => _agilityBonus;
     
     [SerializeField]
-    private int _vitalityBonus;
+    protected int _vitalityBonus;
     public int VitalityBonus => _vitalityBonus;
     
     [SerializeField]
-    private int _intelligenceBonus;
+    protected int _intelligenceBonus;
     public int IntelligenceBonus => _intelligenceBonus;
 
     [SerializeField]
-    private int _wisdomBonus;
+    protected int _wisdomBonus;
     public int WisdomBonus => _wisdomBonus;
 
     [SerializeField]
-    private int _experienceBonus;
+    protected int _experienceBonus;
     public int ExperienceBonus => _experienceBonus;
     
     [SerializeField]
-    private int _healthBonus;
+    protected int _healthBonus;
     public int HealthBonus => _healthBonus;
     
     [SerializeField]
-    private int _manaBonus;
+    protected int _manaBonus;
     public int ManaBonus => _manaBonus;
     
     [SerializeField]
-    private int _staminaBonus;
+    protected int _staminaBonus;
     public int StaminaBonus => _staminaBonus;
-    
-    
+
+
+    public override Effect Copy()
+    {
+        var effect = new ModifyStatsEffect();;
+        effect._strengthBonus = this._strengthBonus;
+        effect._agilityBonus = this._agilityBonus;
+        effect._vitalityBonus = this._vitalityBonus;
+        effect._intelligenceBonus = this._intelligenceBonus;
+        effect._wisdomBonus = this._wisdomBonus;
+        effect._experienceBonus = this._experienceBonus;
+        effect._healthBonus = this._healthBonus;
+        effect._manaBonus = this._manaBonus;
+        effect._staminaBonus = this._staminaBonus;
+        return effect;
+    }
 }
 
 interface IModifyStats

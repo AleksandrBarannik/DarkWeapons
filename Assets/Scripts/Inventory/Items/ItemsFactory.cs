@@ -27,12 +27,6 @@ public class ItemsFactory : MonoBehaviour
         _itemsDataBase = dataBase;
     }
 
-    private void Start()
-    {
-        //CreateSceneItem(1);
-    }
-
-
     private Item FindItem(int id, out ItemSceneView itemPrefab)
     {
         _equippableItem = _itemsDataBase.EquippableItems.Find((item) => item.ID == id);
@@ -65,12 +59,11 @@ public class ItemsFactory : MonoBehaviour
         return null;
     }
 
-    public ItemSceneView CreateSceneItem(int id, Transform transformSpawn) // в предыдущей версии был только id и функция была только void
+    public ItemSceneView CreateSceneItem(int id, Transform transformSpawn) 
     {
-        var targetItem = FindItem(id, out var itemSceneView);
+        var targetItem = FindItem(id, out var itemSceneView).Copy();
         var spawnItem = Instantiate(itemSceneView, transformSpawn.position, Quaternion.identity);
         
-        //_itemSceneView = _consumableItemSceneView;
         spawnItem.RendererMesh.material = targetItem.Material;
         spawnItem.FilterMesh.name = targetItem.Name;
         spawnItem.FilterMesh.mesh = targetItem.Mesh;

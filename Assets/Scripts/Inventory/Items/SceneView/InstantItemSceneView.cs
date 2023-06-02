@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InstantItemSceneView :ItemSceneView
 {
-    protected override bool CanCollect()
+    protected override bool TryCollect()
     {
         return true;
     }

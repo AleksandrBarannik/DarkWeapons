@@ -31,4 +31,30 @@ public class EquippableItem : Item
         }
         
     }
+
+    public override Item Copy()
+    {
+        var item = new EquippableItem();
+        item._id = this._id;
+        item._name = this._name;
+        item._scaleElement = this._scaleElement;
+        item._colliderSize = this._colliderSize;
+        item._colliderCenter = this._colliderCenter;
+        item._description = this._description;
+        item._stackCount = this._stackCount;
+        item._stackMaxCount = this._stackMaxCount;
+        item._icon = this._icon;
+        item._mesh = this._mesh;
+        item._material = this._material;
+        item._slot = this._slot;
+
+        
+        item._effects = new List<Effect>();
+        foreach (var effect in _effects)
+        {
+            item._effects.Add(effect.Copy());
+        }
+        
+        return item;
+    }
 }
