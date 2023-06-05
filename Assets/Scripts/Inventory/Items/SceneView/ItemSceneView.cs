@@ -26,7 +26,7 @@ public abstract  class ItemSceneView : MonoBehaviour
     private Transform scaleItem;
     public Transform ScaleItem => scaleItem;
 
-    public  Item Item;
+    public abstract Item Item { get; set; }
 
    
     public void OnTriggerEnter(Collider collider)

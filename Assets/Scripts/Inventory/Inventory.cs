@@ -7,8 +7,7 @@ using UnityEngine;
 //Сам инвентарь (не визуал , логика всего инвентаря, добавление предметов)
 public class Inventory
 {
-    private float lastClickTime;
-    private const float DOUBLE_CLICK_TIME = 0.2f;
+    
     
     public const int INVENTORY_SIZE = 40;
     private List<Item> bag = new List<Item>();
@@ -50,27 +49,7 @@ public class Inventory
     }
 
     
-    public void ApplyItem()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            var timeSinceLastCLick = Time.time - lastClickTime;
-
-            if (timeSinceLastCLick < DOUBLE_CLICK_TIME)
-            {
-                Debug.Log("DoubleClick");
-                for (int i = 0; i < bag.Count; i++)
-                {
-                    bag[i].OnInteract();
-                }
-            }
-            lastClickTime = Time.time;
-        }
-        
-        
-        
-        
-    }
+    
 
     
 

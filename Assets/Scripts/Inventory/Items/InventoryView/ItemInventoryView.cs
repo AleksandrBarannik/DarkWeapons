@@ -18,9 +18,17 @@ public class ItemInventoryView : MonoBehaviour
 
     public void SetItem(Item item)
     {
-        _itemIcon.sprite = item.Icon;
-        _stackCountTMP.gameObject.SetActive(true);
-        _stackCountTMP.text = $"{item.StackCount}/{item.StackMaxCount}";
+        if (item != null)
+        {
+            _itemIcon.sprite = item.Icon;
+            _stackCountTMP.gameObject.SetActive(true);
+            _stackCountTMP.text = $"{item.StackCount}/{item.StackMaxCount}";
+        }
+        else
+        {
+            _itemIcon.sprite = null;
+            _stackCountTMP.gameObject.SetActive(false);
+        }
     }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 //Что-то базовое что можно сделать со всеми предметами
 [Serializable]
-public abstract class Item
+public  class Item
 {
     [Tooltip("Id in DataBase")][SerializeField]
     protected int _id;
@@ -67,12 +67,11 @@ public abstract class Item
     //при двойном клике на предмет взаимодействие с ним 
     public virtual void OnInteract(){}
 
-    public abstract Item Copy();
-
-
-
-
-
+    public virtual Item Copy()
+    {
+        throw  new  NotImplementedException();
+        
+    }
 
 
 }

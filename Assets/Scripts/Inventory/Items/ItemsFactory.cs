@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
     //СОздает предмет на сцене  по айдишнику  и из базы данных предмета  передает его значения ему 
@@ -64,6 +65,15 @@ public class ItemsFactory : MonoBehaviour
         var targetItem = FindItem(id, out var itemSceneView).Copy();
         var spawnItem = Instantiate(itemSceneView, transformSpawn.position, Quaternion.identity);
         
+        FillItemSceneView(spawnItem, targetItem);
+        
+
+        return spawnItem;
+
+    }
+
+    public static void FillItemSceneView( ItemSceneView spawnItem , Item targetItem)
+    {
         spawnItem.RendererMesh.material = targetItem.Material;
         spawnItem.FilterMesh.name = targetItem.Name;
         spawnItem.FilterMesh.mesh = targetItem.Mesh;
@@ -71,9 +81,6 @@ public class ItemsFactory : MonoBehaviour
         spawnItem.Collider.size = targetItem.ColliderSize;
         spawnItem.Collider.center = targetItem.ColliderCenter;
         spawnItem.Item = targetItem;
-
-        return spawnItem;
-
     }
 
     
