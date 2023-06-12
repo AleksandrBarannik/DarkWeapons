@@ -22,23 +22,42 @@ public class EquippableItem : Item
     [SerializeField]
     private List<Effect> _effects;
 
-    public override void OnCollect()
+    public List<Effect> Effects => _effects;
+
+
+    public override void OnInteract()
     {
-        base.OnCollect();
-        foreach (var effect in _effects)
-        {
-            Game.Instance.Player.Character.Stats.EffectsProxy.AddEffect(effect);
-        }
-        
+        base.OnInteract();
+        Equip();
+    }
+
+    public void Equip()
+    {
+        Game.Instance.Player.Inventory.Equip(this);
+        /*
+         foreach (var effect in _effects)
+         {
+             Game.Instance.Player.Character.Stats.EffectsProxy.AddEffect(effect);
+         }
+         */
+     }
+     
+     public void UnEquip()
+     {
+        /* foreach (var effect in _effects)
+         {
+             Game.Instance.Player.Character.Stats.EffectsProxy.AddEffect(effect);
+         }
+         */
     }
 
     public override Item Copy()
     {
         var item = new EquippableItem();
         FillDataItem(item);
+        item._slot = _slot;
         
         
-        //??? вообще работает эффекты у эквипебла? список не ModifyStatsEffect Должен быть ли?
 
         item._effects = new List<Effect>();
         foreach (var effect in _effects)

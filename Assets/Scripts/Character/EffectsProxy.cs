@@ -9,8 +9,8 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     private BasicCharacter _owner;
     
     private List<Effect>_allEffectsOnCharacter = new List<Effect>();
+    private Inventory Inventory => Game.Instance.Player.Inventory;
     
-    private int totalBonus = 0;
 
     public void AddEffect(Effect effect)
     {
@@ -22,13 +22,26 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     {
         get
         {
-            foreach (var effect in _allEffectsOnCharacter)
+            int totalBonus = 0;
+            foreach (var effect in _allEffectsOnCharacter)  //Для любых аур и дебафов
             {
                 if (effect is IModifyStats modifyStatsEffect)
                 {
                     totalBonus += modifyStatsEffect.StrengthBonus;
                 }
                 
+            }
+
+            foreach (var item in Inventory.Equipment)// Для экипорованных айтемов эффекты
+            {
+                foreach (var effect in item.Value.Effects)
+                {
+                    if (effect is IModifyStats modifyStatsEffect)
+                    {
+                        totalBonus += modifyStatsEffect.StrengthBonus;
+                    }
+
+                }
             }
             return totalBonus;
         }
@@ -38,6 +51,8 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     {
         get
         {
+            int totalBonus = 0;
+            
             foreach (var effect in _allEffectsOnCharacter)
             {
                 if (effect is ModifyStatsEffect modifyStatsEffect)
@@ -51,8 +66,10 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
 
     public int VitalityBonus 
     {
+        
         get
         {
+            int totalBonus = 0;
             foreach (var effect in _allEffectsOnCharacter)
             {
                 if (effect is ModifyStatsEffect modifyStatsEffect)
@@ -68,6 +85,7 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     {
         get
         {
+            int totalBonus = 0;
             foreach (var effect in _allEffectsOnCharacter)
             {
                 if (effect is ModifyStatsEffect modifyStatsEffect)
@@ -84,6 +102,7 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     {
         get
         {
+            int totalBonus = 0;
             foreach (var effect in _allEffectsOnCharacter)
             {
                 if (effect is ModifyStatsEffect modifyStatsEffect)
@@ -100,6 +119,7 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     {
         get
         {
+            int totalBonus = 0;
             foreach (var effect in _allEffectsOnCharacter)
             {
                 if (effect is ModifyStatsEffect modifyStatsEffect)
@@ -115,7 +135,9 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     public int HealthBonus
     {
         get
-        {foreach (var effect in _allEffectsOnCharacter)
+        {
+            int totalBonus = 0;
+            foreach (var effect in _allEffectsOnCharacter)
             {
                 if (effect is ModifyStatsEffect modifyStatsEffect)
                 {
@@ -130,6 +152,7 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     {
         get
         {
+            int totalBonus = 0;
             foreach (var effect in _allEffectsOnCharacter)
             {
                 if (effect is ModifyStatsEffect modifyStatsEffect)
@@ -146,6 +169,7 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
     {
         get
         {
+            int totalBonus = 0;
             foreach (var effect in _allEffectsOnCharacter)
             {
                 if (effect is ModifyStatsEffect modifyStatsEffect)

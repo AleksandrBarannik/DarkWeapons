@@ -7,6 +7,9 @@ using UnityEngine;
 public class InventoryScreen : Screen
 {
     [SerializeField]
+    private List<EquippableSlotNode> _equippableSlotNodes;
+    
+    [SerializeField]
     private List<ItemInventorySlot> _bagSlots;
 
     [SerializeField]
@@ -32,5 +35,23 @@ public class InventoryScreen : Screen
             _bagSlots[i].SetItem(Game.Instance.Player.Inventory.Bag[i]);
 
         }
+
+        //Отвечает за слот экипируемый (перенос в него item)
+        foreach (var equipableSlot in _equippableSlotNodes)
+        {
+            if (Game.Instance.Player.Inventory.Equipment.ContainsKey(equipableSlot.slot))
+                equipableSlot.slotView.SetItem(Game.Instance.Player.Inventory.Equipment[equipableSlot.slot]);
+            else
+            {
+                equipableSlot.slotView.SetItem(null);
+            }
+        }
     }
+}
+
+[Serializable]
+public class EquippableSlotNode
+{
+    public EquipmentSlot slot;
+    public ItemInventorySlot slotView;
 }
