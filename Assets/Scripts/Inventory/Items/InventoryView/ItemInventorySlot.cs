@@ -45,7 +45,7 @@ public class ItemInventorySlot : MonoBehaviour
                 SetItem(null);
             }
             else
-            {
+            {   
                 SetItem(_item);
             }
         }

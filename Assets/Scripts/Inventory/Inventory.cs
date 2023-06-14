@@ -26,7 +26,6 @@ public class Inventory
             if (item.ID == bag[i].ID)
             {
                 var sanityCheck = 0;
-
                 while (bag[i].StackCount < bag[i].StackMaxCount && sanityCheck < 1000)
                 {
                     sanityCheck++;
@@ -38,24 +37,29 @@ public class Inventory
                 }
                 if (sanityCheck >= 1000)
                     throw  new Exception("Infinity Loop");
+
             }
+            
         }
         
         if (bag.Count >= INVENTORY_SIZE)
         {
              Debug.Log("Инвентарь забит");
              return false;
-        }
+        } 
         bag.Add(item);
+        
         return true;
     }
 
     public void Equip(EquippableItem equippableItem)
     {
-        if (equipment.ContainsKey(equippableItem.Slot))
+        if (IsEquipped(equippableItem))
         {
-           // UnEquip(equippableItem);
-
+            var itemInSlot = equipment[equippableItem.Slot];
+            UnEquip(itemInSlot);
+            
+           // надо как-то экипировать нужный предмет
         }
         else
         {
@@ -66,6 +70,7 @@ public class Inventory
                 if (equipableInBag == equippableItem)
                 {
                     bag[i] = null;
+                    
                     return;
                 }
             }
@@ -73,7 +78,6 @@ public class Inventory
             Debug.LogError($"Экипируемого предмета нет в инвентаре {equippableItem.Name}");
         }
     }
-
     public void UnEquip(EquippableItem equippableItem)
     {
         var prewiousEquip = equippableItem;

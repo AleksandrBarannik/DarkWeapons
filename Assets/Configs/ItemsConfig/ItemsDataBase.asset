@@ -28,6 +28,21 @@ MonoBehaviour:
     _effects:
     - {fileID: 11400000, guid: 9cdda72229649c4479596b90ec183bdd, type: 2}
     - {fileID: 11400000, guid: 18571bbee0c9fcc409f36ad8919d5f0b, type: 2}
+  - _id: 7
+    _name: SwordBaseVersion2
+    _scaleElement: {x: 0.2, y: 0.2, z: 0.2}
+    _colliderSize: {x: 1, y: 6, z: 1}
+    _colliderCenter: {x: 0, y: 2, z: 0}
+    _description: SwordBase
+    _stackMaxCount: 1
+    _stackCount: 1
+    _icon: {fileID: 21300000, guid: 04f1daa5a1ee7ee479a3726cd0e554f7, type: 3}
+    _mesh: {fileID: 4300000, guid: e63ecf4b97d312d49ba6fa012d369af5, type: 3}
+    _material: {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
+    _slot: 1
+    _effects:
+    - {fileID: 11400000, guid: 9cdda72229649c4479596b90ec183bdd, type: 2}
+    - {fileID: 11400000, guid: 18571bbee0c9fcc409f36ad8919d5f0b, type: 2}
   _consumableItems:
   - _id: 2
     _name: HealthBoutle
