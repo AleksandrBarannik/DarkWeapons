@@ -24,7 +24,7 @@ MonoBehaviour:
     _icon: {fileID: 21300000, guid: fb1ae10a47c45d04c807f8e2b317257b, type: 3}
     _mesh: {fileID: 4300000, guid: e63ecf4b97d312d49ba6fa012d369af5, type: 3}
     _material: {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
-    _slot: 2
+    _slot: 1
     _effects:
     - {fileID: 11400000, guid: 9cdda72229649c4479596b90ec183bdd, type: 2}
     - {fileID: 11400000, guid: 18571bbee0c9fcc409f36ad8919d5f0b, type: 2}

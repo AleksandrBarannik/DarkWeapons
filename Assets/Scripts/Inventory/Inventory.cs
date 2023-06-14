@@ -54,7 +54,8 @@ public class Inventory
     {
         if (equipment.ContainsKey(equippableItem.Slot))
         {
-            
+           // UnEquip(equippableItem);
+
         }
         else
         {
@@ -73,10 +74,26 @@ public class Inventory
         }
     }
 
-    
-    
+    public void UnEquip(EquippableItem equippableItem)
+    {
+        var prewiousEquip = equippableItem;
+        equipment.Remove(equippableItem.Slot);
+        bag.Add(prewiousEquip);
+    }
 
-    
+    public bool IsEquipped(EquippableItem equippableItem)
+    {
+        if (equipment.ContainsKey(equippableItem.Slot))
+        {
+            return true;
+        }
+        return false;
+    }
 
-    
+
+
+
+
+
+
 }

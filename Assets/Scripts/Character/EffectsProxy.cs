@@ -60,6 +60,18 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
                     totalBonus += modifyStatsEffect.AgilityBonus;
                 }
             }
+            
+            foreach (var item in Inventory.Equipment)// Для экипорованных айтемов эффекты
+            {
+                foreach (var effect in item.Value.Effects)
+                {
+                    if (effect is IModifyStats modifyStatsEffect)
+                    {
+                        totalBonus += modifyStatsEffect.AgilityBonus;
+                    }
+
+                }
+            }
             return totalBonus;
         }
     }
@@ -77,6 +89,19 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
                     totalBonus += modifyStatsEffect.VitalityBonus;
                 }
             }
+            
+            foreach (var item in Inventory.Equipment)// Для экипорованных айтемов эффекты
+            {
+                foreach (var effect in item.Value.Effects)
+                {
+                    if (effect is IModifyStats modifyStatsEffect)
+                    {
+                        totalBonus += modifyStatsEffect.VitalityBonus;
+                    }
+
+                }
+            }
+            
             return totalBonus;
         }
     }
@@ -93,6 +118,18 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
                     totalBonus += modifyStatsEffect.VitalityBonus;
                 }
             }
+            
+            foreach (var item in Inventory.Equipment)// Для экипорованных айтемов эффекты
+            {
+                foreach (var effect in item.Value.Effects)
+                {
+                    if (effect is IModifyStats modifyStatsEffect)
+                    {
+                        totalBonus += modifyStatsEffect.IntelligenceBonus;
+                    }
+
+                }
+            }
             return totalBonus;
             
         }
@@ -107,7 +144,19 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
             {
                 if (effect is ModifyStatsEffect modifyStatsEffect)
                 {
-                    totalBonus += modifyStatsEffect.VitalityBonus;
+                    totalBonus += modifyStatsEffect.WisdomBonus;
+                }
+            }
+            
+            foreach (var item in Inventory.Equipment)// Для экипорованных айтемов эффекты
+            {
+                foreach (var effect in item.Value.Effects)
+                {
+                    if (effect is IModifyStats modifyStatsEffect)
+                    {
+                        totalBonus += modifyStatsEffect.WisdomBonus;
+                    }
+
                 }
             }
             return totalBonus;
@@ -144,6 +193,18 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
                     totalBonus += modifyStatsEffect.HealthBonus;
                 }
             }
+            
+            foreach (var item in Inventory.Equipment)// Для экипорованных айтемов эффекты
+            {
+                foreach (var effect in item.Value.Effects)
+                {
+                    if (effect is IModifyStats modifyStatsEffect)
+                    {
+                        totalBonus += modifyStatsEffect.HealthBonus;
+                    }
+
+                }
+            }
             return totalBonus;
         }
     }
@@ -160,6 +221,19 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
                     totalBonus += modifyStatsEffect.ManaBonus;
                 }
             }
+            
+            foreach (var item in Inventory.Equipment)// Для экипорованных айтемов эффекты
+            {
+                foreach (var effect in item.Value.Effects)
+                {
+                    if (effect is IModifyStats modifyStatsEffect)
+                    {
+                        totalBonus += modifyStatsEffect.ManaBonus;
+                    }
+
+                }
+            }
+            
             return totalBonus; 
         }
         
@@ -177,6 +251,19 @@ public class EffectsProxy : MonoBehaviour,IModifyStats
                     totalBonus += modifyStatsEffect.StaminaBonus;
                 }
             }
+            
+            foreach (var item in Inventory.Equipment)// Для экипорованных айтемов эффекты
+            {
+                foreach (var effect in item.Value.Effects)
+                {
+                    if (effect is IModifyStats modifyStatsEffect)
+                    {
+                        totalBonus += modifyStatsEffect.StaminaBonus;
+                    }
+
+                }
+            }
+            
             return totalBonus;
         }
     }
