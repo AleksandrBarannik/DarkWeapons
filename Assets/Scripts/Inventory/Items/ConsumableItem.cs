@@ -21,7 +21,11 @@ public class ConsumableItem : Item
         }
         
         StackCount--;
-
+        if (_stackCount <= 0)
+        {
+            Game.Instance.Player.Inventory.Remove(this);
+        }
+        Game.Instance.Player.Inventory.UpdateInventory();
     }
 
     public override Item Copy()

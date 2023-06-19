@@ -40,13 +40,16 @@ public class ItemInventorySlot : MonoBehaviour
         {
             Debug.Log("DoubleClick");
             _item.OnInteract();
-            if (_item.StackCount <= 0)
+            if (_item != null)
             {
-                SetItem(null);
-            }
-            else
-            {   
-                SetItem(_item);
+                if (_item.StackCount <= 0)
+                {
+                    SetItem(null);
+                }
+                else
+                {
+                    SetItem(_item);
+                }
             }
         }
 

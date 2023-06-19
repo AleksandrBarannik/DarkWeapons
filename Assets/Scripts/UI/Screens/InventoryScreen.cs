@@ -25,11 +25,19 @@ public class InventoryScreen : Screen
             var newSlot = Instantiate(_slotPrefab, _slotsParent);
             _bagSlots.Add(newSlot);
         }
+
+        Game.Instance.Player.Inventory.OnUpdateInventory += UpdateInventoryView;
     }
 
     public override void OnPush()
     {
         base.OnPush();
+        UpdateInventoryView();
+        
+    }
+
+    private void UpdateInventoryView()
+    {
         for (int i = 0; i < Game.Instance.Player.Inventory.Bag.Count; i++)
         {
             _bagSlots[i].SetItem(Game.Instance.Player.Inventory.Bag[i]);
@@ -48,6 +56,8 @@ public class InventoryScreen : Screen
         }
     }
 }
+
+
 
 [Serializable]
 public class EquippableSlotNode

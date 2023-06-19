@@ -41,6 +41,7 @@ public class EquippableItem : Item
         {
             UnEquip();
         }
+        Game.Instance.Player.Character.Stats.UpdateStats();
         
     }
 

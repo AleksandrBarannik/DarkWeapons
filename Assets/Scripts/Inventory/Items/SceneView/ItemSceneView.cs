@@ -28,14 +28,17 @@ public abstract  class ItemSceneView : MonoBehaviour
 
     public abstract Item Item { get; set; }
 
+    private bool collected = false;
+
    
     public void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject == Game.Instance.Player.Character.gameObject)
+        if (!collected && collider.gameObject == Game.Instance.Player.Character.gameObject)
         {
             if (TryCollect())
             {
                  OnCollect();
+                 collected = true;
                  Destroy(this.gameObject);
             }
             

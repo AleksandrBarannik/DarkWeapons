@@ -44,4 +44,10 @@ public class MagicStats : Stats
             //подождать время  пока не востановится мана нужное количество
         }
     }
+
+    public override void UpdateStats()
+    {
+        base.UpdateStats();
+        onChangeMana?.Invoke();
+    }
 }

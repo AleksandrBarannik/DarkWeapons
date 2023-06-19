@@ -7,6 +7,7 @@ using UnityEngine;
 //Сам инвентарь (не визуал , логика всего инвентаря, добавление предметов)
 public class Inventory
 {
+    public event Action OnUpdateInventory;
     
     
     public const int INVENTORY_SIZE = 40;
@@ -23,6 +24,9 @@ public class Inventory
         //ДОбавляет стаковые предметы в инвентарь
         for (int i = 0; i < bag.Count; i++)
         {
+            if (bag[i] == null)
+                continue;
+            
             if (item.ID == bag[i].ID)
             {
                 var sanityCheck = 0;
@@ -37,10 +41,20 @@ public class Inventory
                 }
                 if (sanityCheck >= 1000)
                     throw  new Exception("Infinity Loop");
-
             }
             
         }
+        
+        for (int i = 0; i < bag.Count; i++)
+        {
+            if (bag[i] == null)
+            {
+                bag[i] = item;
+                UpdateInventory();
+                return true;
+            }
+        }
+        
         
         if (bag.Count >= INVENTORY_SIZE)
         {
@@ -49,49 +63,76 @@ public class Inventory
         } 
         bag.Add(item);
         
+        UpdateInventory();
         return true;
+        
     }
 
     public void Equip(EquippableItem equippableItem)
     {
-        if (IsEquipped(equippableItem))
+        Item previousEquipped = null;
+        if (HaveSomethingInSlot(equippableItem))
         {
-            var itemInSlot = equipment[equippableItem.Slot];
-            UnEquip(itemInSlot);
-            
-           // надо как-то экипировать нужный предмет
+            previousEquipped = equipment[equippableItem.Slot];
         }
-        else
-        {
-            equipment.Add(equippableItem.Slot, equippableItem);
-            for (int i = 0; i < bag.Count; i++ )
-            {
-                var equipableInBag = bag[i] as EquippableItem;
-                if (equipableInBag == equippableItem)
-                {
-                    bag[i] = null;
-                    
-                    return;
-                }
-            }
 
-            Debug.LogError($"Экипируемого предмета нет в инвентаре {equippableItem.Name}");
+        equipment[equippableItem.Slot] = equippableItem;
+        for (int i = 0; i < bag.Count; i++)
+        {
+            var equipableInBag = bag[i] as EquippableItem;
+            if (equipableInBag == equippableItem)
+            {
+                bag[i] = previousEquipped;
+                UpdateInventory();
+                return;
+            }
         }
+
+        Debug.LogError($"Экипируемого предмета нет в инвентаре {equippableItem.Name}");
+
+        UpdateInventory();
     }
+
     public void UnEquip(EquippableItem equippableItem)
     {
         var prewiousEquip = equippableItem;
         equipment.Remove(equippableItem.Slot);
-        bag.Add(prewiousEquip);
+        Add(prewiousEquip);
+        UpdateInventory();
     }
 
+    public bool HaveSomethingInSlot(EquippableItem equippableItem)
+    {
+        if (equipment.ContainsKey(equippableItem.Slot))
+        {
+            return equipment[equippableItem.Slot] != null;
+        }
+        return false;
+    }
     public bool IsEquipped(EquippableItem equippableItem)
     {
         if (equipment.ContainsKey(equippableItem.Slot))
         {
-            return true;
+            return equipment[equippableItem.Slot] == equippableItem;
         }
         return false;
+    }
+
+    public void Remove(Item item)
+    {
+        for (var i = 0; i < bag.Count; i++)
+        {
+            if (bag[i] == item)
+            {
+                bag[i] = null;
+                return;
+            }
+        }
+    }
+
+    public void UpdateInventory()
+    {
+        OnUpdateInventory?.Invoke();
     }
 
 

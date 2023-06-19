@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using UnityEngine;
 
 //Базовые характеристики для всех (и врагов и босов и главного персонажа)
@@ -95,6 +96,12 @@ public class Stats : MonoBehaviour
             // подождать какое-то время на востановление стамины
         }
             
+    }
+
+    public virtual void UpdateStats()
+    {
+        onChangeHealth?.Invoke();
+        onChangeStamina?.Invoke();
     }
 
 }
