@@ -11,15 +11,13 @@ public class PlayerCharacterController : CharacterConrtoller
     public  List<EnemyCharacterController> enemys;
 
     private int _staminaAmount = 2;
-    
-    
-    
-    
 
-   protected override void ProcessInput(BasicCharacter target)
+
+    protected override void ProcessInput(BasicCharacter target)
     {
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0))
+            //if (_joystick.isActiveAndEnabled)
         {
             
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
