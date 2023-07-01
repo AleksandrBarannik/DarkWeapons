@@ -11,7 +11,11 @@ public class Initializer : MonoBehaviour
     [SerializeField] private Player _player;
     private void Awake()
     {
-        Instantiate(gameManagerPrefab);
+        if (Game.Instance == null)
+        {
+            Instantiate(gameManagerPrefab);
+        }
+        
         LevelCreator();
     }
 

@@ -1,10 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Отвечает за нажаты клавиши
 public class KeyInput : MonoBehaviour
 {
+    [SerializeField]
+    private Button _buttonInventory;
+    
+    [SerializeField]
+    private Button _buttonPlayerStats;
+    
+    [SerializeField]
+    private Button _buttonEscape;
+    
     void Update()
     {
         InputControlKey();
