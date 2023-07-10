@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Initializer : MonoBehaviour
@@ -15,14 +17,23 @@ public class Initializer : MonoBehaviour
         {
             Instantiate(gameManagerPrefab);
         }
-        
-        LevelCreator();
+        StartCoroutine(SetLevel());
     }
 
-    private void LevelCreator()
+    private IEnumerator SetLevel()
     {
          Game.Instance.Level = _currentLevel;
          Game.Instance.Player = _player;
+
+         if (_currentLevel == null || _player == null)
+         {
+             Game.Instance.ScreenController.Push_T<MenuScreen>();
+         }
+         else
+         {
+             yield return null;
+             Game.Instance.EventBus.OnLevelStarted();
+         }
     }
     
     

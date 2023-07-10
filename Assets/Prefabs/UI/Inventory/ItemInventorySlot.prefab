@@ -82,7 +82,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4f6bf95fb5e71774bbfc946c7e12d8e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -99,6 +99,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2317502336359016323}
     m_Modifications:
+    - target: {fileID: 1046655886848771790, guid: 5170c539bd7b406499ccf33d5442094f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6298647622791841790, guid: 5170c539bd7b406499ccf33d5442094f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -186,6 +190,10 @@ PrefabInstance:
     - target: {fileID: 7638828024070371561, guid: 5170c539bd7b406499ccf33d5442094f, type: 3}
       propertyPath: m_Name
       value: ItemInventoryView
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638828024070371561, guid: 5170c539bd7b406499ccf33d5442094f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5170c539bd7b406499ccf33d5442094f, type: 3}

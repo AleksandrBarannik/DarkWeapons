@@ -14,11 +14,16 @@ public class HUDScreen : Screen
 
     private void Start()
     {
-        foreach (var enemy in Game.Instance.Level.EnemiesController.Enemies)
-        {
-            CreateEnemyPanel(enemy);
-        }
         Game.Instance.EventBus.onEnemySpawn += CreateEnemyPanel;
+
+        if (Game.Instance.Level != null)
+        {
+            foreach (var enemy in Game.Instance.Level.EnemiesController.Enemies)
+            {
+                CreateEnemyPanel(enemy);
+            }
+        }
+
     }
 
     private void CreateEnemyPanel(EnemyCharacterController enemyCharacterController)

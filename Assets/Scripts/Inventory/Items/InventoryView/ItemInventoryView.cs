@@ -10,11 +10,18 @@ public class ItemInventoryView : MonoBehaviour
     [SerializeField]
     private Image _itemIcon;
     public Image ItemIcon => _itemIcon;
+    
 
     [SerializeField]
     public TextMeshProUGUI _stackCountTMP;
-    
-    
+
+    private Sprite cachedSlotIcon;
+
+    private void Awake()
+    {
+        cachedSlotIcon = _itemIcon.sprite;
+    }
+
 
     public void SetItem(Item item)
     {
@@ -26,7 +33,7 @@ public class ItemInventoryView : MonoBehaviour
         }
         else
         {
-            _itemIcon.sprite = null;
+            _itemIcon.sprite = cachedSlotIcon;
             _stackCountTMP.gameObject.SetActive(false);
         }
     }

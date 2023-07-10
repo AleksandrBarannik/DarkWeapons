@@ -18,17 +18,26 @@ public class PlayerPanel : CharacterPanel
     
     protected override void Start()
     {
-        _playerStats = Game.Instance.Player.PlayerStats;
-        SetTarget(_playerStats);
-        UpdateMana();
-        _playerStats.onChangeMana += UpdateMana;
-        base.Start();
+        if (Game.Instance.Player != null)
+        {
+            AttachPlayer();
+        }
+        Game.Instance.EventBus.onLevelStarted += AttachPlayer;
     }
 
     //do not remove (hide parent Update)
     private void Update()
     {
         
+    }
+
+    private void AttachPlayer()
+    {
+        _playerStats = Game.Instance.Player.PlayerStats;
+        SetTarget(_playerStats);
+        UpdateMana();
+        _playerStats.onChangeMana += UpdateMana;
+        base.Start();
     }
 
 

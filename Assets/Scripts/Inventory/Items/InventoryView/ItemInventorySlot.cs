@@ -39,7 +39,7 @@ public class ItemInventorySlot : MonoBehaviour
         if (timeSinceLastCLick < DOUBLE_CLICK_TIME)
         {
             Debug.Log("DoubleClick");
-            _item.OnInteract();
+            _item?.OnInteract();
             if (_item != null)
             {
                 if (_item.StackCount <= 0)

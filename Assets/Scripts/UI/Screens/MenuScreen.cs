@@ -15,11 +15,14 @@ public class MenuScreen : Screen
     [SerializeField]
     private Button _buttonStart;
 
+    private int newGameIndex = 1;
+
     private void Start()
     {
         _buttonStart.onClick.AddListener(LoadNewGame);
         _buttonExit.onClick.AddListener(ExitGame);
         _buttonContinue.onClick.AddListener(ContinueGame);
+        Debug.Log("Menu Initialized");
     }
 
 
@@ -27,7 +30,7 @@ public class MenuScreen : Screen
     {
         gameObject.SetActive(false);
         SceneLoader.Instance.slider.gameObject.SetActive(true);
-        SceneLoader.Instance.LoadScene(1);
+        SceneLoader.Instance.LoadScene(newGameIndex);
     }
 
     private void ExitGame()
