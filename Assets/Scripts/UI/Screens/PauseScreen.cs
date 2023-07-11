@@ -14,12 +14,16 @@ public class PauseScreen : Screen
     private Button _mainMenuButton;
 
     private int mainMenuIndex = 0;
-    
-    
-    public override void OnBackPressed()
+
+
+    private void Start()
     {
         _unPausedButton.onClick.AddListener(UnPause);
         _mainMenuButton.onClick.AddListener(BackMainMenu);
+    }
+
+    public override void OnBackPressed()
+    {
         Game.Instance.UnPause();
        
     }
