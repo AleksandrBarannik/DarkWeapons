@@ -1284,6 +1284,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4171633196223163694}
     m_Modifications:
+    - target: {fileID: 231540224028678443, guid: 89d49861093b2c642b3ce49f6bdf1ba8, type: 3}
+      propertyPath: loadingScreen
+      value: 
+      objectReference: {fileID: 8217659555956357913}
     - target: {fileID: 2268639214711288179, guid: 89d49861093b2c642b3ce49f6bdf1ba8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1386,6 +1390,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89d49861093b2c642b3ce49f6bdf1ba8, type: 3}
+--- !u!1 &8217659555956357913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5576738593056787514, guid: 89d49861093b2c642b3ce49f6bdf1ba8, type: 3}
+  m_PrefabInstance: {fileID: 4570718110512052003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8217659556307735354 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5576738594515772441, guid: 89d49861093b2c642b3ce49f6bdf1ba8, type: 3}

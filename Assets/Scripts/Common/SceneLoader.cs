@@ -46,6 +46,7 @@ public class SceneLoader : MonoBehaviour
             textMeshPro.text = "Loading... " + progress * 100f + "%";
             yield return null;
         }
+        loadingScreen.SetActive(false);
     }
 
 }

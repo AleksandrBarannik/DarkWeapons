@@ -31,6 +31,7 @@ public class MenuScreen : Screen
         gameObject.SetActive(false);
         SceneLoader.Instance.slider.gameObject.SetActive(true);
         SceneLoader.Instance.LoadScene(newGameIndex);
+       
     }
 
     private void ExitGame()
