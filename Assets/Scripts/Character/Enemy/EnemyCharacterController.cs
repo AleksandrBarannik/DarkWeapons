@@ -83,7 +83,7 @@ public class EnemyCharacterController : CharacterConrtoller
     {
         Destroy(this);
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

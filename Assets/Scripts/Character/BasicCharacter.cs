@@ -15,6 +15,7 @@ public class BasicCharacter : MonoBehaviour
   
     [SerializeField] 
     private CharacterView _characterView;
+    public CharacterView CharacterView =>_characterView;
     
     [SerializeField]
     private NavMeshAgent agent; // reference to the NavMeshAgent
@@ -130,6 +131,7 @@ public class BasicCharacter : MonoBehaviour
         target.ProcessInteraction(this);
     }
 
+    
     private void Died()
     {
         

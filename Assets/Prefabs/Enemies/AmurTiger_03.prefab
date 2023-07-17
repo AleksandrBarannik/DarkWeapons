@@ -2422,3 +2422,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 9500000}
+  _meshRenderer: {fileID: 13700004}

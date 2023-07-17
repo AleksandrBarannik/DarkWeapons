@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6044206952563022984}
+  _meshRenderer: {fileID: 6044206952558813768}
 --- !u!114 &7033535792473384694
 MonoBehaviour:
   m_ObjectHideFlags: 0

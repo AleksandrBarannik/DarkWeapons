@@ -12,12 +12,14 @@ public class PlayerCharacterController : CharacterConrtoller
 
     private int _staminaAmount = 2;
 
+    [SerializeField]
+    private MoveMarker _MoveMarker;
+
 
     protected override void ProcessInput(BasicCharacter target)
     {
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0))
-            //if (_joystick.isActiveAndEnabled)
         {
             
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
@@ -28,26 +30,25 @@ public class PlayerCharacterController : CharacterConrtoller
                 {
                     target.Interact(interactedTarget);
                 }
-                
 
                 else
                 {
                     var attackTarget = hit.collider.gameObject.GetComponent<EnemyCharacterController>();
                     if (attackTarget != null)
                     {
+                        attackTarget.ControllerTarget.CharacterView.Blink();
                         target.Attack(attackTarget.gameObject);
                     }
                     else
                     {
                         target.MoveTo(hit.point);
+                        _MoveMarker.MarkPoint(hit.point);
                     }
-                    
                 }
             }
         }
-
-        
-
-
     }
+    
+    
+    
 }
